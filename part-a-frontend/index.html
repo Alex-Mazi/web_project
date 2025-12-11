@@ -1,38 +1,50 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Library Homepage</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="assets\css\harry_styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://indestructibletype.com/fonts/Bodoni/Bodoni.css"
+      type="text/css"
+      charset="utf-8"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
 
-<head>
-    <title> Library Homepage</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="assets\css\harry_styles.css">
-    <link rel="stylesheet" href="https://indestructibletype.com/fonts/Bodoni/Bodoni.css" type="text/css" charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-
-<body>
-
-    <header> 
-        <h1>IT LIBRARY</h1>
+  <body>
+    <header>
+      <button id="menu-btn">☰</button>
+      <h1>IT LIBRARY</h1>
     </header>
 
+    <nav id="side-menu">
+      <button id="close-menu-btn">✕</button>
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="books.html">Books</a>
+      <a href="about.html">About</a>
+      <a href="register.html">Register</a>
+    </nav>
+
     <main>
+      <section id="intro">
+        <h3>Welcome to IT Library</h3>
+        <p>
+          Your digital space for learning Computer Science. Explore curated
+          courses, books, and resources designed to help you grow your skills at
+          your own pace.
+        </p>
+      </section>
 
-        <section id="intro">
-            <h3>Welcome to IT Library</h3>
-            <p>Your digital space for learning Computer Science. 
-               Explore curated courses, books, and resources designed to help you grow your skills at your own pace.</p>
-        </section>
-
-        <section id="recommended-courses">
-            <h3>Recommended Courses</h3>
-        </section>
-
+      <section id="recommended-courses">
+        <h3>Recommended Courses</h3>
+      </section>
     </main>
 
-    <footer>
-        Copyright © 2025 Mazi Perifana - All rights reserved
-    </footer>
+    <footer>Copyright © 2025 Mazi Perifana - All rights reserved</footer>
 
-</body>
-
+    <script src="assets\js\ui\menu.js"></script>
+  </body>
 </html>
