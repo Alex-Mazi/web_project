@@ -1,15 +1,4 @@
-body {
-    margin: 0;
-    padding-top: 3rem; 
-    padding-bottom: 2.5rem; 
-    text-align: center;
-}
-
-main {
-    padding: 1rem;
-    box-sizing: border-box;
-}
-
+/* ======== HEADER ======== */
 header {
     position: fixed;
     top: 0;
@@ -21,7 +10,23 @@ header {
     justify-content: center;
     z-index: 10000;
 }
+/* ======================== */
 
+/* ========= BODY ========= */
+body {
+    margin: 0;
+    padding-top: 3rem; 
+    padding-bottom: 2.5rem; 
+    text-align: center;
+}
+
+main {
+    padding: 1rem;
+    box-sizing: border-box;
+}
+/* ======================== */
+
+/* ======== FOOTER ======== */
 footer {
     position: fixed;
     left: 0;
@@ -33,16 +38,9 @@ footer {
     justify-content: center;
     z-index: 9000;
 }
+/* ======================== */
 
-#intro h3 {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
-
-#intro p {
-    padding-bottom: 0.7rem;
-}
-
+/* ========= MENU ========= */
 #side-menu {
     position: fixed;
     top: 0;
@@ -58,7 +56,20 @@ footer {
 #side-menu.active {
     left: 0;
 }
+/* ======================== */
 
+/* ===== INDEX INTRO ====== */
+#intro h3 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+#intro p {
+    padding-bottom: 0.7rem;
+}
+/* ======================== */
+
+/* == INDEX REC_COURSES === */
 #recommended-courses {
     width: 100%;
     box-sizing: border-box;
@@ -83,7 +94,77 @@ footer {
 .course-card {
     flex: 0 0 100%;
 }
+/* ======================== */
 
+/* === INDEX CATEGORIES === */
+#course-categories {
+    width: 100%;
+    max-width: 900px;
+    padding: 1rem;
+    margin: 1rem auto;
+}
+
+.categories-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.category-card p {
+    margin: 0;
+}
+/* ======================== */
+
+/* ===== REGISTRATION ===== */
+#register-container {
+    width: 90%;
+    max-width: 40rem;
+    margin: 2rem auto;
+}
+
+#register-container h2{
+    margin-bottom: 1rem;
+}
+/* ======================== */
+
+/* ====== FORM GROUP ====== */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+/* ======================== */
+
+/* ==== REGISTER LABEL ==== */
+label {
+    margin-bottom: 5px;
+}
+/* ======================== */
+
+/* === REGISTER CHECKS ==== */
+.checkboxes, .course-selection {
+    display: grid;
+    margin-top: 0.5rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.checkboxes > *, .course-selection > * {
+    min-width: 0;
+}
+/* ======================== */
+
+/* === REGISTER COURSES === */
+.course-item label {
+    margin: 0;
+}
+/* ======================== */
+
+/* === REGISTER SUMMARY === */
+#summary {
+    margin-top: 2rem;
+}
+/* ======================== */
+
+/* ======== MEDIA ========= */
 @media (max-width: 400px) {
     #side-menu {
         width: 55vw;      
@@ -111,6 +192,14 @@ footer {
         max-width: 300px;
     }
 
+    #register-container {
+        max-width: 50rem;
+    }
+
+    .checkboxes, .course-selection {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
 }
 
 @media (min-width: 900px) {
@@ -128,18 +217,19 @@ footer {
         max-width: 320px;
     }
 
+    #register-container {
+        max-width: 60rem;
+    }
+
+    .checkboxes, .course-selection {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
 }
 
-#course-categories {
-    width: 100%;
-    box-sizing: border-box;
-    padding: -2rem 1rem;
-    margin: 1rem 0;
+@media (min-width: 1200px) { 
+    #register-container {
+        max-width: 70rem;
+    }
 }
-
-.categories-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
+/* ======================== */
