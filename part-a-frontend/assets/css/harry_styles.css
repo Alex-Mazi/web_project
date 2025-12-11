@@ -100,14 +100,68 @@ footer{
 }
 
 #recommended-courses {
-    border-bottom: 2px solid #ccc; 
-    width: 100%;          
-    box-sizing: border-box; 
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 1rem;   
+    margin-bottom: 1rem;
 }
 
 #recommended-courses h3 {
-    color:   #A05C70;        
-    font-weight: 300; 
-    font-size: 1rem; 
-    margin: 0.2rem 0;  
+    color: #A05C70;
+    font-weight: 300;
+    font-size: 1rem;
+    border-bottom: 2px solid #ccc;
+    margin: 0.2rem 0 0.5rem 0; 
+}
+
+#menu-btn {
+  background: none;
+  border: none;
+  color: #F0EEE9;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  left: 1rem;
+}
+
+#close-menu-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: #F0EEE9;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px;          
+  width: 250px;
+  height: 100%;
+  background-color: #800020;
+  color: #F0EEE9;
+  padding-top: 3rem;     
+  transition: left 0.3s ease;
+  z-index: 999;          
+}
+
+/* Links inside menu */
+#side-menu a {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: #F0EEE9;
+  text-decoration: none;
+  text-align: left;
+}
+
+#side-menu a:hover {
+  background-color: #a0334a;
+}
+
+/* When the drawer is open */
+#side-menu.active {
+  left: 0;
 }
