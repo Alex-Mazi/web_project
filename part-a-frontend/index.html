@@ -12,8 +12,18 @@
 <body>
 
     <header> 
+        <button id="menu-btn">☰</button>
         <h1>IT LIBRARY</h1>
     </header>
+
+    <nav id="side-menu">
+        <button id="close-menu-btn">✕</button>
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="books.html">Books</a>
+        <a href="about.html">About</a>
+        <a href="register.html">Register</a>
+    </nav>
 
     <main>
 
@@ -25,6 +35,17 @@
 
         <section id="recommended-courses">
             <h3>Recommended Courses</h3>
+            <div class="carousel">
+                
+
+                <div class="carousel-track">
+                    <div class="course-card">Course 1</div>
+                    <div class="course-card">Course 2</div>
+                    <div class="course-card">Course 3</div>
+                </div>
+                <button class="carousel-btn prev">‹</button>
+                <button class="carousel-btn next">›</button>
+            </div>
         </section>
 
     </main>
@@ -33,6 +54,8 @@
         Copyright © 2025 Mazi Perifana - All rights reserved
     </footer>
 
+    <script src="assets\js\ui\menu.js"></script>
+    
 </body>
 
 </html>
