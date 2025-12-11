@@ -10,7 +10,6 @@ main {
     box-sizing: border-box;
 }
 
-
 header {
     position: fixed;
     top: 0;
@@ -32,6 +31,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 9000;
 }
 
 #intro h3 {
