@@ -20,7 +20,6 @@
     </header>
 
     <nav id="side-menu">
-        <button id="close-menu-btn">✕</button>
         <a href="index.html">Home</a>
         <a href="courses.html">Courses</a>
         <a href="books.html">Books</a>
@@ -28,27 +27,55 @@
         <a href="register.html">Register</a>
     </nav>
 
+    <div id="overlay"></div>
+
     <main>
-      <section id="intro">
-        <h3>Welcome to IT Library</h3>
-        <p>
-          Your digital space for learning Computer Science. Explore curated
-          courses, books, and resources designed to help you grow your skills at
-          your own pace.
-        </p>
-      </section>
+        
+        <section id="intro">
+            <h3>Welcome to IT Library</h3>
+            <p>
+            Your digital space for learning Computer Science. Explore curated
+            courses, books, and resources designed to help you grow your skills at
+            your own pace.
+            </p>
+        </section>
 
         <section id="recommended-courses">
             <h3>Recommended Courses</h3>
             <div class="carousel">
                 
-                <div class="carousel-track">
-                    <div class="course-card">Course 1</div>
-                    <div class="course-card">Course 2</div>
-                    <div class="course-card">Course 3</div>
-                </div>
+                <div class="carousel-track"></div>
+
                 <button class="carousel-btn prev">‹</button>
                 <button class="carousel-btn next">›</button>
+
+            </div>
+        </section>
+
+        <section id="course-categories">
+            <h3>Course Categories</h3>
+
+            <div class="categories-container">
+
+                <div class="category-card">
+                    <h4>Programming</h4>
+                    <p>Learn the fundamentals of writing code and building software.</p>
+                </div>
+
+                <div class="category-card">
+                    <h4>Networks</h4>
+                    <p>Understand how devices communicate across modern networks.</p>
+                </div>
+
+                <div class="category-card">
+                    <h4>Cybersecurity</h4>
+                    <p>Explore tools and techniques that protect digital systems.</p>
+                </div>
+
+                <div class="category-card">
+                    <h4>Databases</h4>
+                    <p>Manage, store, and organize data efficiently and effectively.</p>
+                </div>
 
             </div>
         </section>
@@ -59,7 +86,9 @@
         Copyright © 2025 Mazi Perifana - All rights reserved
     </footer>
 
-    <script src="assets\js\ui\menu.js"></script>
+    <script src="assets/js/ui/menu.js"></script>
+    <script src="assets/js/data/courses.js"></script>
+    <script src="assets/js/ui/carousel.js"></script>
 </body>
 
 </html>
