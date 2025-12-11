@@ -1,0 +1,86 @@
+body {
+    margin: 0.2rem;
+    padding-top: 3rem; 
+    padding-bottom: 2.5rem; 
+    text-align: center;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#intro h3 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+#intro p {
+    padding-bottom: 0.7rem;
+}
+
+#side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    padding-top: 3rem;
+    transition: left 0.3s ease;
+    z-index: 999;
+}
+
+#side-menu.active {
+    left: 0;
+}
+
+#recommended-courses {
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.carousel {
+    position: relative;
+    padding: 0 2.5rem;
+}
+
+.carousel-track {
+    display: flex;
+    overflow: hidden;
+    gap: 1rem;
+}
+
+.course-card {
+    flex: 0 0 calc(100% - 1rem);
+}
+
+@media (min-width: 600px) {
+    .course-card {
+        flex: 0 0 calc(50% - 1rem);
+    }
+}
+
+@media (min-width: 900px) {
+    .course-card {
+        flex: 0 0 calc(33.333% - 1rem);
+    }
+}

@@ -1,0 +1,77 @@
+body {
+    background-color: #F0EEE9;
+    font-family: Helvetica;
+    color: #333333;
+}
+
+header {
+    background-color: #800020;
+    color: #F0EEE9;
+    box-shadow: 0 0 25px 0 black;
+    font-family:'Bodoni* 11';
+}
+
+footer {
+    background-color: #800020;
+    color: #F0EEE9;
+    box-shadow: 0 0 25px 0 black;
+    font-size: 0.8rem;
+}
+
+#intro h3 {
+    color: #333333;
+}
+
+#intro p {
+    color: #555555;
+}
+
+#recommended-courses h3 {
+    color: #A05C70;
+}
+
+#side-menu {
+    background-color: #800020;
+    color: #F0EEE9;
+}
+
+#side-menu a {
+    color: #F0EEE9;
+    text-decoration: none;
+}
+
+#side-menu a:hover {
+    background-color: #a0334a;
+}
+
+#menu-btn{
+    background: none;
+    border: none;
+    color: #F0EEE9;
+    font-size: 24px;
+}
+
+#close-menu-btn {
+    background: none;
+    border: none;
+    color: #F0EEE9;
+    font-size: 24px;
+}
+
+#recommended-courses h3 {
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+.course-card {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.carousel-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #800020;
+}

@@ -1,0 +1,55 @@
+#menu-btn {
+    cursor: pointer;
+    position: absolute;
+    left: 1rem;
+}
+
+#close-menu-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+#side-menu a {
+    display: block;
+    padding: 1rem 1.5rem;
+    text-align: left;
+}
+
+#intro h3 {
+    margin-bottom: -0.5rem;
+}
+
+#intro p {
+    text-align: justify;
+}
+
+#recommended-courses h3 {
+    border-bottom: 2px solid #ccc;
+    margin: 0.2rem 0 0.5rem 0;
+}
+
+.course-card {
+    min-width: 200px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-btn.prev {
+    left: 0.3rem;
+}
+
+.carousel-btn.next {
+    right: 0.3rem;
+}
