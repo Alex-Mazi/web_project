@@ -10,7 +10,7 @@ header {
 /* ========= BODY ========= */
 body {
     background-color: #F0EEE9;
-    font-family: Helvetica;
+    font-family: 'Source Sans Pro', sans-serif;
     color: #333333;
 }
 /* ======================== */
@@ -48,12 +48,37 @@ footer {
 /* ======================== */
 
 /* ===== INDEX INTRO ====== */
+#intro {
+    width: 92%;               /* adapts to small screens */
+    max-width: 850px;         /* limits size on large screens */
+    padding: 1.5rem 1.2rem;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    border-left: 6px solid #800020;
+    text-align: left;
+    line-height: 1.6;
+}
+
 #intro h3 {
-    color: #333333;
+    font-size: 1.4rem;
+    text-align: center;
+    position: relative;
+}
+
+#intro h3::after {
+    content: "";
+    width: 50px;
+    height: 3px;
+    background-color: #A05C70;
+    display: block;
+    border-radius: 2px;
 }
 
 #intro p {
+    font-size: 1rem;
     color: #555555;
+    text-align: justify;
 }
 /* ======================== */
 

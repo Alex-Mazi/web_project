@@ -1,5 +1,3 @@
-
-
 // Select the container where the cards will be inserted
 const carouselTrack = document.querySelector(".carousel-track");
 
