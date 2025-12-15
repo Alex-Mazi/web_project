@@ -10,7 +10,7 @@ header {
 /* ========= BODY ========= */
 body {
     background-color: #F0EEE9;
-    font-family: Helvetica;
+    font-family: 'Source Sans Pro', sans-serif;
     color: #333333;
 }
 /* ======================== */
@@ -48,12 +48,37 @@ footer {
 /* ======================== */
 
 /* ===== INDEX INTRO ====== */
+#intro {
+    width: 92%;               
+    max-width: 850px;         
+    padding: 1.5rem 1.2rem;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    border-left: 6px solid #800020;
+    text-align: left;
+    line-height: 1.6;
+}
+
 #intro h3 {
-    color: #333333;
+    font-size: 1.4rem;
+    text-align: center;
+    position: relative;
+}
+
+#intro h3::after {
+    content: "";
+    width: 50px;
+    height: 3px;
+    background-color: #A05C70;
+    display: block;
+    border-radius: 2px;
 }
 
 #intro p {
+    font-size: 1rem;
     color: #555555;
+    text-align: justify;
 }
 /* ======================== */
 
@@ -70,6 +95,12 @@ footer {
     background-color: #ffffff;
     border: 1px solid #ccc;
     border-radius: 6px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.course-card:visited {
+    color: inherit;
 }
 
 .course-card:active {
@@ -83,8 +114,23 @@ footer {
     box-shadow: 0 0 12px rgba(128, 0, 32, 0.25);
 }
 
+.course-card * {
+    text-decoration: none;
+}
+
 .course-card *:focus {
     outline: none;
+}
+
+.course-card h4 {
+    color: black;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.2rem;
+    text-decoration-line: underline;
+    text-decoration-color: rgb(22, 0, 0); 
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
 }
 
 .carousel-btn {
@@ -92,6 +138,20 @@ footer {
     border: none;
     font-size: 2rem;
     color: #800020;
+}
+
+.carousel-btn::before {
+    font-size: 2rem;
+    color: #800020;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(128, 0, 32, 0.06);
+    border-radius: 50%;
+}
+
+.carousel-btn:active {
+    background-color: rgba(128, 0, 32, 0.12);
 }
 
 .course-card img {
@@ -316,5 +376,45 @@ input.invalid {
     background: #f0eee9;
     padding: 1rem;
     border-radius: 8px;
+}
+/* ======================== */
+
+/* ==== COURSE DETAILS ==== */
+#course-category {
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    border-radius: 999px;
+    background: #f0eee9;
+    color: #800020;
+    font-size: 0.85rem;
+}
+
+.course-meta {
+    text-align: center;
+}
+
+#course-title {
+    font-size: 1.6rem;
+}
+
+#course-description {
+    max-width: 800px;
+    padding-top: 1.5rem;
+    border-top: 1px solid #ddd;
+}
+
+#course-description h3 {
+    border-top: 1px solid #ddd;
+    padding-top: 1.5rem;
+    color: #800020;
+}
+
+#course-description p {
+    line-height: 1.6;
+    color: #555;
+}
+
+#related-courses h3 {
+    color: #800020;
 }
 /* ======================== */
