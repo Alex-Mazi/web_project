@@ -1,15 +1,11 @@
-// Select the container where the cards will be inserted
-const carouselTrack = document.querySelector(".carousel-track");
-
-// Function to choose which courses should appear in the carousel
-// (Later you may adjust the selection logic)
-function getRecommendedCourses() {
-    return courses.filter(course => course.recommended === true);
-}
+/* ===================================== */
+/* CAROUSEL CORE LOGIC */
+/* ===================================== */
 
 function createCourseCard(course) {
-    const card = document.createElement("div");
+    const card = document.createElement("a");
     card.classList.add("course-card");
+    card.href = `course-details.html?id=${course.id}`;
 
     const imgSrc = course.image || "assets/img/thumbnails/default-course.png";
 
@@ -18,55 +14,46 @@ function createCourseCard(course) {
         <h4>${course.title}</h4>
     `;
 
-    // Make whole card clickable
-    card.addEventListener("click", () => {
-        window.location.href = `course-details.html?id=${course.id}`;
-    });
-
     return card;
 }
 
+/* ===================================== */
+/* INITIALIZE A CAROUSEL INSTANCE */
+/* ===================================== */
 
+window.initCarousel = function initCarousel(carouselElement, coursesToRender) {
+    const track = carouselElement.querySelector(".carousel-track");
+    const prevBtn = carouselElement.querySelector(".carousel-btn.prev");
+    const nextBtn = carouselElement.querySelector(".carousel-btn.next");
 
-// Function to render the recommended courses into the carousel
-function renderCarousel() {
-    const recommended = getRecommendedCourses();
+    if (!track || !prevBtn || !nextBtn) return;
 
-    recommended.forEach(course => {
-        const card = createCourseCard(course);
-        carouselTrack.appendChild(card);
+    // Render cards
+    coursesToRender.forEach(course => {
+        track.appendChild(createCourseCard(course));
+    });
+
+    // Scroll amount = card width + gap
+    function getScrollAmount() {
+        const card = track.querySelector(".course-card");
+        if (!card) return 200;
+
+        const style = window.getComputedStyle(track);
+        const gap = parseInt(style.gap || 16);
+        return card.offsetWidth + gap;
+    }
+
+    nextBtn.addEventListener("click", () => {
+        track.scrollBy({
+            left: getScrollAmount(),
+            behavior: "smooth"
+        });
+    });
+
+    prevBtn.addEventListener("click", () => {
+        track.scrollBy({
+            left: -getScrollAmount(),
+            behavior: "smooth"
+        });
     });
 }
-
-// Initialize the carousel on page load
-renderCarousel();
-
-// --- Carousel Sliding Feature ---
-
-const track = document.querySelector('.carousel-track');
-const prevBtn = document.querySelector('.carousel-btn.prev');
-const nextBtn = document.querySelector('.carousel-btn.next');
-
-// Detect how far to scroll: width of 1 card + gap
-function getScrollAmount() {
-    const card = document.querySelector('.course-card');
-    if (!card) return 200; // fallback
-    const style = window.getComputedStyle(track);
-    const gap = parseInt(style.columnGap || style.gap || 16);
-    return card.offsetWidth + gap;
-}
-
-nextBtn.addEventListener('click', () => {
-    track.scrollBy({ 
-        left: getScrollAmount(), 
-        behavior: 'smooth' 
-    });
-});
-
-prevBtn.addEventListener('click', () => {
-    track.scrollBy({ 
-        left: -getScrollAmount(), 
-        behavior: 'smooth' 
-    });
-});
-

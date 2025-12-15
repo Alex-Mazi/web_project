@@ -95,6 +95,12 @@ footer {
     background-color: #ffffff;
     border: 1px solid #ccc;
     border-radius: 6px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.course-card:visited {
+    color: inherit;
 }
 
 .course-card:active {
@@ -108,8 +114,23 @@ footer {
     box-shadow: 0 0 12px rgba(128, 0, 32, 0.25);
 }
 
+.course-card * {
+    text-decoration: none;
+}
+
 .course-card *:focus {
     outline: none;
+}
+
+.course-card h4 {
+    color: black;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.2rem;
+    text-decoration-line: underline;
+    text-decoration-color: rgb(22, 0, 0); 
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
 }
 
 .carousel-btn {
@@ -355,5 +376,45 @@ input.invalid {
     background: #f0eee9;
     padding: 1rem;
     border-radius: 8px;
+}
+/* ======================== */
+
+/* ==== COURSE DETAILS ==== */
+#course-category {
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    border-radius: 999px;
+    background: #f0eee9;
+    color: #800020;
+    font-size: 0.85rem;
+}
+
+.course-meta {
+    text-align: center;
+}
+
+#course-title {
+    font-size: 1.6rem;
+}
+
+#course-description {
+    max-width: 800px;
+    padding-top: 1.5rem;
+    border-top: 1px solid #ddd;
+}
+
+#course-description h3 {
+    border-top: 1px solid #ddd;
+    padding-top: 1.5rem;
+    color: #800020;
+}
+
+#course-description p {
+    line-height: 1.6;
+    color: #555;
+}
+
+#related-courses h3 {
+    color: #800020;
 }
 /* ======================== */

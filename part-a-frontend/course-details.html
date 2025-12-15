@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Course Details | IT Library</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <header>
+        <button id="menu-btn">☰</button>
+        <h1>IT LIBRARY</h1>
+    </header>
+
+    <nav id="side-menu">
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="books.html">Books</a>
+        <a href="about.html">About</a>
+        <a href="register.html">Register</a>
+    </nav>
+
+    <div id="overlay"></div>
+
+    <main>
+
+        <section id="course-hero">
+            <img id="course-image" src="" alt="">
+            <div class="course-meta">
+                <h2 id="course-title"></h2>
+                <p id="course-category"></p>
+            </div>
+        </section>
+
+        <section id="course-facts">
+            <div class="fact">
+                <span class="fact-label">Instructor</span>
+                <span id="fact-teacher"></span>
+            </div>
+
+            <div class="fact">
+                <span class="fact-label">Duration</span>
+                <span id="fact-duration"></span>
+            </div>
+
+            <div class="fact">
+                <span class="fact-label">Level</span>
+                <span id="fact-level"></span>
+            </div>
+        </section>
+
+        <section id="course-description">
+            <h3>Course Overview</h3>
+            <p id="course-description-text"></p>
+        </section>
+
+        <section id="course-outcomes">
+            <h3>What you’ll learn</h3>
+            <ul id="outcomes-list"></ul>
+        </section>
+
+        <section id="course-topics">
+            <h3>Topics covered</h3>
+            <div id="topics-container"></div>
+        </section>
+
+        <section id="course-prerequisites">
+            <h3>Prerequisites</h3>
+            <p id="prerequisites-text"></p>
+        </section>
+
+        <section id="related-courses">
+            <h3>Related Courses</h3>
+            <div class="carousel">
+                <div class="carousel-track"></div>
+
+                <button class="carousel-btn prev">‹</button>
+                <button class="carousel-btn next">›</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        Copyright © 2025 Mazi Perifana - All rights reserved
+    </footer>
+
+    <script src="assets/js/data/courses.js"></script>
+    <script src="assets/js/data/course-details.js"></script>
+
+    <script src="assets/js/ui/carousel.js"></script>
+    <script src="assets/js/ui/menu.js"></script>
+    
+</body>
+
+</html>
