@@ -6,7 +6,7 @@ window.courses = [
     category: "Programming",
     level: "Beginner",
     description: "Learn the foundations of programming through clear examples, problem-solving, and guided exercises.",
-    recommended: true,
+    recommended: false,
     image: "assets/img/thumbnails/intro-programming.png"
   },
   {
@@ -15,7 +15,7 @@ window.courses = [
     category: "Programming",
     level: "Intermediate",
     description: "Understand OOP concepts such as classes, inheritance, interfaces, and polymorphism through practical Java examples.",
-    recommended: false,
+    recommended: true,
     image: "assets/img/thumbnails/java.png"
   },
   {
@@ -35,7 +35,7 @@ window.courses = [
     category: "Networks",
     level: "Beginner",
     description: "Explore how devices communicate, including IP addressing, routing, protocols, and foundational networking concepts.",
-    recommended: false,
+    recommended: true,
     image: "assets/img/thumbnails/networks-basics.png"
   },
   {
@@ -55,7 +55,7 @@ window.courses = [
     category: "Cybersecurity",
     level: "Intermediate",
     description: "Study digital threats, encryption, authentication, and security best practices used to protect modern systems.",
-    recommended: true,
+    recommended: false,
     image: "assets/img/thumbnails/cybersecurity.png"
   },
   {
@@ -64,7 +64,7 @@ window.courses = [
     category: "Cybersecurity",
     level: "Advanced",
     description: "Learn ethical hacking techniques, vulnerability scanning, and penetration testing methodologies in a controlled environment.",
-    recommended: false,
+    recommended: true,
     image: "assets/img/thumbnails/hacking.png"
   },
 
@@ -84,7 +84,7 @@ window.courses = [
     category: "Databases",
     level: "Intermediate",
     description: "Learn how to design efficient database schemas, normalize data, and improve performance with indexing techniques.",
-    recommended: false
+    recommended: true
   },
 
   /* -------------------- AI & DATA -------------------- */
@@ -94,7 +94,7 @@ window.courses = [
     category: "Artificial Intelligence",
     level: "Intermediate",
     description: "Explore core AI concepts including search algorithms, reasoning, decision-making, and basic machine learning techniques.",
-    recommended: true,
+    recommended: false,
   },
   {
     id: 11,
@@ -102,7 +102,7 @@ window.courses = [
     category: "Artificial Intelligence",
     level: "Intermediate",
     description: "Learn how machines identify patterns through data using supervised and unsupervised learning approaches.",
-    recommended: false,
+    recommended: true,
     image: "assets/img/thumbnails/ai.png"
   },
 ];
