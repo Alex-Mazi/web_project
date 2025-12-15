@@ -110,3 +110,113 @@
     margin: 0;
 }
 /* ======================== */
+
+/* ABOUT PAGE SECTIONS */
+#about-container {
+    width: 90%;
+    max-width: 60rem;
+    margin: 2rem auto;
+    text-align: left;
+}
+
+.about-section {
+    margin-bottom: 2.5rem;
+}
+
+.about-section h2 {
+    color: #800020;
+    font-family: "Bodoni* 11";
+    margin-bottom: 1rem;
+}
+
+.about-section p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* Mission list */
+.mission-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.mission-list li {
+    margin: 0.6rem 0;
+    color: #333;
+    font-weight: 500;
+}
+
+/* ----------------------------------------- */
+/* TEAM GRID */
+/* ----------------------------------------- */
+
+.team-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+/* Tablet */
+@media (min-width: 40rem) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop */
+@media (min-width: 56.25rem) {
+    .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ----------------------------------------- */
+/* TEAM CARD WITH ANIMATION */
+/* ----------------------------------------- */
+
+.team-card {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 0.3rem 0.6rem rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+}
+
+.team-card:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 0.6rem 1.2rem rgba(0,0,0,0.15);
+}
+
+/* ----------------------------------------- */
+/* CIRCULAR TEAM PHOTOS */
+/* ----------------------------------------- */
+
+.team-photo {
+    width: 7rem;
+    height: 7rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 3px solid #800020;
+}
+
+/* ----------------------------------------- */
+/* MAP SECTION */
+/* ----------------------------------------- */
+
+#map-container {
+    width: 100%;
+    height: 20rem;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    box-shadow: 0 0.3rem 0.6rem rgba(0,0,0,0.15);
+    margin-top: 1rem;
+}
+
+#map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
