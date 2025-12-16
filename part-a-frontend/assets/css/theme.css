@@ -398,10 +398,9 @@ input.invalid {
 }
 
 #course-description {
-    max-width: 800px;
     padding-top: 0.5rem;
     border-top: 1px solid #ddd;
-    padding-bottom: 1.8rem;
+    padding-bottom: 0.5rem;
     border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
@@ -415,7 +414,6 @@ input.invalid {
 }
 
 #course-description p {
-    max-width: 650px;
     line-height: 1.7;
     font-size: 0.98rem;
     color: #555;
@@ -453,9 +451,8 @@ input.invalid {
 }
 
 .section-hint {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     color: #777;
-    margin-top: 1rem;
 }
 
 #course-outcomes {

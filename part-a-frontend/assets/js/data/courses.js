@@ -8,8 +8,7 @@ window.courses = [
     duration: "5 weeks",
     teacher: "Dr. Elena Markou",
     shortDescription: "Learn the fundamentals of programming and computational thinking.",
-    description:
-      "This course introduces the core concepts of programming through clear explanations, problem-solving strategies, and hands-on exercises. It is designed for students with little to no prior coding experience.",
+    description: "This course provides a comprehensive introduction to the fundamental principles of programming and computational thinking. Designed for students with little to no prior coding experience, it focuses on building a strong conceptual foundation through clear explanations, practical examples, and guided exercises. Students will learn how programs are structured, how data is processed, and how logic is applied to solve problems step by step. Emphasis is placed on understanding core programming concepts rather than memorizing syntax, allowing learners to develop transferable problem-solving skills. By the end of the course, students will be confident in reading, writing, and reasoning about simple programs, preparing them for more advanced topics in software development.",
     learningOutcomes: [
       "Understand basic programming concepts",
       "Write simple programs using variables and conditions",
@@ -30,8 +29,7 @@ window.courses = [
     duration: "6 weeks",
     teacher: "Nikolas Georgiou",
     shortDescription: "Learn object-oriented programming principles using Java.",
-    description:
-      "This course focuses on object-oriented programming concepts such as classes, inheritance, interfaces, and polymorphism. Through hands-on Java examples, students will learn how to design modular and reusable software.",
+    description: "This course introduces students to the principles of Object-Oriented Programming (OOP) using Java as the primary language. Building on basic programming knowledge, it explores how complex software systems are designed and structured using classes, objects, and reusable components. Students will learn how to model real-world problems through abstraction and apply key OOP concepts such as encapsulation, inheritance, polymorphism, and interfaces. Through hands-on exercises and practical examples, the course emphasizes writing clean, maintainable, and scalable code. By the end of the course, students will be able to design object-oriented solutions, understand existing Java codebases, and apply best practices that are essential for modern software development.",
     learningOutcomes: [
       "Understand object-oriented programming principles",
       "Design classes and interfaces",
@@ -52,8 +50,7 @@ window.courses = [
     duration: "6 weeks",
     teacher: "Alex Papadopoulos",
     shortDescription: "Build modern, responsive websites using core web technologies.",
-    description:
-      "A hands-on introduction to HTML, CSS, and JavaScript. Students will learn how the web works and how to create structured, styled, and interactive websites from scratch.",
+    description: "This course provides a practical introduction to modern web development, focusing on the core technologies used to build responsive and interactive websites. Students will learn how the web works and how HTML, CSS, and JavaScript come together to create structured, styled, and dynamic user experiences. The course emphasizes best practices in semantic markup, layout design, and client-side interactivity, with a strong focus on hands-on learning. Through guided exercises and real-world examples, students will build and enhance their own web pages while gaining an understanding of accessibility, responsiveness, and performance. By the end of the course, students will be confident in creating functional, visually appealing websites and prepared to explore more advanced front-end or full-stack development topics.",
     learningOutcomes: [
       "Create semantic HTML structures",
       "Style pages using CSS",
@@ -75,8 +72,7 @@ window.courses = [
     duration: "4 weeks",
     teacher: "Maria Nikolaou",
     shortDescription: "Understand how computers communicate over networks.",
-    description:
-      "This course explores the fundamentals of computer networking, including IP addressing, protocols, routing, and basic network architecture concepts.",
+    description: "This course introduces the fundamental principles of computer networking and how devices communicate across local and global networks. Students will explore how data is transmitted, routed, and received, gaining an understanding of the building blocks that power the internet and modern digital communication. Key topics include IP addressing, network protocols, routing concepts, and the role of common network devices. The course balances theory with practical insight, helping students visualize how networks function in real-world scenarios. By the end of the course, students will be able to explain core networking concepts, identify network components, and understand how information flows between connected systems.",
     learningOutcomes: [
       "Understand how data is transmitted across networks",
       "Identify common network devices",
@@ -97,8 +93,7 @@ window.courses = [
     duration: "7 weeks",
     teacher: "Dimitris Karras",
     shortDescription: "Learn how to manage and secure modern computer networks.",
-    description:
-      "An intermediate-level course focusing on network configuration, traffic management, and security principles. Students will explore common vulnerabilities and methods for protecting network infrastructure.",
+    description: "This course focuses on the practical and security-focused aspects of managing modern computer networks. Building on foundational networking knowledge, students will learn how to configure network services, manage traffic flow, and apply essential security measures to protect systems and data. Topics include network configuration, firewall setup, secure communication protocols, traffic monitoring, and common network vulnerabilities. Through real-world scenarios and guided examples, students will gain insight into how administrators maintain reliable and secure network infrastructures. By the end of the course, students will understand how to manage network environments, identify potential threats, and apply fundamental techniques to safeguard digital communication.",
     learningOutcomes: [
       "Configure and manage network services",
       "Apply basic network security measures",
@@ -120,8 +115,7 @@ window.courses = [
     duration: "6 weeks",
     teacher: "Sophia Anagnostou",
     shortDescription: "Explore digital threats and modern security practices.",
-    description:
-      "This course introduces key cybersecurity concepts, including common attack types, defensive strategies, and best practices for protecting systems and data.",
+    description: "This course provides a comprehensive introduction to the core principles of cybersecurity, focusing on how digital systems are protected against modern threats. Students will explore common types of cyber attacks, including malware, phishing, and unauthorized access, as well as the techniques used to prevent, detect, and respond to them. The course covers essential security concepts such as authentication, encryption, access control, and security policies. Through practical examples and real-world scenarios, students will learn how vulnerabilities arise and how defensive strategies are applied to safeguard systems and data. By the end of the course, students will have a solid understanding of cybersecurity fundamentals and the role they play in maintaining secure digital environments.",
     learningOutcomes: [
       "Recognize common cyber threats",
       "Understand basic cryptography concepts",
@@ -142,8 +136,7 @@ window.courses = [
     duration: "8 weeks",
     teacher: "Andreas Konstantinou",
     shortDescription: "Learn ethical hacking techniques and penetration testing methods.",
-    description:
-      "This advanced course introduces ethical hacking methodologies, vulnerability scanning tools, and penetration testing techniques within a controlled and legal environment.",
+    description: "This advanced course focuses on ethical hacking techniques and penetration testing methodologies used to identify and assess security vulnerabilities in computer systems and networks. Students will learn how attackers think and operate, while applying ethical and legal frameworks to test system defenses in a controlled environment. The course covers reconnaissance, vulnerability scanning, exploitation, and post-exploitation techniques, as well as reporting and remediation practices. Through hands-on labs and realistic scenarios, students will develop practical skills in assessing system security, understanding common attack vectors, and strengthening defenses. By the end of the course, students will be able to perform structured penetration tests and contribute to improving the security posture of modern digital infrastructures.",
     learningOutcomes: [
       "Understand ethical hacking principles",
       "Perform vulnerability assessments",
@@ -165,8 +158,7 @@ window.courses = [
     duration: "5 weeks",
     teacher: "Eleni Stavrou",
     shortDescription: "Learn how databases work and write practical SQL queries.",
-    description:
-      "This course covers database fundamentals, relational models, and SQL queries used to store, retrieve, and manage structured data.",
+    description: "This course introduces the fundamental concepts of databases and relational data management, focusing on how data is structured, stored, and retrieved efficiently. Students will learn the principles of relational database design, including tables, keys, relationships, and normalization. A strong emphasis is placed on practical SQL skills, enabling students to write queries to create, read, update, and delete data. Through guided examples and hands-on exercises, students will gain experience working with real-world datasets, understanding how databases support modern applications. By the end of the course, students will be able to design simple databases, write effective SQL queries, and understand the role of databases in software systems.",
     learningOutcomes: [
       "Understand relational database concepts",
       "Write basic SQL queries",
@@ -187,8 +179,7 @@ window.courses = [
     duration: "6 weeks",
     teacher: "Christos Pappas",
     shortDescription: "Design efficient databases and optimize performance.",
-    description:
-      "Students will learn how to design normalized database schemas, apply indexing strategies, and optimize queries for performance and scalability.",
+    description: "This course focuses on designing efficient, scalable, and high-performance databases for real-world applications. Students will explore advanced database design principles, including normalization and denormalization strategies, schema modeling, and the use of primary and foreign keys to enforce data integrity. The course also introduces performance optimization techniques such as indexing, query optimization, and execution plan analysis. Through practical case studies and hands-on exercises, students will learn how to identify bottlenecks, improve query performance, and maintain database efficiency as systems grow. By the end of the course, students will be able to design well-structured database schemas and apply optimization techniques to support reliable and performant applications.",
     learningOutcomes: [
       "Design normalized database schemas",
       "Apply indexing strategies",
@@ -209,8 +200,7 @@ window.courses = [
     duration: "6 weeks",
     teacher: "George Ioannou",
     shortDescription: "Explore the foundations of artificial intelligence.",
-    description:
-      "This course introduces core AI concepts including search algorithms, reasoning, decision-making, and introductory machine learning techniques.",
+    description: "This course provides an introduction to the fundamental concepts and techniques behind Artificial Intelligence. Students will explore how intelligent systems reason, learn, and make decisions by studying topics such as search algorithms, problem-solving strategies, knowledge representation, and basic machine learning concepts. Through real-world examples and guided exercises, the course explains how AI is applied in areas like recommendation systems, natural language processing, and autonomous agents. Emphasis is placed on understanding the logic and limitations of AI rather than advanced mathematics, making the course accessible while still conceptually rigorous. By the end of the course, students will have a solid foundation for further study in machine learning, data science, and intelligent systems.",
     learningOutcomes: [
       "Understand core AI concepts",
       "Apply basic search algorithms",
@@ -231,8 +221,7 @@ window.courses = [
     duration: "7 weeks",
     teacher: "Panagiotis Roussos",
     shortDescription: "Learn how machines identify patterns using data.",
-    description:
-      "This course introduces supervised and unsupervised learning techniques, model evaluation, and practical machine learning workflows.",
+    description: "This course introduces the core principles of machine learning, focusing on how systems can learn patterns and make predictions from data. Students will explore supervised and unsupervised learning approaches, understand how models are trained and evaluated, and examine common algorithms such as linear regression, decision trees, and clustering techniques. Through practical examples and conceptual exercises, the course explains key ideas like feature selection, overfitting, and model performance. Rather than emphasizing complex mathematics, the course prioritizes intuition and real-world applications, helping students understand how machine learning is used in areas such as recommendation systems, image recognition, and data-driven decision making. By the end of the course, students will be prepared to continue into more advanced AI and data science topics.",
     learningOutcomes: [
       "Understand supervised and unsupervised learning",
       "Train simple machine learning models",
