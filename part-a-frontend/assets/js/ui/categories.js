@@ -1,5 +1,3 @@
-// courses[] already exists globally
-
 function getCategories() {
     const categoryMap = {};
 
@@ -39,5 +37,4 @@ function renderCategories() {
     });
 }
 
-// Run automatically on page load
 document.addEventListener("DOMContentLoaded", renderCategories);
