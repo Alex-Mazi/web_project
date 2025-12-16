@@ -91,6 +91,8 @@
   box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.1);
   border-radius: 0.4rem;
   padding: 2rem;
+  margin-bottom: 5rem;
+  margin-top: 3rem;
 }
 
 .events-list {
@@ -210,11 +212,10 @@
 }
 
 #fullcalendar-container {
-    padding: 1.5rem; 
+    padding: 0.3rem; 
     background: #faf1f1;
-    margin-top: 1rem;
-    max-width: 95%;
-    height: 80%;
+    margin-top: 1.5rem;
+    width: 100%;
     justify-self: center;
     border-radius: 0.5rem;
     box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.2);
@@ -248,7 +249,7 @@
 
 .fc .fc-toolbar-title {
     color: #800020; 
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 700;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
