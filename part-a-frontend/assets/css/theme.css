@@ -399,22 +399,89 @@ input.invalid {
 
 #course-description {
     max-width: 800px;
-    padding-top: 1.5rem;
+    padding-top: 0.5rem;
     border-top: 1px solid #ddd;
+    padding-bottom: 1.8rem;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
 #course-description h3 {
-    border-top: 1px solid #ddd;
-    padding-top: 1.5rem;
-    color: #800020;
+    padding-top: 0rem;
+    color: #440213;
+    border-top: none;
+    text-align: left;
+    font-weight: 400;          
+    font-size: 1.05rem;       
 }
 
 #course-description p {
-    line-height: 1.6;
+    max-width: 650px;
+    line-height: 1.7;
+    font-size: 0.98rem;
     color: #555;
+    text-align: justify;
 }
 
-#related-courses h3 {
+.fact.recommended span:last-child {
     color: #800020;
+    font-weight: 700;
+}
+
+.fact-label {
+    font-size: 0.75rem;
+    color: #777;
+    display: block;
+    margin-bottom: 0.1rem;
+}
+
+.fact span:last-child {
+    font-weight: 600;
+    color: #800020;
+    font-size: 0.9rem;
+}
+
+.content-card {
+    margin: 0rem;
+}
+
+.highlight-card {
+    background: #faf8f6;
+    padding-bottom: 1.5rem;
+    margin-top: -3rem;
+}
+
+.course-left h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1.4rem;
+    font-weight: 400;         
+    font-size: 1.05rem;        
+    color: #440213;
+    text-align: left;
+}
+
+.section-hint {
+    font-size: 0.7rem;
+    color: #777;
+    margin-top: 1rem;
+}
+
+#course-outcomes {
+    background: #ffffff;
+    padding: 1.2rem 1.4rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    text-align: justify;
+}
+
+#course-outcomes h3 {
+    font-weight: 400;         
+    font-size: 1.05rem;        
+    color: #440213;
+    margin-bottom: 0.6rem;
+    text-align: center;
+}
+
+#course-outcomes li + li {
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 /* ======================== */

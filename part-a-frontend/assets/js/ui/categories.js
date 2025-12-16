@@ -7,7 +7,7 @@ function getCategories() {
         if (!categoryMap[course.category]) {
             categoryMap[course.category] = {
                 name: course.category,
-                description: course.description
+                description: course.shortDescription
             };
         }
     });

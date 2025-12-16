@@ -24,10 +24,6 @@ function renderCourseDetails(course) {
     img.src = course.image;
     img.alt = course.title;
 
-    document.getElementById("fact-teacher").textContent = course.teacher;
-    document.getElementById("fact-duration").textContent = course.duration;
-    document.getElementById("fact-level").textContent = course.level;
-
     const outcomesList = document.getElementById("outcomes-list");
     course.learningOutcomes.forEach(outcome => {
         const li = document.createElement("li");
@@ -58,6 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const course = findCourseById(courseId);
     renderCourseDetails(course);
     renderRelatedCoursesCarousel(course);
+    renderFacts(course);
 });
 
 function renderRelatedCoursesCarousel(currentCourse) {
@@ -76,6 +73,22 @@ function renderRelatedCoursesCarousel(currentCourse) {
 
     initCarousel(carousel, relatedCourses);
 }
+
+function renderFacts(course) {
+    const durationEl = document.getElementById("fact-duration");
+    const levelEl = document.getElementById("fact-level");
+    const recommendedEl = document.getElementById("fact-recommended");
+
+    if (durationEl) durationEl.textContent = course.duration || "—";
+    if (levelEl) levelEl.textContent = course.level || "—";
+
+    if (recommendedEl) {
+        if (course.recommended === true) recommendedEl.textContent = "Recommended";
+        else if (course.recommended === false) recommendedEl.textContent = "Not recommended";
+        else recommendedEl.textContent = "—";
+    }
+}
+
 
 
 

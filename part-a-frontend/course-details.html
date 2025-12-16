@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="assets/css/components.css">
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap"
+        rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -36,59 +37,112 @@
     <main>
 
         <section id="course-hero">
-            <img id="course-image" src="" alt="">
+
+            <!-- LEFT: VISUAL -->
+            <div class="hero-visual">
+                <img id="course-image" alt="">
+            </div>
+
+            <!-- RIGHT: INFO -->
             <div class="course-meta">
                 <h2 id="course-title"></h2>
                 <p id="course-category"></p>
+
+                <div id="course-facts">
+                    <div class="fact">
+                        <span class="fact-label">
+                            <svg class="fact-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2" />
+                                <path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                            Duration
+                        </span>
+                        <span id="fact-duration"></span>
+                    </div>
+
+                    <div class="fact">
+                        <span class="fact-label">
+                            <svg class="fact-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="4" y="10" width="4" height="8" fill="currentColor" />
+                                <rect x="10" y="6" width="4" height="12" fill="currentColor" />
+                                <rect x="16" y="3" width="4" height="15" fill="currentColor" />
+                            </svg>
+                            Level
+                        </span>
+                        <span id="fact-level"></span>
+                    </div>
+
+                    <div class="fact recommended">
+                        <span class="fact-label">
+                            <svg class="fact-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 2l3 6 6 .9-4.5 4.4 1 6.2L12 16l-5.5 3.5 1-6.2L3 8.9 9 8z"
+                                    fill="currentColor" />
+                            </svg>
+                            Status
+                        </span>
+
+                        <span id="fact-recommended"></span>
+                    </div>
+                </div>
             </div>
+
         </section>
 
-        <section id="course-facts">
-            <div class="fact">
-                <span class="fact-label">Instructor</span>
-                <span id="fact-teacher"></span>
+        <section class="course-content-grid">
+
+            <!-- LEFT COLUMN -->
+            <div class="course-left">
+
+                <div class="content-card">
+                    <section id="course-description">
+                        <h3>Course Overview</h3>
+                        <p id="course-description-text"></p>
+                    </section>
+                </div>
+
+                <div class="content-card">
+                    <section id="course-outcomes">
+                        <h3>What you’ll learn</h3>
+                        <ul id="outcomes-list"></ul>
+                    </section>
+                </div>
+
+                <h3 class="section-title">Related Courses</h3>
+                
+                <section id="related-courses" class="content-card highlight-card">
+                    <p class="section-hint">
+                        Courses from the same category you might find useful.
+                    </p>
+
+                    <div class="carousel related-carousel">
+                        <div class="carousel-track"></div>
+
+                        <button class="carousel-btn prev" aria-label="Previous course">‹</button>
+                        <button class="carousel-btn next" aria-label="Next course">›</button>
+                    </div>
+                </section>
+
             </div>
 
-            <div class="fact">
-                <span class="fact-label">Duration</span>
-                <span id="fact-duration"></span>
+            <!-- RIGHT COLUMN -->
+            <div class="course-right">
+
+                <section id="course-topics">
+                    <h3>Topics covered</h3>
+                    <div id="topics-container"></div>
+                </section>
+
+                <section id="course-prerequisites">
+                    <h3>Prerequisites</h3>
+                    <p id="prerequisites-text"></p>
+                </section>
+
+                <!-- A course by → next step -->
+
             </div>
 
-            <div class="fact">
-                <span class="fact-label">Level</span>
-                <span id="fact-level"></span>
-            </div>
         </section>
 
-        <section id="course-description">
-            <h3>Course Overview</h3>
-            <p id="course-description-text"></p>
-        </section>
-
-        <section id="course-outcomes">
-            <h3>What you’ll learn</h3>
-            <ul id="outcomes-list"></ul>
-        </section>
-
-        <section id="course-topics">
-            <h3>Topics covered</h3>
-            <div id="topics-container"></div>
-        </section>
-
-        <section id="course-prerequisites">
-            <h3>Prerequisites</h3>
-            <p id="prerequisites-text"></p>
-        </section>
-
-        <section id="related-courses">
-            <h3>Related Courses</h3>
-            <div class="carousel">
-                <div class="carousel-track"></div>
-
-                <button class="carousel-btn prev">‹</button>
-                <button class="carousel-btn next">›</button>
-            </div>
-        </section>
 
     </main>
 
@@ -101,7 +155,7 @@
 
     <script src="assets/js/ui/carousel.js"></script>
     <script src="assets/js/ui/menu.js"></script>
-    
+
 </body>
 
 </html>
