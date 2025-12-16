@@ -210,12 +210,13 @@
 }
 
 #fullcalendar-container {
-    background: #f8f8f8;
-    padding: 0; 
+    padding: 1; 
     margin-top: 1rem;
     max-width: 95%;
     height: 80%;
     justify-self: center;
+    box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.1);
+
 }
 
 .fc-daygrid-event-harness {
