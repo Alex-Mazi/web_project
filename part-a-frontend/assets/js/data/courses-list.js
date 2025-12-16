@@ -15,7 +15,7 @@ window.courses = [
       "Develop problem-solving skills",
       "Read and interpret basic code structures"
     ],
-    topics: ["Variables", "Conditions", "Loops", "Functions"],
+    topics: ["Python", "Variables", "Conditions", "Loops", "Functions"],
     prerequisites: [],
     recommended: true,
     image: "assets/img/thumbnails/intro-programming.png",
@@ -36,7 +36,7 @@ window.courses = [
       "Apply inheritance and polymorphism",
       "Build structured Java applications"
     ],
-    topics: ["Classes", "Inheritance", "Interfaces", "Polymorphism"],
+    topics: ["Java", "Classes", "Inheritance", "Interfaces", "Polymorphism"],
     prerequisites: ["Introduction to Programming"],
     recommended: true,
     image: "assets/img/thumbnails/java.png",
@@ -186,7 +186,7 @@ window.courses = [
       "Optimize SQL queries",
       "Improve database performance"
     ],
-    topics: ["Normalization", "Indexes", "Query Optimization", "Performance Tuning"],
+    topics: ["SQL", "Normalization", "Indexes", "Query Optimization", "Performance Tuning"],
     prerequisites: ["Databases & SQL Fundamentals"],
     recommended: true,
     teacherImage: "assets/img/people/christospappas.jpg"
