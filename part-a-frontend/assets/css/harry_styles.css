@@ -58,7 +58,7 @@
 /* DESKTOP: */
 @media (min-width: 56.25rem) and (orientation: landscape){
   .about-grid {
-    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-columns: 0.8fr 1.5fr 1fr;
 
     grid-template-areas:
       "col-left col-center col-right"
@@ -85,15 +85,18 @@
   }
 }
 
+.events-info {  
+  background: #f8f8f8;
+  background: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.4rem;
+  padding: 2rem;
+}
+
 .events-list {
   list-style:circle;
-  background: #f8f8f8;
-  border: 0.1rem solid #800020;
   padding-left: 0;
-  text-align: left;
-  padding: 2rem;
-  border-radius: 0.8rem;
-  box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.1);
+  text-align: left;  
 }
 
 #about-wrapper {
@@ -133,7 +136,9 @@
 
 .mission-list {
   list-style:disc;
-  padding-left: 0;
+  padding-top: 0.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .mission-list li {
@@ -156,6 +161,15 @@
   }
 }
 
+.office-info  {
+  background: #f8f8f8;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 0.4rem;
+  box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.1);
+  margin-bottom: 2.5rem;
+}
+
 .team-grid {
   display: flex;
   flex-wrap: wrap;
@@ -166,6 +180,7 @@
 .team-card {
   cursor: pointer;
   text-align: center;
+  justify-content: center;
   position: relative;
   background: #f8f8f8;
   padding: 1rem;
@@ -175,9 +190,9 @@
   box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.1);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-.team-card:hover {
-  transform: translateY(-0.4rem);
-  box-shadow: 0 0.8rem 1.2rem rgba(0, 0, 0, 0.2);
+
+.team-card p {
+  text-align: center
 }
 
 .team-photo {
@@ -191,13 +206,16 @@
 
 .member-details-data {
     display: none;
+    text-align: center;
 }
 
 #fullcalendar-container {
+    background: #f8f8f8;
     padding: 0; 
     margin-top: 1rem;
-    max-width: 100%;
-    min-height: 20rem;
+    max-width: 95%;
+    height: 80%;
+    justify-self: center;
 }
 
 .fc-daygrid-event-harness {
@@ -217,7 +235,7 @@
 }
 
 .fc-daygrid-day-frame {
-  min-height: 3rem;
+  min-height: 1rem;
 }
 .fc .fc-daygrid-day-number {
     padding: 5px;
@@ -227,8 +245,9 @@
 
 .fc .fc-toolbar-title {
     color: #800020; 
-    font-size: 1.35rem;
+    font-size: 1.2rem;
     font-weight: 700;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .fc-daygrid-day-number:has(~ .fc-daygrid-event-harness) {
@@ -248,7 +267,7 @@
   padding: 0.6rem 0.8rem;
   box-shadow: 0 0.4rem 1rem rgba(0,0,0,0.2);
   font-size: 0.8rem;
-  line-height: 1.4;
+  line-height: 1;
   pointer-events: none;
   display: none;
   z-index: 9999;
