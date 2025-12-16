@@ -9,45 +9,65 @@
     <link rel="stylesheet" href="assets/css/layout.css" />
     <link rel="stylesheet" href="assets/css/components.css" />
     <link rel="stylesheet" href="assets/css/harry_styles.css" />
-    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/main.min.css' rel='stylesheet' />
-    <script defer src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.js'></script>
-    <script defer src="assets/js/ui/carousel.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/main.min.css"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.js"
+    ></script>
+    <script defer src="assets/js/ui/modal.js"></script>
     <script defer src="assets/js/ui/menu.js"></script>
     <script defer src="assets/js/ui/calendar.js"></script>
-    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/main.min.css' rel='stylesheet' />
+    <link
+      href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/main.min.css"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
-    <header> 
-        <button id="menu-btn">☰</button>
-        <h1>IT LIBRARY</h1>
+    <header>
+      <button id="menu-btn">☰</button>
+      <h1>IT LIBRARY</h1>
     </header>
 
     <nav id="side-menu">
-        <a href="index.html">Home</a>
-        <a href="courses.html">Courses</a>
-        <a href="books.html">Books</a>
-        <a href="about.html">About</a>
-        <a href="register.html">Register</a>
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="books.html">Books</a>
+      <a href="about.html">About</a>
+      <a href="register.html">Register</a>
     </nav>
 
     <div id="overlay"></div>
     <main>
-
       <div id="about-wrapper">
         <div class="about-carousel">
           <div class="about-carousel-track">
             <div class="about-carousel-slide">
-              <img src="assets/img/about/vecteezy_abstract-modern-tech-of-programming-code-screen-developer_6222102.jpg" alt="" />
+              <img
+                src="assets/img/about/vecteezy_abstract-modern-tech-of-programming-code-screen-developer_6222102.jpg"
+                alt=""
+              />
             </div>
             <div class="about-carousel-slide">
-              <img src="assets/img/about/group-young-business-people-working-office.jpg" alt="" />
+              <img
+                src="assets/img/about/group-young-business-people-working-office.jpg"
+                alt=""
+              />
             </div>
             <div class="about-carousel-slide">
-              <img src="assets/img/about/two-business-people-standing-server-room-with-laptop-discussing.jpg" alt="" />
+              <img
+                src="assets/img/about/two-business-people-standing-server-room-with-laptop-discussing.jpg"
+                alt=""
+              />
             </div>
             <div class="about-carousel-slide">
-              <img src="assets/img/about/woman-taking-e-learning-courses.jpg" alt="" />
+              <img
+                src="assets/img/about/woman-taking-e-learning-courses.jpg"
+                alt=""
+              />
             </div>
           </div>
         </div>
@@ -57,17 +77,16 @@
             <section class="about-section">
               <h2>Upcoming Events</h2>
               <ul class="events-list">
-                <li><strong>Live Python Class</strong> — March 5th</li>
-                <li><strong>Frontend Workshop</strong> — March 12th</li>
-                <li><strong>AI Webinar</strong> — March 20th</li>
+                <li><strong>Live Python Class</strong> — December 5th</li>
+                <li><strong>Frontend Workshop</strong> — December 12th</li>
+                <li><strong>AI Webinar</strong> — December 20th</li>
               </ul>
             </section>
 
             <section class="about-section">
-            <h2>Calendar</h2>
-            <div id="fullcalendar-container"></div>
-          </section>
-
+              <h2>Calendar</h2>
+              <div id="fullcalendar-container"></div>
+            </section>
           </div>
 
           <div class="col-center">
@@ -100,22 +119,52 @@
               <h2>Team Members</h2>
 
               <div class="team-grid">
-                <div class="team-card">
-                  <img src="assets/img/team1.jpg" class="team-photo" />
+                <div
+                  class="team-card clickable-card"
+                  data-member-id="christina"
+                >
+                  <img src="assets/img/people/christina.jpg" class="team-photo" />
                   <h3>Christina Perifana</h3>
-                  <p>Project Lead & Developer</p>
+                  <p>Frontend Developer</p>
+
+                  <span
+                    class="member-details-data"
+                    data-full-name="Christina Perifana"
+                    data-role="Frontend Developer"
+                    data-description="Christina leads the project development cycle, overseeing all technological implementations from frontend design to backend infrastructure. She is a full-stack expert with a passion for clean code."
+                  >
+                  </span>
                 </div>
 
-                <div class="team-card">
-                  <img src="assets/img/team2.jpg" class="team-photo" />
+                <div
+                  class="team-card clickable-card"
+                  data-member-id="alexandra"
+                >
+                  <img src="assets/img/people/alexandra.jpg" class="team-photo" />
                   <h3>Alexandra Mazi</h3>
-                  <p>Backend Engineer</p>
+                  <p>Backend Developer</p>
+
+                  <span
+                    class="member-details-data"
+                    data-full-name="Alexandra Mazi"
+                    data-role="Backend Developer"
+                    data-description="Alexandra focuses on building robust, scalable server-side applications and managing the database architecture. She specializes in Python and cloud services (AWS)."
+                  >
+                  </span>
                 </div>
 
-                <div class="team-card">
-                  <img src="assets/img/team3.jpg" class="team-photo" />
+                <div class="team-card clickable-card" data-member-id="fifi">
+                  <img src="assets/img/people/fifi.jpg" class="team-photo" />
                   <h3>Fifi</h3>
                   <p>Rubber Ducky</p>
+
+                  <span
+                    class="member-details-data"
+                    data-full-name="Fifi"
+                    data-role="Emotional Support"
+                    data-description="Fifi's role is critical: rubber ducks are essential for debugging and providing silent, unwavering moral support during late-night coding sessions. She is the best listener on the team."
+                  >
+                  </span>
                 </div>
               </div>
             </section>
@@ -136,12 +185,19 @@
       </div>
     </main>
 
-    <footer>Copyright © 2025 IT Library</footer>
+    <footer>Copyright © 2025 Mazi Perifana - All rights reserved
+</footer>
+
+    <div id="member-modal" class="modal-hidden">
+      <div class="modal-content">
+        <button class="modal-close-btn"></button>
+        <div id="modal-details"></div>
+      </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
     <script src="assets/js/ui/menu.js"></script>
     <script src="assets/js/ui/calendar.js"></script>
-
+    <script src="assets/js/ui/modal.js"></script>
   </body>
-
 </html>
