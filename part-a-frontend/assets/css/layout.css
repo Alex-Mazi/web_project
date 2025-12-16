@@ -193,6 +193,12 @@ label {
     object-fit: contain;
 }
 
+.course-content-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
 #course-title {
     margin-bottom: 0.3rem;
 }
@@ -206,7 +212,6 @@ label {
 }
 
 #related-courses {
-    margin-bottom: 1rem;
     padding-top: 1.5rem;
 }
 
@@ -252,7 +257,6 @@ label {
 .course-left {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
 }
 
 #course-outcomes {
@@ -270,6 +274,42 @@ label {
     margin-bottom: 0.4rem;   
     line-height: 1.5;
 }
+
+.course-right .content-card {
+    background: #ffffffa2;
+    padding: 1.1rem 1.2rem;
+    border-radius: 1px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.instructor-info {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.instructor-info img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #f0eee9;
+}
+
+#teacher-name {
+    font-weight: 600;
+    color: #800020;
+    margin: 0;
+}
+
+.teacher-role {
+    display: block;         
+    font-size: 0.8rem;
+    color: #777;
+    text-align: left;        
+    margin-top: 0.15rem;
+}
+
 /* ======================== */
 
 /* ======== MEDIA ========= */
@@ -302,6 +342,10 @@ label {
 
     .fact {
         align-items: center;
+    }
+
+    .highlight-card {
+        margin-right: 0.6rem;
     }
 
 }
@@ -367,6 +411,20 @@ label {
         margin: 0 auto;
     }
 
+    .course-content-grid {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: 2.5rem;
+        align-items: stretch;
+    }
+
+    .course-right {
+        position: sticky;
+        top: 4.5rem;
+        align-self: start;
+        height: 100%;
+    }
+
 }
 
 @media (min-width: 900px) {
@@ -411,11 +469,39 @@ label {
         flex: 1;
     }
 
+    .course-content-grid {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: 2.5rem;
+        align-items: stretch;
+    }
+
+    .course-right {
+        max-width: 360px;
+        align-self: start;
+        height: 100%;
+    }
+
 }
 
 @media (min-width: 1200px) { 
+
     #register-container {
         max-width: 70rem;
     }
+
+    .course-content-grid {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: 2.5rem;
+        align-items: stretch;
+    }
+
+    .course-right {
+        max-width: 360px;
+        align-self: start;
+        height: 100%;
+    }
+
 }
 /* ======================== */

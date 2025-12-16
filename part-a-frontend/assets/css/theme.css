@@ -405,12 +405,12 @@ input.invalid {
     border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
-#course-description h3 {
+.content-card h3, .section-title {
     padding-top: 0rem;
     color: #440213;
     border-top: none;
     text-align: left;
-    font-weight: 400;          
+    font-weight: 530;          
     font-size: 1.05rem;       
 }
 
@@ -420,6 +420,7 @@ input.invalid {
     font-size: 0.98rem;
     color: #555;
     text-align: justify;
+    margin-left: 0.6rem;
 }
 
 .fact.recommended span:last-child {
@@ -447,16 +448,8 @@ input.invalid {
 .highlight-card {
     background: #faf8f6;
     padding-bottom: 1.5rem;
-    margin-top: -3rem;
-}
-
-.course-left h3 {
-    font-size: 1.1rem;
-    margin-bottom: 1.4rem;
-    font-weight: 400;         
-    font-size: 1.05rem;        
-    color: #440213;
-    text-align: left;
+    margin-top: 0.3rem;
+    margin-left: 0.6rem;
 }
 
 .section-hint {
@@ -474,7 +467,7 @@ input.invalid {
 }
 
 #course-outcomes h3 {
-    font-weight: 400;         
+    font-weight: 530;         
     font-size: 1.05rem;        
     color: #440213;
     margin-bottom: 0.6rem;
@@ -483,5 +476,25 @@ input.invalid {
 
 #course-outcomes li + li {
     border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.course-right h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    text-align: left;
+}
+
+.sidebar-section h4 {
+    padding-bottom: 0.5rem;
+}
+
+#topics-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-left: 0.6rem;
+    margin-right: 0.6rem;
 }
 /* ======================== */

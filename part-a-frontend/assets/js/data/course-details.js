@@ -21,8 +21,31 @@ function renderCourseDetails(course) {
         course.description;
 
     const img = document.querySelector("#course-image");
-    img.src = course.image;
-    img.alt = course.title;
+
+    if (course.image) {
+        img.src = course.image;
+        img.alt = course.title;
+    } else {
+        img.src = "assets/img/thumbnails/default-course.png";
+        img.alt = "Course image";
+    }
+
+    const teacherNameEl = document.getElementById("teacher-name");
+    const teacherImageEl = document.getElementById("teacher-image");
+
+    if (teacherNameEl) {
+        teacherNameEl.textContent = course.teacher || "IT Library Faculty";
+    }
+
+    if (teacherImageEl) {
+        if (course.teacherImage) {
+            teacherImageEl.src = course.teacherImage;
+            teacherImageEl.alt = course.teacher;
+        } else {
+            teacherImageEl.src = "assets/img/thumbnails/default-course.png";
+            teacherImageEl.alt = "Instructor";
+        }
+    }
 
     const outcomesList = document.getElementById("outcomes-list");
     course.learningOutcomes.forEach(outcome => {
@@ -30,7 +53,7 @@ function renderCourseDetails(course) {
         li.textContent = outcome;
         outcomesList.appendChild(li);
     });
-    
+
     const topicsContainer = document.getElementById("topics-container");
     course.topics.forEach(topic => {
         const span = document.createElement("span");
@@ -39,12 +62,20 @@ function renderCourseDetails(course) {
         topicsContainer.appendChild(span);
     });
 
-    const prereqText = document.getElementById("prerequisites-text");
+    const prereqList = document.getElementById("prerequisites-list");
+    prereqList.innerHTML = "";
 
-    if (course.prerequisites.length === 0) {
-    prereqText.textContent = "No prior knowledge required.";
+    if (!course.prerequisites || course.prerequisites.length === 0) {
+        const li = document.createElement("li");
+        li.textContent = "No prior knowledge required.";
+        li.classList.add("empty-prereq");
+        prereqList.appendChild(li);
     } else {
-    prereqText.textContent = course.prerequisites.join(", ");
+        course.prerequisites.forEach(req => {
+            const li = document.createElement("li");
+            li.textContent = req;
+            prereqList.appendChild(li);
+        });
     }
 
 }
