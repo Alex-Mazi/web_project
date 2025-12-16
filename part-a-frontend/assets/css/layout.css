@@ -197,7 +197,7 @@ label {
     display: grid;
     grid-template-columns: 3fr 1.2fr;
     gap: 3rem;
-    align-items: start;
+    align-items: stretch;
 }
 
 #course-title {
@@ -266,13 +266,6 @@ label {
     line-height: 1.5;
 }
 
-.course-right .content-card {
-    background: #ffffffa2;
-    padding: 1.1rem 1.2rem;
-    border-radius: 1px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
 .instructor-info {
     display: flex;
     align-items: center;
@@ -300,7 +293,6 @@ label {
     text-align: left;        
     margin-top: 0.15rem;
 }
-
 /* ======================== */
 
 /* ======== MEDIA ========= */
@@ -408,13 +400,14 @@ label {
         display: grid;
         grid-template-columns: 3fr 1fr;
         gap: 2.5rem;
-        align-items: start;
+        align-items: stretch;
     }
 
     .course-right {
         position: sticky;
         top: 4.5rem;
-        align-self: start;
+        align-self: stretch;
+        padding-top: 0.3rem;
     }
 
     .section-hint {
@@ -472,11 +465,15 @@ label {
         display: grid;
         grid-template-columns: 3fr 1fr;
         gap: 2.5rem;
-        align-items: start;
+        align-items: stretch;
+    }
+
+    .sidebar-card {
+        min-height: 520px;
     }
 
     .course-right {
-        align-self: start;
+        align-self: stretch;
         margin-left: 3rem;
     }
 
@@ -497,12 +494,12 @@ label {
         display: grid;
         grid-template-columns: 3fr 1fr;
         gap: 2.5rem;
-        align-items: start;
+        align-items: stretch;
     }
 
     .course-right {
         max-width: 360px;
-        align-self: start;
+        align-self: stretch;
     }
 
 }
