@@ -194,7 +194,8 @@ label {
 }
 
 .course-content-grid {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     grid-template-columns: 3fr 1.2fr;
     gap: 3rem;
     align-items: stretch;
@@ -331,6 +332,34 @@ label {
         margin-right: 0.6rem;
     }
 
+    .course-left {
+        display: contents;
+    }
+
+    #course-description {
+        order: 1;
+    }
+
+    .course-right {
+        order: 2;
+        position: static;
+    }
+
+    #course-outcomes {
+        order: 3;
+        margin-top: -3rem;
+        margin-bottom: -1rem;
+    }
+
+    .section-title {
+        order: 4;
+        margin-bottom: -3.3rem;
+    }
+
+    #related-courses {
+        order: 5;
+    }
+
 }
 
 @media (min-width: 600px) {
@@ -403,7 +432,13 @@ label {
         align-items: stretch;
     }
 
+    .course-left {
+        display: flex;
+        flex-direction: column;
+    }
+
     .course-right {
+        order: initial;
         position: sticky;
         top: 4.5rem;
         align-self: stretch;
