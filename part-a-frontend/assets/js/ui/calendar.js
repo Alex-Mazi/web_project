@@ -2,22 +2,28 @@ document.addEventListener("DOMContentLoaded", function () {
   window.EVENTS = [
     {
       title: "Live Python Class",
-      start: "2025-03-05",
-      description: "Beginner-friendly live coding session covering Python basics.",
+      start: "2025-12-05",
+      description:
+        "Beginner-friendly live coding session covering Python basics.",
       instructor: "Christina Perifana",
     },
     {
       title: "Frontend Workshop",
-      start: "2025-03-12",
+      start: "2025-12-12",
       description: "Hands-on workshop with HTML, CSS, and JavaScript.",
       instructor: "Alexandra Mazi",
     },
+    {
+      title: "AI Webinar",
+      start: "2025-12-20",
+      description: "Learn about the latest trends in artificial intelligence.",
+      instructor: "TBA",
+    }
   ];
 
   const calendarEl = document.getElementById("fullcalendar-container");
   if (!calendarEl) return;
 
-  // 🔹 Create ONE tooltip
   const tooltip = document.createElement("div");
   tooltip.className = "event-tooltip";
   document.body.appendChild(tooltip);
@@ -29,14 +35,11 @@ document.addEventListener("DOMContentLoaded", function () {
     eventDisplay: "block",
     events: window.EVENTS,
 
-
     headerToolbar: {
       left: "prev",
       center: "title",
       right: "next",
     },
-
-   
 
     eventDidMount: function (info) {
       const dayCell = info.el.closest(".fc-daygrid-day");
@@ -55,17 +58,22 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       info.el.addEventListener("mousemove", (e) => {
-        const padding = 12;
-        tooltip.style.left = Math.min(
+        const padding = 20; 
+
+        const leftPosition = Math.min(
           e.pageX + padding,
           window.innerWidth - tooltip.offsetWidth - padding
-        ) + "px";
+        );
 
-        tooltip.style.top = Math.min(
+        const topPosition = Math.min(
           e.pageY + padding,
-          window.innerHeight - tooltip.offsetHeight - padding
-        ) + "px";
+          window.innerHeight + window.scrollY - tooltip.offsetHeight - padding 
+        );
+
+        tooltip.style.left = leftPosition + "px";
+        tooltip.style.top = topPosition + "px";
       });
+
 
       info.el.addEventListener("mouseleave", () => {
         tooltip.style.display = "none";
