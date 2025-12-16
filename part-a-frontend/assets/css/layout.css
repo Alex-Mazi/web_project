@@ -199,6 +199,8 @@ label {
     grid-template-columns: 3fr 1.2fr;
     gap: 3rem;
     align-items: stretch;
+    overflow: visible;
+    transform: none;
 }
 
 #course-title {
@@ -294,10 +296,111 @@ label {
     text-align: left;        
     margin-top: 0.15rem;
 }
+
+.book-recommendations {
+    display: none;
+    margin-top: 1.2rem;
+}
+
+.book-cover {
+    width: 80px;
+    height: auto;
+    max-height: 80px;
+    object-fit: contain;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.book-card:hover .book-cover {
+    transform: scale(1.12);
+}
+
+.book-card {
+    transition: background-color 0.2s ease;
+}
+
+.book-card:hover {
+    background-color: rgba(248, 119, 145, 0.06);
+}
+
+.book-recommendations ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.book-recommendations li {
+    padding: 0.75rem;
+    border-radius: 8px;
+    background: var(--surface-soft);
+}
+
+.book-card a {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-align: left;
+    text-decoration: none;
+    color: inherit;
+}
+
+.book-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.book-author {
+    font-size: 0.75rem;
+    color: #800020;
+    opacity: 0.85;
+}
+
+.mobile-related {
+    display: none;
+    margin-top: 2rem;
+}
+
+.mobile-related-header {
+    display: flex;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.mobile-related-tab {
+    flex: 1;
+    padding: 0.6rem 0;
+    background: none;
+    border: none;
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: #777;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.mobile-related-tab.active {
+    display: block;
+    color: #800020;
+    font-weight: 600;
+    border-bottom: 2px solid #800020;
+}
+
+.mobile-related-panel {
+    display: none;
+    opacity: 0;
+    transform: translateX(6px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.mobile-related-panel.active {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
 /* ======================== */
 
 /* ======== MEDIA ========= */
-@media (max-width: 400px) {
+@media (max-width: 599px) {
 
     #side-menu {
         width: 55vw;      
@@ -342,7 +445,7 @@ label {
 
     .course-right {
         order: 2;
-        position: static;
+        position: sticky;
     }
 
     #course-outcomes {
@@ -351,13 +454,26 @@ label {
         margin-bottom: -1rem;
     }
 
-    .section-title {
+    .mobile-related {
         order: 4;
-        margin-bottom: -3.3rem;
+        margin-top: 0rem;
     }
 
     #related-courses {
         order: 5;
+    }
+
+    .mobile-related {
+        display: block;
+    }
+
+    .section-title {
+        display: none;
+    }
+
+    .mobile-related-panel .book-recommendations {
+        display: block;
+        margin-top: 0;
     }
 
 }
@@ -430,6 +546,7 @@ label {
         grid-template-columns: 3fr 1fr;
         gap: 2.5rem;
         align-items: stretch;
+        overflow: visible;
     }
 
     .course-left {
@@ -439,7 +556,6 @@ label {
 
     .course-right {
         order: initial;
-        position: sticky;
         top: 4.5rem;
         align-self: stretch;
         padding-top: 0.3rem;
@@ -448,6 +564,15 @@ label {
     .section-hint {
         font-size: 0.9rem;
         color: #777;
+    }
+
+    .book-recommendations {
+        display: block;
+    }
+
+    .course-sidebar {
+        display: flex;
+        flex-direction: column;
     }
 
 }
@@ -501,10 +626,7 @@ label {
         grid-template-columns: 3fr 1fr;
         gap: 2.5rem;
         align-items: stretch;
-    }
-
-    .sidebar-card {
-        min-height: 520px;
+        overflow: visible;
     }
 
     .course-right {
@@ -515,6 +637,15 @@ label {
     .section-hint {
         font-size: 1rem;
         color: #777;
+    }
+
+    .book-recommendations {
+        display: block;
+    }
+
+    .course-sidebar {
+        display: flex;
+        flex-direction: column;
     }
 
 }
@@ -530,11 +661,16 @@ label {
         grid-template-columns: 3fr 1fr;
         gap: 2.5rem;
         align-items: stretch;
+        overflow: visible;
     }
 
     .course-right {
         max-width: 360px;
         align-self: stretch;
+    }
+
+    .book-recommendations {
+        display: block;
     }
 
 }

@@ -83,9 +83,13 @@ function renderCourseDetails(course) {
 document.addEventListener("DOMContentLoaded", () => {
     const courseId = getCourseIdFromURL();
     const course = findCourseById(courseId);
+
     renderCourseDetails(course);
-    renderRelatedCoursesCarousel(course);
     renderFacts(course);
+    renderBookRecommendations(course);
+    setupMobileRelated(course);
+    renderRelatedCoursesCarousel(course);
+    setupMobileRelatedTabs();
 });
 
 function renderRelatedCoursesCarousel(currentCourse) {
@@ -119,6 +123,132 @@ function renderFacts(course) {
         else recommendedEl.textContent = "—";
     }
 }
+
+function getRelatedBooks(course) {
+    if (!window.bookslist || !course) return [];
+
+    if (course.category !== "Programming") {
+        return bookslist.filter(
+            book => book.category === course.category
+        );
+    }
+
+    return bookslist.filter(
+        book => course.topics.includes(book.category)
+    );
+}
+
+
+function renderBookRecommendations(course) {
+    const bookListEl = document.querySelector(".book-recommendations .book-list");
+    if (!bookListEl || !window.bookslist || !course) return;
+
+    bookListEl.innerHTML = "";
+
+    const relatedBooks = getRelatedBooks(course);
+
+    if (relatedBooks.length === 0) {
+        const li = document.createElement("li");
+        li.textContent = "No recommended books for this course.";
+        li.classList.add("empty-books");
+        bookListEl.appendChild(li);
+        return;
+    }
+
+    relatedBooks.forEach(book => {
+        const li = document.createElement("li");
+        li.className = "book-card";
+
+        li.innerHTML = `
+            <a href="${book.amazon_link}" target="_blank" rel="noopener">
+                <img
+                    class="book-cover"
+                    src="${book.img}"
+                    alt="${book.title} cover"
+                />
+                <div class="book-meta">
+                    <h4 class="book-title">${book.title}</h4>
+                    <p class="book-author">${book.author}</p>
+                </div>
+            </a>
+        `;
+
+        bookListEl.appendChild(li);
+    });
+}
+
+function setupMobileRelated(currentCourse) {
+    const mobileContainer = document.querySelector(".mobile-related-body");
+    if (!mobileContainer) return;
+
+    if (window.innerWidth > 599) return;
+
+    const relatedCoursesSection = document.getElementById("related-courses");
+    const booksSection = document.querySelector(".book-recommendations");
+
+    if (relatedCoursesSection) {
+        const coursesWrapper = document.createElement("div");
+        coursesWrapper.classList.add("mobile-related-panel", "active");
+        coursesWrapper.dataset.type = "courses";
+        coursesWrapper.appendChild(relatedCoursesSection);
+        mobileContainer.appendChild(coursesWrapper);
+    }
+
+    if (booksSection) {
+        const booksWrapper = document.createElement("div");
+        booksWrapper.classList.add("mobile-related-panel");
+        booksWrapper.dataset.type = "books";
+
+        const carousel = document.createElement("div");
+        carousel.className = "carousel books-carousel";
+
+        carousel.innerHTML = `
+        <div class="carousel-track"></div>
+        <button class="carousel-btn prev">‹</button>
+        <button class="carousel-btn next">›</button>
+    `;
+
+        booksWrapper.appendChild(carousel);
+        mobileContainer.appendChild(booksWrapper);
+
+        const relatedBooks = getRelatedBooks(currentCourse);
+
+        if (relatedBooks.length) {
+            initCarousel(carousel, relatedBooks, createBookCard);
+        }
+    }
+
+}
+
+function setupMobileRelatedTabs() {
+    const tabs = document.querySelectorAll(".mobile-related-tab");
+    const panels = document.querySelectorAll(".mobile-related-panel");
+
+    if (!tabs.length || !panels.length) return;
+
+    tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            const target = tab.dataset.target;
+
+            // tabs
+            tabs.forEach(t => t.classList.remove("active"));
+            tab.classList.add("active");
+
+            // panels
+            panels.forEach(panel => {
+                panel.classList.toggle(
+                    "active",
+                    panel.dataset.type === target
+                );
+            });
+        });
+    });
+}
+
+
+
+
+
 
 
 

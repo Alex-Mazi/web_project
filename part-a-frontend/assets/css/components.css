@@ -182,7 +182,6 @@
 }
 
 .sidebar-section {
-    display: flex;
     flex-direction: column;
     padding-bottom: 1.5rem;
 }
@@ -192,7 +191,7 @@
     border-radius: 18px;
     box-shadow: 0 22px 48px rgba(0, 0, 0, 0.16), 0 8px 20px rgba(0, 0, 0, 0.12);
     padding: 1.8rem 1.8rem;
-    position: relative;
+    position: sticky;
     padding-top: 1rem;
     padding-bottom: 2.4rem;
 }
