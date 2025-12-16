@@ -18,7 +18,8 @@ window.courses = [
     topics: ["Variables", "Conditions", "Loops", "Functions"],
     prerequisites: [],
     recommended: true,
-    image: "assets/img/thumbnails/intro-programming.png"
+    image: "assets/img/thumbnails/intro-programming.png",
+    teacherImage: "assets/img/people/elenamarkou.jpg"
   },
   {
     id: 2,
@@ -38,7 +39,8 @@ window.courses = [
     topics: ["Classes", "Inheritance", "Interfaces", "Polymorphism"],
     prerequisites: ["Introduction to Programming"],
     recommended: true,
-    image: "assets/img/thumbnails/java.png"
+    image: "assets/img/thumbnails/java.png",
+    teacherImage: "assets/img/people/nikolasgeorgiou.jpg"
   },
   {
     id: 3,
@@ -58,7 +60,8 @@ window.courses = [
     topics: ["HTML", "CSS", "JavaScript", "Responsive Design"],
     prerequisites: ["Basic computer skills"],
     recommended: true,
-    image: "assets/img/thumbnails/web.png"
+    image: "assets/img/thumbnails/web.png",
+    teacherImage: "assets/img/people/alexpapadopoulos.jpg"
   },
   /* -------------------- NETWORKS -------------------- */
   {
@@ -79,7 +82,8 @@ window.courses = [
     topics: ["IP Addressing", "Routing", "Protocols", "Network Devices"],
     prerequisites: [],
     recommended: false,
-    image: "assets/img/thumbnails/networks-basics.png"
+    image: "assets/img/thumbnails/networks-basics.png",
+    teacherImage: "assets/img/people/marianikolaou.jpg"
   },
   {
     id: 5,
@@ -99,7 +103,8 @@ window.courses = [
     topics: ["Firewalls", "Network Configuration", "Security Protocols", "Traffic Analysis"],
     prerequisites: ["Computer Networks Basics"],
     recommended: true,
-    image: "assets/img/thumbnails/networks.png"
+    image: "assets/img/thumbnails/networks.png",
+    teacherImage: "assets/img/people/dimitriskarras.jpg"
   },
   /* -------------------- CYBERSECURITY -------------------- */
   {
@@ -120,7 +125,8 @@ window.courses = [
     topics: ["Malware", "Encryption", "Authentication", "Security Policies"],
     prerequisites: ["Basic networking knowledge"],
     recommended: true,
-    image: "assets/img/thumbnails/cybersecurity.png"
+    image: "assets/img/thumbnails/cybersecurity.png",
+    teacherImage: "assets/img/people/sophiaanagnostou.jpg"
   },
   {
     id: 7,
@@ -140,7 +146,8 @@ window.courses = [
     topics: ["Penetration Testing", "Vulnerability Scanning", "Exploits", "Security Tools"],
     prerequisites: ["Cybersecurity Essentials"],
     recommended: true,
-    image: "assets/img/thumbnails/hacking.png"
+    image: "assets/img/thumbnails/hacking.png",
+    teacherImage: "assets/img/people/andreaskonstantinou.jpg"
   },
   /* -------------------- DATABASES -------------------- */
   {
@@ -161,7 +168,8 @@ window.courses = [
     topics: ["SQL", "Relational Models", "Tables", "Queries"],
     prerequisites: [],
     recommended: true,
-    image: "assets/img/thumbnails/sql.png"
+    image: "assets/img/thumbnails/sql.png",
+    teacherImage: "assets/img/people/elenistavrou.jpg"
   },
   {
     id: 9,
@@ -181,6 +189,7 @@ window.courses = [
     topics: ["Normalization", "Indexes", "Query Optimization", "Performance Tuning"],
     prerequisites: ["Databases & SQL Fundamentals"],
     recommended: true,
+    teacherImage: "assets/img/people/christospappas.jpg"
   },
   /* -------------------- AI & DATA -------------------- */
   {
@@ -200,7 +209,9 @@ window.courses = [
     ],
     topics: ["Search Algorithms", "Reasoning", "Decision Making", "AI Applications"],
     prerequisites: ["Introduction to Programming"],
-    recommended: false
+    recommended: false,
+    image: "assets/img/thumbnails/ai-intro.png",
+    teacherImage: "assets/img/people/georgeioannou.jpg"
   },
   {
     id: 11,
@@ -220,6 +231,7 @@ window.courses = [
     topics: ["Supervised Learning", "Unsupervised Learning", "Models", "Evaluation"],
     prerequisites: ["Introduction to Artificial Intelligence"],
     recommended: true,
-    image: "assets/img/thumbnails/ai.png"
+    image: "assets/img/thumbnails/ai.png",
+    teacherImage: "assets/img/people/panagiotisroussos.jpg"
   }
 ];
