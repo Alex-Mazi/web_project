@@ -210,7 +210,7 @@ window.courses = [
     topics: ["Search Algorithms", "Reasoning", "Decision Making", "AI Applications"],
     prerequisites: ["Introduction to Programming"],
     recommended: false,
-    image: "assets/img/thumbnails/ai-intro.png",
+    image: "assets/img/thumbnails/ai-intro.jpg",
     teacherImage: "assets/img/people/georgeioannou.jpg"
   },
   {

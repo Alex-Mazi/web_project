@@ -1,52 +1,94 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const modal = document.getElementById('member-modal');
-    const modalDetails = document.getElementById('modal-details');
-    const closeButton = document.querySelector('.modal-close-btn');
-    
-    const teamCards = document.querySelectorAll('.team-card'); 
+window.ITLibrary = window.ITLibrary || {};
 
-    if (!modal) {
-        console.error("Modal element #member-modal not found.");
-        return;
-    }
-    
-    function openModal(clickedCard) {
-        const image = clickedCard.querySelector('.team-photo').outerHTML;
-        const dataSpan = clickedCard.querySelector('.member-details-data');
-        
-        const name = dataSpan.getAttribute('data-full-name');
-        const role = dataSpan.getAttribute('data-role');
-        const description = dataSpan.getAttribute('data-description');
-
-        modalDetails.innerHTML = `
-            ${image}
-            <h3>${name}</h3>
-            <p class="modal-role">${role}</p>
-            <p>${description}</p>
-        `;
-
+window.ITLibrary.openModal = function(modalElementId) {
+    const modal = document.getElementById(modalElementId);
+    if (modal) {
         modal.classList.remove('modal-hidden');
+        
+    }
+};
+
+window.ITLibrary.closeModal = function(modalElementId) {
+    const modal = document.getElementById(modalElementId);
+    if (modal) {
+        modal.classList.add('modal-hidden');
+    }
+};
+
+document.addEventListener("DOMContentLoaded", function () {
+    const memberModal = document.getElementById('member-modal');
+    const modalDetails = document.getElementById('modal-details');
+    const teamCards = document.querySelectorAll('.team-card'); 
+    
+    if (memberModal && modalDetails) {
+        
+        function openTeamModal(clickedCard) {
+            const image = clickedCard.querySelector('.team-photo').outerHTML;
+            const dataSpan = clickedCard.querySelector('.member-details-data');
+            
+            if (!dataSpan) {
+                console.error("Missing .member-details-data span in clicked card.");
+                return;
+            }
+
+            const name = dataSpan.getAttribute('data-full-name');
+            const role = dataSpan.getAttribute('data-role');
+            const description = dataSpan.getAttribute('data-description');
+
+            modalDetails.innerHTML = `
+                ${image}
+                <h3>${name}</h3>
+                <p class="modal-role">${role}</p>
+                <p>${description}</p>
+            `;
+
+            ITLibrary.openModal('member-modal'); 
+        }
+
+        teamCards.forEach(card => {
+            card.addEventListener('click', function() {
+                openTeamModal(this); 
+            });
+        });
     }
 
-    teamCards.forEach(card => {
-        card.addEventListener('click', function() {
-            openModal(this); 
+    function handleModalClose(modalElement) {
+        if (modalElement) {
+            window.ITLibrary.closeModal(modalElement.id);
+
+            if (modalElement.id === 'summary-modal') {
+                const registerForm = document.getElementById("registerForm");
+                const successMessage = document.getElementById("registrationSuccessMessage");
+                
+                if (registerForm && successMessage.style.display !== 'block') {
+                    registerForm.style.display = "block";
+                }
+            }
+        }
+    }
+
+    document.querySelectorAll('.modal-close-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const modalElement = this.closest('[id$="-modal"]'); 
+            handleModalClose(modalElement);
         });
     });
 
-    closeButton.addEventListener('click', function() {
-        modal.classList.add('modal-hidden');
-    });
-
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            modal.classList.add('modal-hidden');
-        }
+    document.querySelectorAll('[id$="-modal"]').forEach(modalElement => {
+        modalElement.addEventListener('click', function(e) {
+            if (e.target === modalElement) {
+                handleModalClose(modalElement);
+            }
+        });
     });
 
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && !modal.classList.contains('modal-hidden')) {
-            modal.classList.add('modal-hidden');
+        if (e.key === 'Escape') {
+            const openModal = document.querySelector('[id$="-modal"]:not(.modal-hidden)');
+            if (openModal) {
+                handleModalClose(openModal);
+            }
         }
     });
+
 });

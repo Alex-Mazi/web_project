@@ -20,22 +20,33 @@ document.getElementById("registerForm").addEventListener("submit", function (e) 
         if (input) input.classList.remove("invalid");
     }
 
-    // Full Name
     let fullName = document.getElementById("fullName").value.trim();
     let nameRegex = /^[A-Za-z'-]+(\s+[A-Za-z'-]+)+$/;
     if (!fullName) showError("fullName", "Name required");
-    else if (!nameRegex.test(fullName)) showError("fullName", "Full name required(no special characters or numbers)");
+    else if (!nameRegex.test(fullName)) showError("fullName", "Full name required (no special characters or numbers)");
     else clearError("fullName");
 
-    // Email
     let email = document.getElementById("email").value.trim();
     let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email) showError("email", "Email required");
     else if (!emailRegex.test(email)) showError("email", "Invalid email format");
     else clearError("email");
 
-    // Date of birth
-    let dob = document.getElementById("dob").value;
+let dob = document.getElementById("dob").value;
+
+let dobFormatted = dob; 
+
+if (dob) {
+    const dateParts = dob.split('-'); 
+    if (dateParts.length === 3) {
+        const year = dateParts[0];
+        const month = dateParts[1];
+        const day = dateParts[2];
+        
+        dobFormatted = `${day}/${month}/${year}`;
+    }
+}
+
     if (!dob) showError("dob", "Date of birth required");
     else {
         let age = new Date().getFullYear() - new Date(dob).getFullYear();
@@ -43,22 +54,18 @@ document.getElementById("registerForm").addEventListener("submit", function (e) 
         else clearError("dob");
     }
 
-    // Username
     let username = document.getElementById("username").value.trim();
     if (username.length < 5) showError("username", "Username must be at least 5 characters");
     else clearError("username");
 
-    // Password
     let password = document.getElementById("password").value;
     if (password.length < 8) showError("password", "Password must be at least 8 characters");
     else clearError("password");
 
-    // Confirm password
     let confirmPassword = document.getElementById("confirmPassword").value;
     if (password !== confirmPassword) showError("confirmPassword", "Passwords do not match");
     else clearError("confirmPassword");
 
-    // Interests
     let interests = [...document.querySelectorAll("input[name='interest']:checked")];
     if (interests.length === 0) {
         document.getElementById("interest-error").textContent = "Choose at least one interest";
@@ -67,7 +74,6 @@ document.getElementById("registerForm").addEventListener("submit", function (e) 
     } else {
         document.getElementById("interest-error").style.display = "none";
     }
-
 
     function validateCourses() {
         const checkboxes = document.querySelectorAll(".course-checkbox");
@@ -89,9 +95,8 @@ document.getElementById("registerForm").addEventListener("submit", function (e) 
                 } else {
                     dropdown.classList.remove("invalid");
 
-                    // Save selection for summary
                     courseSelections.push({
-                        course: cb.parentElement.innerText.trim(),
+                        course: cb.parentElement.innerText.trim(), 
                         experience: dropdown.value
                     });
                 }
@@ -121,24 +126,94 @@ document.getElementById("registerForm").addEventListener("submit", function (e) 
 
     if (!valid) return;
 
-    //Summary Data
     let summaryData = {
         fullName,
         email,
-        dob,
+        dob: dobFormatted,
         username,
         interests: interests.map(i => i.value),
         courses: courseCheck.data
     };
 
-    // Show summary
-    document.getElementById("summaryText").textContent =
-        JSON.stringify(summaryData, null, 2);
+    const summaryTextContainer = document.getElementById("summaryText"); 
+    const registerForm = document.getElementById("registerForm");
 
-    document.getElementById("summary").style.display = "block";
-});
+    let summaryHTML = `
+        <div class="summary-section">
+            <h4>Personal Details</h4>
+            <ul>
+                <li><strong>Name:</strong> ${summaryData.fullName}</li>
+                <li><strong>Email:</strong> ${summaryData.email}</li>
+                <li><strong>Date of Birth:</strong> ${summaryData.dob}</li>
+                <li><strong>Username:</strong> ${summaryData.username}</li>
+            </ul>
+        </div>
+    `;
 
-//Experience dropdown toggle
+    if (summaryData.interests.length > 0) {
+        summaryHTML += `
+            <div class="summary-section">
+                <h4>Interests</h4>
+                <p>${summaryData.interests.join(' • ')}</p>
+            </div>
+        `;
+    }
+
+    if (summaryData.courses.length > 0) {
+        summaryHTML += `
+            <div class="summary-section">
+                <h4>Course Experience</h4>
+                <ul class="course-list">
+        `;
+        
+        summaryData.courses.forEach(courseItem => {
+            summaryHTML += `
+                <li><strong>${courseItem.course}:</strong> ${courseItem.experience}</li>
+            `;
+        });
+        
+        summaryHTML += `
+                </ul>
+            </div>
+        `;
+    }
+    
+    summaryTextContainer.innerHTML = summaryHTML;
+
+    if (window.ITLibrary && window.ITLibrary.openModal) {
+        ITLibrary.openModal('summary-modal');
+    } else {
+        console.error("ITLibrary.openModal is not defined. Ensure modal.js is loaded correctly.");
+    }
+    
+    const confirmBtn = document.getElementById("confirmRegistrationBtn");
+    
+    if (!confirmBtn.hasListener) {
+        confirmBtn.addEventListener("click", () => {
+            
+            if (window.ITLibrary && window.ITLibrary.closeModal) {
+                ITLibrary.closeModal('summary-modal');
+            }
+            
+            registerForm.style.display = "none";
+            
+            const successMessage = document.getElementById("registrationSuccessMessage");
+            if (successMessage) {
+                successMessage.innerHTML = `
+                    <h2>Registration Successful!</h2>
+                    <p><strong>Welcome, ${fullName}!</strong> You are now registered for our learning platform.</p>
+                    <p>Your journey to success starts here.</p>
+                `;
+                successMessage.style.display = "block";
+            } else {
+                alert(`Registration confirmed! Welcome, ${fullName}!`);
+            }
+            
+            registerForm.reset(); 
+        });
+        confirmBtn.hasListener = true; 
+    }
+}); 
 
 document.querySelectorAll(".course-checkbox").forEach(cb => {
     cb.addEventListener("change", function () {
