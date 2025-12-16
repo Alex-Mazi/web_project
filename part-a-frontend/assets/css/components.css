@@ -210,6 +210,7 @@
     background: #e0e0e0;
     margin: 1.2rem calc(var(--sidebar-pad-x) * -1);
     background: rgba(0, 0, 0, 0.08);
+    margin-top: 0rem;
     width: auto;
 }
 
