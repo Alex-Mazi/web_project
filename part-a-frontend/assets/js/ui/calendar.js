@@ -45,8 +45,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const dayCell = info.el.closest(".fc-daygrid-day");
       if (dayCell) dayCell.classList.add("has-custom-event");
 
-      info.el.style.backgroundColor = "#800020";
-      info.el.style.borderColor = "#800020";
+      info.el.style.backgroundColor = "#c28594";
+      info.el.style.borderColor = "#68011a";
 
       info.el.addEventListener("mouseenter", (e) => {
         tooltip.innerHTML = `

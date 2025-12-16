@@ -210,12 +210,14 @@
 }
 
 #fullcalendar-container {
-    padding: 1; 
+    padding: 1.5rem; 
+    background: #faf1f1;
     margin-top: 1rem;
     max-width: 95%;
     height: 80%;
     justify-self: center;
-    box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.2);
 
 }
 
@@ -226,9 +228,9 @@
 
 .fc-daygrid-event {
   display: block ;
-  background-color: #800020 ;
-  border-color: #800020 ;
-  color: #ffffff ;
+  background-color: #c28594 ;
+  border-color: #68011a ;
+  color: #ffffff;
   font-size: 0.75rem;
   padding: 0.2rem 0.4rem;
   border-radius: 0.3rem;
@@ -236,7 +238,7 @@
 }
 
 .fc-daygrid-day-frame {
-  min-height: 1rem;
+  min-height: 0rem;
 }
 .fc .fc-daygrid-day-number {
     padding: 5px;
@@ -263,7 +265,7 @@
 .event-tooltip {
   position: absolute;
   background: #ffffff;
-  color: #333;
+  color: #800020;
   border-radius: 0.5rem;
   padding: 0.6rem 0.8rem;
   box-shadow: 0 0.4rem 1rem rgba(0,0,0,0.2);
