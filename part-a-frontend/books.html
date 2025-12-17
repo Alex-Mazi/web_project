@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Books - IT Library</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/harry_styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap"
+        rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <header>
+        <button id="menu-btn">☰</button>
+        <h1>IT LIBRARY</h1>
+    </header>
+
+    <nav id="side-menu">
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="books.html">Books</a>
+        <a href="about.html">About</a>
+        <a href="register.html">Register</a>
+    </nav>
+
+    <div id="overlay"></div>
+
+    <main>
+        <div id="about-wrapper">
+            <div id="about-container">
+                <div class="library-controls">
+                        <div class="view-toggle">
+                            <button id="gridViewBtn" class="toggle-btn active" onclick="setView('grid')">
+                                Grid
+                            </button>
+                            <button id="listViewBtn" class="toggle-btn" onclick="setView('list')">
+                                List
+                            </button>
+                        </div>
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Search by title, author, or ISBN..." />
+                    </div>
+                    <div class="filter-box">
+                        <select id="categoryFilter">
+                            <option value="">All Categories</option>
+                        </select>
+                        <button class="reset-btn" onclick="resetFilters()">Reset</button>
+                    </div>
+                </div>
+
+                <div class="results-info" id="resultsInfo"></div>
+
+                <div class="books-grid" id="booksGrid"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>Copyright © 2025 Mazi Perifana - All rights reserved</footer>
+
+    <script src="assets/js/data/index.js"></script>
+    <script src="assets/js/data/books-list.js"></script>
+    <script src="assets/js/data/books.js"></script>
+
+    <script src="assets/js/ui/menu.js"></script>
+    <script src="assets/js/ui/categories.js"></script>
+</body>
+
+</html>
