@@ -63,9 +63,52 @@ window.courses = [
     image: "assets/img/thumbnails/web.png",
     teacherImage: "assets/img/people/alexpapadopoulos.jpg"
   },
-  /* -------------------- NETWORKS -------------------- */
   {
     id: 4,
+    title: "Data Structures & Algorithms",
+    category: "Programming",
+    level: "Intermediate",
+    duration: "7 weeks",
+    teacher: "Katerina Louka",
+    shortDescription: "Learn how data is organized and how efficient algorithms are designed.",
+    description: "This course introduces the fundamental data structures and algorithms that form the backbone of efficient software development. Students will explore how data can be organized, stored, and manipulated using structures such as arrays, linked lists, stacks, queues, trees, and graphs. The course also covers essential algorithmic techniques including searching, sorting, recursion, and basic complexity analysis. Through clear explanations and practical examples, students will learn how to evaluate algorithm efficiency and make informed design decisions. By the end of the course, students will be able to choose appropriate data structures, implement common algorithms, and reason about performance in real-world programming scenarios.",
+    learningOutcomes: [
+      "Understand common data structures",
+      "Implement basic algorithms",
+      "Analyze algorithm efficiency",
+      "Apply problem-solving strategies"
+    ],
+    topics: ["Arrays", "Linked Lists", "Stacks", "Queues", "Sorting", "Searching", "Big-O"],
+    prerequisites: ["Introduction to Programming"],
+    recommended: true,
+    //image: "assets/img/thumbnails/algorithms.png",
+    teacherImage: "assets/img/people/katerinalouka.jpg"
+  },
+  {
+    id: 5,
+    title: "Advanced Python Programming",
+    category: "Programming",
+    level: "Advanced",
+    duration: "8 weeks",
+    teacher: "Dimitra Kalogirou",
+    shortDescription: "Write efficient, clean, and scalable Python applications.",
+    description: "This course builds on existing Python knowledge to explore advanced programming techniques and best practices. Students will learn how to write more expressive and efficient code using advanced language features such as decorators, generators, context managers, and functional programming concepts. The course also introduces performance considerations, error handling strategies, and code organization patterns used in larger Python projects. Through practical examples and structured exercises, students will gain confidence in writing maintainable, scalable Python applications suitable for professional development environments. By the end of the course, students will be able to design robust Python programs and understand how to optimize and structure complex codebases.",
+    learningOutcomes: [
+      "Use advanced Python language features",
+      "Write clean and maintainable code",
+      "Optimize Python program performance",
+      "Structure larger Python applications"
+    ],
+    topics: ["Python", "Decorators", "Generators", "Context Managers", "Performance"],
+    prerequisites: ["Introduction to Programming"],
+    recommended: true,
+    //image: "assets/img/thumbnails/advanced-python.png",
+    teacherImage: "assets/img/people/dimitrakalogirou.jpg"
+  },
+
+  /* -------------------- NETWORKS -------------------- */
+  {
+    id: 6,
     title: "Computer Networks Basics",
     category: "Networks",
     level: "Beginner",
@@ -86,7 +129,7 @@ window.courses = [
     teacherImage: "assets/img/people/marianikolaou.jpg"
   },
   {
-    id: 5,
+    id: 7,
     title: "Network Administration & Security",
     category: "Networks",
     level: "Intermediate",
@@ -106,9 +149,72 @@ window.courses = [
     image: "assets/img/thumbnails/networks.png",
     teacherImage: "assets/img/people/dimitriskarras.jpg"
   },
+  {
+    id: 8,
+    title: "Wireless Networks & Wi-Fi Technologies",
+    category: "Networks",
+    level: "Intermediate",
+    duration: "5 weeks",
+    teacher: "Ioannis Petrou",
+    shortDescription: "Understand how wireless networks operate and are secured.",
+    description: "This course explores the principles and technologies behind modern wireless networking, with a focus on Wi-Fi standards and real-world deployment scenarios. Students will learn how wireless communication works, how access points and clients interact, and how data is transmitted over radio frequencies. The course covers Wi-Fi standards, signal propagation, interference, and basic wireless security mechanisms. Through practical examples, students will gain insight into designing, configuring, and troubleshooting wireless networks in home, enterprise, and public environments. By the end of the course, students will understand how wireless networks are built and how to ensure reliable and secure connectivity.",
+    learningOutcomes: [
+      "Understand wireless networking principles",
+      "Explain Wi-Fi standards and architectures",
+      "Identify common wireless issues",
+      "Apply basic wireless security practices"
+    ],
+    topics: ["Wi-Fi Standards", "Wireless Signals", "Access Points", "Interference", "Wireless Security"],
+    prerequisites: ["Computer Networks Basics"],
+    recommended: false,
+    //image: "assets/img/thumbnails/wireless-networks.png",
+    teacherImage: "assets/img/people/ioannispetrou.jpg"
+  },
+  {
+    id: 9,
+    title: "Routing & Switching Concepts",
+    category: "Networks",
+    level: "Intermediate",
+    duration: "6 weeks",
+    teacher: "Stavros Michailidis",
+    shortDescription: "Learn how routers and switches move data across networks.",
+    description: "This course focuses on the core concepts behind routing and switching, which are essential for building and managing modern computer networks. Students will learn how switches forward traffic within local networks and how routers connect different networks together. Topics include VLANs, routing tables, static and dynamic routing, and basic network segmentation. The course emphasizes conceptual understanding supported by practical scenarios, helping students visualize how data flows across complex network infrastructures. By the end of the course, students will be able to explain routing and switching behavior and understand how network devices collaborate to deliver data efficiently.",
+    learningOutcomes: [
+      "Understand switching and routing functions",
+      "Explain VLAN and subnet concepts",
+      "Describe routing table behavior",
+      "Analyze network traffic flow"
+    ],
+    topics: ["Switching", "Routing", "VLANs", "Subnets", "Routing Tables"],
+    prerequisites: ["Computer Networks Basics"],
+    recommended: true,
+    //image: "assets/img/thumbnails/routing-switching.png",
+    teacherImage: "assets/img/people/stavrosmichailidis.jpg"
+  },
+  {
+    id: 10,
+    title: "Network Troubleshooting & Monitoring",
+    category: "Networks",
+    level: "Advanced",
+    duration: "6 weeks",
+    teacher: "Eftychia Karamanou",
+    shortDescription: "Diagnose, monitor, and resolve network performance issues.",
+    description: "This advanced course focuses on identifying, analyzing, and resolving common network problems in real-world environments. Students will learn systematic troubleshooting methodologies and how to use monitoring tools to observe network performance and detect anomalies. Topics include latency, packet loss, bandwidth analysis, log inspection, and fault isolation. The course also introduces proactive monitoring strategies that help prevent issues before they impact users. Through realistic scenarios and guided exercises, students will develop the skills needed to maintain stable and efficient network infrastructures. By the end of the course, students will be able to diagnose network issues and apply effective remediation techniques.",
+    learningOutcomes: [
+      "Apply structured troubleshooting methodologies",
+      "Monitor network performance metrics",
+      "Identify causes of network failures",
+      "Resolve connectivity and performance issues"
+    ],
+    topics: ["Network Monitoring", "Troubleshooting", "Logs", "Performance Metrics", "Fault Isolation"],
+    prerequisites: ["Network Administration & Security"],
+    recommended: true,
+    //image: "assets/img/thumbnails/network-troubleshooting.png",
+    teacherImage: "assets/img/people/eftychiakaramanou.jpg"
+  },
   /* -------------------- CYBERSECURITY -------------------- */
   {
-    id: 6,
+    id: 11,
     title: "Cybersecurity Essentials",
     category: "Cybersecurity",
     level: "Intermediate",
@@ -129,7 +235,7 @@ window.courses = [
     teacherImage: "assets/img/people/sophiaanagnostou.jpg"
   },
   {
-    id: 7,
+    id: 12,
     title: "Ethical Hacking & Penetration Testing",
     category: "Cybersecurity",
     level: "Advanced",
@@ -149,9 +255,51 @@ window.courses = [
     image: "assets/img/thumbnails/hacking.png",
     teacherImage: "assets/img/people/andreaskonstantinou.jpg"
   },
+  {
+    id: 13,
+    title: "Digital Forensics Fundamentals",
+    category: "Cybersecurity",
+    level: "Intermediate",
+    duration: "6 weeks",
+    teacher: "Nikos Theodorou",
+    shortDescription: "Learn how digital evidence is collected and analyzed.",
+    description: "This course introduces the core principles and practices of digital forensics, focusing on how digital evidence is identified, preserved, and analyzed during cybersecurity investigations. Students will explore the forensic process, including evidence handling, chain of custody, and analysis techniques for computers, storage devices, and basic network data. The course emphasizes legal and ethical considerations while demonstrating how forensic methods are applied in incident response and investigations. Through realistic scenarios and guided examples, students will gain insight into how forensic professionals reconstruct events and support security decision-making. By the end of the course, students will understand the role of digital forensics in cybersecurity and be able to explain fundamental investigation techniques.",
+    learningOutcomes: [
+      "Understand digital forensics principles",
+      "Identify and preserve digital evidence",
+      "Explain forensic investigation workflows",
+      "Recognize legal and ethical constraints"
+    ],
+    topics: ["Digital Evidence", "Forensics Process", "Chain of Custody", "Incident Analysis"],
+    prerequisites: ["Cybersecurity Essentials"],
+    recommended: false,
+    //image: "assets/img/thumbnails/digital-forensics.png",
+    teacherImage: "assets/img/people/nikostheodorou.jpg"
+  },
+  {
+    id: 14,
+    title: "Security Operations & Incident Response",
+    category: "Cybersecurity",
+    level: "Advanced",
+    duration: "7 weeks",
+    teacher: "Eirini Papakonstantinou",
+    shortDescription: "Detect, analyze, and respond to cybersecurity incidents.",
+    description: "This advanced course focuses on the operational side of cybersecurity, teaching students how organizations detect, analyze, and respond to security incidents in real time. Students will learn about Security Operations Centers (SOCs), monitoring strategies, alert triage, and incident response frameworks. The course covers the full incident lifecycle, from detection and containment to eradication and recovery, as well as post-incident analysis and reporting. Through realistic scenarios and case-based learning, students will gain insight into how security teams coordinate responses to threats and minimize impact. By the end of the course, students will be able to explain SOC operations and apply structured incident response procedures in modern security environments.",
+    learningOutcomes: [
+      "Understand SOC operations",
+      "Analyze security alerts and incidents",
+      "Apply incident response frameworks",
+      "Coordinate containment and recovery actions"
+    ],
+    topics: ["SOC", "Incident Response", "Threat Detection", "Security Monitoring", "Response Frameworks"],
+    prerequisites: ["Ethical Hacking & Penetration Testing"],
+    recommended: true,
+    //image: "assets/img/thumbnails/incident-response.png",
+    teacherImage: "assets/img/people/eirinipapakonstantinou.jpg"
+  },
   /* -------------------- DATABASES -------------------- */
   {
-    id: 8,
+    id: 15,
     title: "Databases & SQL Fundamentals",
     category: "Databases",
     level: "Beginner",
@@ -172,7 +320,7 @@ window.courses = [
     teacherImage: "assets/img/people/elenistavrou.jpg"
   },
   {
-    id: 9,
+    id: 16,
     title: "Database Design & Optimization",
     category: "Databases",
     level: "Intermediate",
@@ -193,7 +341,7 @@ window.courses = [
   },
   /* -------------------- AI & DATA -------------------- */
   {
-    id: 10,
+    id: 17,
     title: "Introduction to Artificial Intelligence",
     category: "Artificial Intelligence",
     level: "Intermediate",
@@ -214,7 +362,7 @@ window.courses = [
     teacherImage: "assets/img/people/georgeioannou.jpg"
   },
   {
-    id: 11,
+    id: 18,
     title: "Machine Learning Fundamentals",
     category: "Artificial Intelligence",
     level: "Intermediate",
