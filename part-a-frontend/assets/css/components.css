@@ -214,8 +214,7 @@
     --sidebar-pad-x: 1.2rem;
     border-radius: 18px;
     box-shadow: 0 22px 48px rgba(0, 0, 0, 0.16), 0 8px 20px rgba(0, 0, 0, 0.12);
-    padding: 1.8rem 1.8rem;
-    position: sticky;
+    padding: 1.8rem;
     padding-top: 1rem;
     padding-bottom: 2.4rem;
 }

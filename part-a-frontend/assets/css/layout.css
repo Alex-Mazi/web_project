@@ -450,7 +450,6 @@ label {
 
     .course-right {
         order: 2;
-        position: sticky;
     }
 
     #course-outcomes {
@@ -479,6 +478,13 @@ label {
     .mobile-related-panel .book-recommendations {
         display: block;
         margin-top: 0;
+    }
+
+    .course-right.sidebar-card {
+        position: static;
+        top: auto;
+        max-height: none;
+        overflow: visible;
     }
 
 }
@@ -534,10 +540,10 @@ label {
     }
 
     .course-meta {
-        flex: 1 1 auto;     /* toggle-safe */
-        max-width: 560px;   /* controls line length like your working version */
+        flex: 1 1 auto;     
+        max-width: 560px;   
         width: 100%;
-        min-width: 0;       /* CRITICAL for flex items to allow wrapping */
+        min-width: 0;      
         text-align: left;
         margin: 0 auto;
     }
@@ -566,9 +572,8 @@ label {
 
     .course-right {
         order: initial;
-        top: 4.5rem;
-        align-self: stretch;
-        padding-top: 0.3rem;
+        align-self: start; 
+        margin-top: 2rem;
     }
 
     .section-hint {
@@ -583,6 +588,15 @@ label {
     .course-sidebar {
         display: flex;
         flex-direction: column;
+    }
+
+    .course-right.sidebar-card {
+        position: sticky;
+        top: 4.2rem;
+        align-self: start;
+        max-height: calc(100vh - 6.5rem);
+        overflow-y: visible;
+        max-height: none;
     }
 
 }
@@ -640,7 +654,6 @@ label {
     }
 
     .course-right {
-        align-self: stretch;
         margin-left: 3rem;
     }
 
@@ -676,7 +689,6 @@ label {
 
     .course-right {
         max-width: 360px;
-        align-self: stretch;
     }
 
     .book-recommendations {
