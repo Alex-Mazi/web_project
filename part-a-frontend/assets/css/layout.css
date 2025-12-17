@@ -599,6 +599,15 @@ label {
         max-height: none;
     }
 
+    .related-carousel .course-card {
+        aspect-ratio: auto;
+    }
+
+    .related-carousel .course-card img {
+        height: auto;
+        max-height: 140px;
+    }
+
 }
 
 @media (min-width: 900px) {

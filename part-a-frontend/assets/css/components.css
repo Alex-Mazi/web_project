@@ -276,7 +276,7 @@
 }
 
 .books-carousel .course-card img {
-    height: auto;              /* 🔑 override height: 80% */
+    height: auto;             
     max-height: none;
     flex: 1 1 auto;
 

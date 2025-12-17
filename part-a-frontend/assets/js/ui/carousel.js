@@ -104,5 +104,3 @@ window.initCarousel = function initCarousel(carouselElement, items, createCardFn
     update();
 };
 
-
-
