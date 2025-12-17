@@ -1,3 +1,6 @@
+let originalRelatedParent = null;
+let originalRelatedNextSibling = null;
+
 function getCourseIdFromURL() {
     const params = new URLSearchParams(window.location.search);
     return parseInt(params.get("id"), 10);
@@ -42,12 +45,13 @@ function renderCourseDetails(course) {
             teacherImageEl.src = course.teacherImage;
             teacherImageEl.alt = course.teacher;
         } else {
-            teacherImageEl.src = "assets/img/thumbnails/default-course.png";
+            teacherImageEl.src = "assets/img/people/default-teacher.png";
             teacherImageEl.alt = "Instructor";
         }
     }
 
     const outcomesList = document.getElementById("outcomes-list");
+    outcomesList.innerHTML = "";
     course.learningOutcomes.forEach(outcome => {
         const li = document.createElement("li");
         li.textContent = outcome;
@@ -55,6 +59,7 @@ function renderCourseDetails(course) {
     });
 
     const topicsContainer = document.getElementById("topics-container");
+    topicsContainer.innerHTML = "";
     course.topics.forEach(topic => {
         const span = document.createElement("span");
         span.classList.add("topic-tag");
@@ -85,29 +90,48 @@ document.addEventListener("DOMContentLoaded", () => {
     const course = findCourseById(courseId);
 
     renderCourseDetails(course);
+    if (!course) return;
+
     renderFacts(course);
     renderBookRecommendations(course);
     setupMobileRelated(course);
-    renderRelatedCoursesCarousel(course);
+
+    requestAnimationFrame(() => {
+        renderRelatedCoursesCarousel(course);
+    });
+
     setupMobileRelatedTabs();
 });
 
-function renderRelatedCoursesCarousel(currentCourse) {
+
+function renderRelatedCoursesCarousel(currentCourse, attempts = 0) {
+    if (!currentCourse) return;
+
     const carousel = document.querySelector("#related-courses .carousel");
     if (!carousel) return;
+
+    if (carousel.offsetWidth === 0) {
+        if (attempts < 10) {
+            requestAnimationFrame(() =>
+                renderRelatedCoursesCarousel(currentCourse, attempts + 1)
+            );
+        }
+        return;
+    }
 
     const relatedCourses = courses.filter(course =>
         course.category === currentCourse.category &&
         course.id !== currentCourse.id
     );
 
-    if (relatedCourses.length === 0) {
+    if (!relatedCourses.length) {
         carousel.style.display = "none";
         return;
     }
 
     initCarousel(carousel, relatedCourses);
 }
+
 
 function renderFacts(course) {
     const durationEl = document.getElementById("fact-duration");
@@ -181,10 +205,22 @@ function setupMobileRelated(currentCourse) {
     const mobileContainer = document.querySelector(".mobile-related-body");
     if (!mobileContainer) return;
 
-    if (window.innerWidth > 599) return;
-
     const relatedCoursesSection = document.getElementById("related-courses");
     const booksSection = document.querySelector(".book-recommendations");
+
+    if (window.innerWidth > 599) {
+        restoreDesktopRelated();
+        return;
+    }
+
+    // 🔐 Save original position ONCE
+    if (!originalRelatedParent && relatedCoursesSection) {
+        originalRelatedParent = relatedCoursesSection.parentElement;
+        originalRelatedNextSibling = relatedCoursesSection.nextElementSibling;
+    }
+
+    // Avoid duplicate moves
+    if (mobileContainer.contains(relatedCoursesSection)) return;
 
     if (relatedCoursesSection) {
         const coursesWrapper = document.createElement("div");
@@ -194,44 +230,61 @@ function setupMobileRelated(currentCourse) {
         mobileContainer.appendChild(coursesWrapper);
     }
 
-    if (booksSection) {
+    if (booksSection && !mobileContainer.querySelector('[data-type="books"]')) {
         const booksWrapper = document.createElement("div");
         booksWrapper.classList.add("mobile-related-panel", "content-card", "highlight-card");
         booksWrapper.dataset.type = "books";
 
-        // ✅ Title (same as related courses)
         const title = document.createElement("h3");
         title.className = "section-title";
         title.textContent = "BOOK RECOMMENDATIONS";
 
-        // ✅ Hint (same styling as related courses)
         const hint = document.createElement("p");
         hint.className = "section-hint";
         hint.textContent = "Books that complement this course";
 
         const carousel = document.createElement("div");
         carousel.className = "carousel books-carousel";
-
         carousel.innerHTML = `
-        <div class="carousel-track"></div>
-        <button class="carousel-btn prev" aria-label="Previous book">‹</button>
-        <button class="carousel-btn next" aria-label="Next book">›</button>
-    `;
+            <div class="carousel-track"></div>
+            <button class="carousel-btn prev">‹</button>
+            <button class="carousel-btn next">›</button>
+        `;
 
-        booksWrapper.appendChild(title);
-        booksWrapper.appendChild(hint);
-        booksWrapper.appendChild(carousel);
-
+        booksWrapper.append(title, hint, carousel);
         mobileContainer.appendChild(booksWrapper);
 
         const relatedBooks = getRelatedBooks(currentCourse);
         if (relatedBooks.length) {
-            initCarousel(carousel, relatedBooks, createBookCard);
+            requestAnimationFrame(() => {
+                initCarousel(carousel, relatedBooks, createBookCard);
+            });
         }
     }
-
-
 }
+
+function restoreDesktopRelated() {
+    const relatedCoursesSection = document.getElementById("related-courses");
+    const mobileContainer = document.querySelector(".mobile-related-body");
+
+    if (!originalRelatedParent || !relatedCoursesSection) return;
+
+    // Move section back to original place
+    if (originalRelatedNextSibling) {
+        originalRelatedParent.insertBefore(
+            relatedCoursesSection,
+            originalRelatedNextSibling
+        );
+    } else {
+        originalRelatedParent.appendChild(relatedCoursesSection);
+    }
+
+    // Remove mobile wrappers
+    if (mobileContainer) {
+        mobileContainer.innerHTML = "";
+    }
+}
+
 
 function setupMobileRelatedTabs() {
     const tabs = document.querySelectorAll(".mobile-related-tab");
@@ -258,7 +311,20 @@ function setupMobileRelatedTabs() {
     });
 }
 
+let resizeTimeout;
 
+window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+
+    resizeTimeout = setTimeout(() => {
+        const courseId = getCourseIdFromURL();
+        const course = findCourseById(courseId);
+        if (!course) return;
+
+        setupMobileRelated(course);
+        setupMobileRelatedTabs(); 
+    }, 150);
+});
 
 
 

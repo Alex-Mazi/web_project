@@ -92,7 +92,6 @@ footer {
 
 .carousel-track {
     display: flex;
-    overflow: hidden;
     gap: 1rem;
     padding: 0 2rem;
     box-sizing: border-box;
@@ -204,6 +203,8 @@ label {
 }
 
 #course-title {
+    line-height: 1.25;
+  overflow-wrap: anywhere;
     margin-bottom: 0.3rem;
 }
 
@@ -533,7 +534,12 @@ label {
     }
 
     .course-meta {
+        flex: 1 1 auto;     /* toggle-safe */
+        max-width: 560px;   /* controls line length like your working version */
+        width: 100%;
+        min-width: 0;       /* CRITICAL for flex items to allow wrapping */
         text-align: left;
+        margin: 0 auto;
     }
 
     .instructor {

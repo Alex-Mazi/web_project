@@ -48,23 +48,61 @@ window.initCarousel = function initCarousel(carouselElement, items, createCardFn
     if (!track || !prevBtn || !nextBtn) return;
 
     track.innerHTML = "";
+    items.forEach(item => track.appendChild(createCardFn(item)));
 
-    items.forEach(item => {
-        track.appendChild(createCardFn(item));
-    });
+    let index = 0;
+    let maxIndex = 0;
 
-    function getScrollAmount() {
+    track.style.transition = "transform 0.35s ease";
+    track.style.willChange = "transform";
+
+    function getMetrics() {
         const card = track.querySelector(".course-card");
-        if (!card) return 200;
+        if (!card) return null;
 
-        const gap = parseInt(getComputedStyle(track).gap || 16);
-        return card.offsetWidth + gap;
+        const styles = getComputedStyle(track);
+        const gap = parseFloat(styles.gap) || 16;
+
+        const cardWidth = card.getBoundingClientRect().width + gap;
+        const viewportWidth = carouselElement.getBoundingClientRect().width;
+
+        const visibleCards = Math.floor(viewportWidth / cardWidth) || 1;
+        maxIndex = Math.max(items.length - visibleCards, 0);
+
+        return cardWidth;
     }
 
-    nextBtn.onclick = () =>
-        track.scrollBy({ left: getScrollAmount(), behavior: "smooth" });
+    function update() {
+        const cardWidth = getMetrics();
+        if (!cardWidth) return;
 
-    prevBtn.onclick = () =>
-        track.scrollBy({ left: -getScrollAmount(), behavior: "smooth" });
+        index = Math.max(0, Math.min(index, maxIndex));
+        track.style.transform = `translateX(-${index * cardWidth}px)`;
+    }
+
+    nextBtn.addEventListener("click", () => {
+        if (index < maxIndex) {
+            index++;
+            update();
+        }
+    });
+
+    prevBtn.addEventListener("click", () => {
+        if (index > 0) {
+            index--;
+            update();
+        }
+    });
+
+    const observer = new ResizeObserver(() => {
+        index = 0;
+        update();
+    });
+
+    observer.observe(carouselElement);
+
+    update();
 };
+
+
 
