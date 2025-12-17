@@ -196,27 +196,40 @@ function setupMobileRelated(currentCourse) {
 
     if (booksSection) {
         const booksWrapper = document.createElement("div");
-        booksWrapper.classList.add("mobile-related-panel");
+        booksWrapper.classList.add("mobile-related-panel", "content-card", "highlight-card");
         booksWrapper.dataset.type = "books";
+
+        // ✅ Title (same as related courses)
+        const title = document.createElement("h3");
+        title.className = "section-title";
+        title.textContent = "BOOK RECOMMENDATIONS";
+
+        // ✅ Hint (same styling as related courses)
+        const hint = document.createElement("p");
+        hint.className = "section-hint";
+        hint.textContent = "Books that complement this course";
 
         const carousel = document.createElement("div");
         carousel.className = "carousel books-carousel";
 
         carousel.innerHTML = `
         <div class="carousel-track"></div>
-        <button class="carousel-btn prev">‹</button>
-        <button class="carousel-btn next">›</button>
+        <button class="carousel-btn prev" aria-label="Previous book">‹</button>
+        <button class="carousel-btn next" aria-label="Next book">›</button>
     `;
 
+        booksWrapper.appendChild(title);
+        booksWrapper.appendChild(hint);
         booksWrapper.appendChild(carousel);
+
         mobileContainer.appendChild(booksWrapper);
 
         const relatedBooks = getRelatedBooks(currentCourse);
-
         if (relatedBooks.length) {
             initCarousel(carousel, relatedBooks, createBookCard);
         }
     }
+
 
 }
 

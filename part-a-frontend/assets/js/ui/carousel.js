@@ -4,7 +4,7 @@
 
 function createCourseCard(course) {
     const card = document.createElement("a");
-    card.classList.add("course-card");
+    card.classList.add("course-card", "course");
     card.href = `course-details.html?id=${course.id}`;
 
     const imgSrc = course.image || "assets/img/thumbnails/default-course.png";
@@ -19,7 +19,7 @@ function createCourseCard(course) {
 
 function createBookCard(book) {
     const card = document.createElement("a");
-    card.classList.add("course-card"); // reuse same styling
+    card.classList.add("course-card", "book"); // reuse same styling
     card.href = book.amazon_link;
     card.target = "_blank";
     card.rel = "noopener";

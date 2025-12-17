@@ -49,9 +49,6 @@ footer {
 
 /* ===== INDEX INTRO ====== */
 #intro {
-    width: 92%;               
-    max-width: 850px;         
-    padding: 1.5rem 1.2rem;
     background: #ffffff;
     border-radius: 14px;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
@@ -63,15 +60,11 @@ footer {
 #intro h3 {
     font-size: 1.4rem;
     text-align: center;
-    position: relative;
 }
 
 #intro h3::after {
     content: "";
-    width: 50px;
-    height: 3px;
     background-color: #A05C70;
-    display: block;
     border-radius: 2px;
 }
 
@@ -114,23 +107,17 @@ footer {
     box-shadow: 0 0 12px rgba(128, 0, 32, 0.25);
 }
 
-.course-card * {
-    text-decoration: none;
-}
-
 .course-card *:focus {
     outline: none;
 }
 
 .course-card h4 {
     color: black;
-    position: relative;
-    display: inline-block;
-    padding-bottom: 0.2rem;
     text-decoration-line: underline;
     text-decoration-color: rgb(22, 0, 0); 
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
+    font-size: 0.9rem;
 }
 
 .carousel-btn {
@@ -156,13 +143,7 @@ footer {
 
 .course-card img {
     width: 100%;
-    height: 100px;
     object-fit: cover;
-}
-
-.course-card h4 {
-    font-size: 0.9rem;
-    padding: 0.5rem;
 }
 /* ======================== */
 
@@ -200,7 +181,6 @@ footer {
 label {
     font-weight: bold;
     color: #333;
-    display: block;
 }
 /* ======================== */
 
@@ -210,8 +190,6 @@ input[type="email"],
 input[type="password"],
 input[type="date"],
 textarea {
-    width: 100%;
-    padding: 0.6rem;
     border-radius: 8px;
     border: 1px solid #ccc;
     font-size: 1rem;
@@ -227,19 +205,12 @@ input:focus {
 
 /* ==== REGISTER CARD ===== */
 .card-item {
-    display: flex;
     align-items: center;
     justify-content: flex-start;
     text-align: left;
     background: #f8f8f8;
-    padding: 0.6rem 0.7rem;
     border-radius: 0.6rem;
     box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.08);
-
-    width: 100%;
-    box-sizing: border-box;
-    gap: 0.5rem;
-
     cursor: pointer;
 }
 
@@ -255,47 +226,28 @@ input:focus {
 .card-item .label-text {
     font-weight: 600;
     color: #333;
-    flex: 1 1 auto;
     white-space: normal;
     text-align: left;
     word-break: break-word;
-    text-overflow: ellipsis;
-    overflow: hidden;
 }
 /* ======================== */
 
 /* == REGISTER INTERESTS == */
 .checkboxes label {
-    display: flex;
     align-items: center;
-}
-
-.checkboxes label {
     background: #f8f8f8;
     border-radius: 0.6rem;
-    padding: 0.6rem 0.7rem;
     box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.08);
-    width: 100%;
-    box-sizing: border-box;
-    gap: 0.5rem;
 }
 /* ======================== */
 
 /* === REGISTER COURSES === */
 .course-item {
-    display: flex;
     align-items: center;
     justify-content: space-between;
-
     background: #f8f8f8;
-    padding: 0.6rem 0.7rem;
     border-radius: 0.6rem;
     box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.08);
-
-    width: 100%;
-    box-sizing: border-box;
-
-    gap: 0.5rem;
 }
 
 .course-item:hover {
@@ -303,19 +255,10 @@ input:focus {
 }
 
 .course-item label {
-    display: flex;
     align-items: center;
-    gap: 0.5rem;
-    margin: 0;
-    flex: 1 1 auto;
 }
 
 .experience-dropdown {
-    flex: 0 0 auto;
-    min-width: 30%;
-    max-width: 50%;
-    padding: 0.2rem;
-
     border-radius: 6px;
     border: 1px solid #ccc;
     background: #f0f0f0;
@@ -342,15 +285,12 @@ input.invalid {
 
 /* ==== REGISTER SUBMIT === */
 #register-btn {
-    width: 100%;
-    padding: 0.7rem;
     background-color: #800020;
     border: none;
     border-radius: 8px;
     color: #f0eee9;
     font-size: 1rem;
     cursor: pointer;
-    margin-top: 1rem;
 }
 
 #register-btn:hover {
@@ -360,9 +300,7 @@ input.invalid {
 
 /* === REGISTER SUMMARY === */
 #summary {
-    margin-top: 2rem;
     background: #ffffff;
-    padding: 1rem;
     border-radius: 12px;
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
 }
@@ -381,8 +319,6 @@ input.invalid {
 
 /* ==== COURSE DETAILS ==== */
 #course-category {
-    display: inline-block;
-    padding: 0.3rem 0.6rem;
     border-radius: 999px;
     background: #f0eee9;
     color: #800020;
@@ -393,19 +329,27 @@ input.invalid {
     text-align: center;
 }
 
+.hero-visual {
+    background: #f0eee9;
+    border-radius: 12px;
+    align-items: center;
+    justify-content: center;
+}
+
+#course-hero img {
+    object-fit: contain;
+}
 #course-title {
     font-size: 1.6rem;
 }
 
 #course-description {
-    padding-top: 0.5rem;
     border-top: 1px solid #ddd;
-    padding-bottom: 0.5rem;
     border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
 .content-card h3, .section-title {
-    padding-top: 0rem;
+    padding-top: 0;
     color: #440213;
     border-top: none;
     text-align: left;
@@ -440,7 +384,7 @@ input.invalid {
 }
 
 .content-card {
-    margin: 0rem;
+    margin: 0;
 }
 
 .highlight-card {
@@ -471,6 +415,11 @@ input.invalid {
     text-align: center;
 }
 
+#course-outcomes li {
+    text-align: justify;
+    line-height: 1.5;
+}
+
 #course-outcomes li + li {
     border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
@@ -493,5 +442,97 @@ input.invalid {
     gap: 0.4rem;
     margin-left: 0.6rem;
     margin-right: 0.6rem;
+}
+
+.instructor-info {
+    align-items: center;
+}
+
+.instructor-info img {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#teacher-name {
+    font-weight: 600;
+    color: #800020;
+}
+
+.teacher-role {   
+    font-size: 0.8rem;
+    color: #777;
+    text-align: left;        
+}
+
+.book-cover {
+    object-fit: contain;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.book-card:hover .book-cover {
+    transform: scale(1.12);
+}
+
+.book-card {
+    transition: background-color 0.2s ease;
+}
+
+.book-card:hover {
+    background-color: rgba(248, 119, 145, 0.06);
+}
+
+.book-recommendations li {
+    border-radius: 8px;
+    background: var(--surface-soft);
+}
+
+.book-card a {
+    align-items: center;
+    text-align: left;
+    text-decoration: none;
+    color: inherit;
+}
+
+.book-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.book-author {
+    font-size: 0.75rem;
+    color: #800020;
+    opacity: 0.85;
+}
+
+.mobile-related-header {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.mobile-related-tab {
+    background: none;
+    border: none;
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: #777;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.mobile-related-tab.active {
+    color: #800020;
+    font-weight: 600;
+    border-bottom: 2px solid #800020;
+}
+
+.mobile-related-panel {
+    opacity: 0;
+    transform: translateX(6px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.mobile-related-panel.active {
+    opacity: 1;
+    transform: translateX(0);
 }
 /* ======================== */
