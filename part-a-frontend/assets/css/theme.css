@@ -12,6 +12,7 @@ body {
     background-color: #F0EEE9;
     font-family: 'Source Sans Pro', sans-serif;
     color: #333333;
+    text-align: center;
 }
 /* ======================== */
 
@@ -28,6 +29,7 @@ footer {
 #side-menu {
     background-color: #800020;
     color: #F0EEE9;
+    transition: left 0.3s ease;
 }
 
 #side-menu a {
@@ -48,10 +50,7 @@ footer {
 /* ======================== */
 
 /* ===== INDEX INTRO ====== */
-#intro {
-    width: 92%;               
-    max-width: 850px;         
-    padding: 1.5rem 1.2rem;
+#intro {         
     background: #ffffff;
     border-radius: 14px;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
@@ -63,7 +62,6 @@ footer {
 #intro h3 {
     font-size: 1.4rem;
     text-align: center;
-    position: relative;
 }
 
 #intro h3::after {
@@ -71,7 +69,6 @@ footer {
     width: 50px;
     height: 3px;
     background-color: #A05C70;
-    display: block;
     border-radius: 2px;
 }
 
@@ -132,8 +129,8 @@ footer {
     text-decoration-color: rgb(22, 0, 0); 
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
-    display: block;              /* 🔑 not inline-block */
-    white-space: normal;         /* allow wrapping */
+    display: block;              
+    white-space: normal;        
     word-break: break-word;
     line-height: 1.25;
     text-align: center;
@@ -236,11 +233,9 @@ input:focus {
     padding: 0.6rem 0.7rem;
     border-radius: 0.6rem;
     box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.08);
-
     width: 100%;
     box-sizing: border-box;
     gap: 0.5rem;
-
     cursor: pointer;
 }
 
@@ -287,15 +282,12 @@ input:focus {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     background: #f8f8f8;
     padding: 0.6rem 0.7rem;
     border-radius: 0.6rem;
     box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.08);
-
     width: 100%;
     box-sizing: border-box;
-
     gap: 0.5rem;
 }
 
@@ -316,7 +308,6 @@ input:focus {
     min-width: 30%;
     max-width: 50%;
     padding: 0.2rem;
-
     border-radius: 6px;
     border: 1px solid #ccc;
     background: #f0f0f0;
@@ -476,6 +467,11 @@ input.invalid {
     text-align: center;
 }
 
+#course-outcomes li {
+    text-align: justify;
+    line-height: 1.5;
+}
+
 #course-outcomes li + li {
     border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
@@ -498,5 +494,116 @@ input.invalid {
     gap: 0.4rem;
     margin-left: 0.6rem;
     margin-right: 0.6rem;
+}
+
+.hero-visual {
+    background: #f0eee9;
+    border-radius: 12px;
+}
+
+.instructor-info img {
+    background: #f0eee9;
+}
+
+#teacher-name {
+    font-weight: 600;
+    color: #800020;
+}
+
+.teacher-role {        
+    font-size: 0.8rem;
+    color: #777;
+    text-align: left;        
+}
+
+.book-cover {
+    transition: transform 0.2s ease;
+}
+
+.book-card:hover .book-cover {
+    transform: scale(1.12);
+}
+
+.book-card {
+    transition: background-color 0.2s ease;
+}
+
+.book-card:hover {
+    background-color: rgba(248, 119, 145, 0.06);
+}
+
+.book-recommendations li {
+    background: var(--surface-soft);
+}
+
+.book-card a {
+    text-align: left;
+    text-decoration: none;
+    color: inherit;
+}
+
+.book-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.book-author {
+    font-size: 0.75rem;
+    color: #800020;
+    opacity: 0.85;
+}
+
+.mobile-related-tab {
+    background: none;
+    border: none;
+    font-size: 0.85rem;
+    color: #777;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.mobile-related-tab.active {
+    color: #800020;
+    font-weight: 600;
+}
+
+.mobile-related-panel {
+    opacity: 0;
+    transform: translateX(6px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.mobile-related-panel.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+/* ======================== */
+
+/* ======== ABOUT ========= */
+#about-wrapper {
+  background: #ffffff;
+}
+
+#about-container {
+  text-align: left;
+}
+
+.about-section h2 {
+  color: #800020;
+  font-family: "Bodoni* 11";
+}
+
+.about-section p {
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.mission-list li {
+  color: #333;
+  font-weight: 500;
+}
+
+.office-info {
+  background: rgba(0, 0, 0, 0.08);
 }
 /* ======================== */
