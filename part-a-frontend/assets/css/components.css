@@ -10,7 +10,6 @@
   padding: 1rem 1.5rem;
   text-align: left;
 }
-
 /* ======================== */
 
 /* ========= DIM ========== */
@@ -18,8 +17,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100dvw;
-  height: 100dvh;
+  width: 100%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.45);
   opacity: 0;
   pointer-events: none;
@@ -31,57 +30,12 @@
   opacity: 1;
   pointer-events: auto;
 }
-
 /* ======================== */
 
 /* == INDEX REC_COURSES === */
 #recommended-courses h3 {
   border-bottom: 2px solid #ccc;
   margin: 0.2rem 0 0.5rem 0;
-}
-
-.course-card {
-  flex: 0 0 260px;
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-.course-card img {
-  width: 100%;
-  height: 120px;       
-  object-fit: contain;   
-  background: #ffffff;
-  padding: 0.5rem;
-}
-
-.course-card h4 {
-  padding: 0.6rem;
-  font-size: 0.85rem;
-  line-height: 1.2;
-  text-align: center;
-}
-
-.carousel-card {
-  flex: 0 0 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  aspect-ratio: 4 / 3;
-  background-color: #ffffff;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: box-shadow 0.15s ease, transform 0.15s ease;
-}
-
-.carousel-card.course img {
-  width: 100%;
-  height: 80%;
-  object-fit: cover;
 }
 
 .carousel-btn {
@@ -101,13 +55,6 @@
 .carousel-btn.next {
   right: 0rem;
 }
-
-.course-card img {
-  width: 100%;
-  border-radius: 0;
-  flex-shrink: 0;
-}
-
 /* ======================== */
 
 /* === INDEX CATEGORIES === */
@@ -648,5 +595,4 @@
 .courses-grid.list-view .course-link {
   text-align: left;
 }
-
 /* ======================== */

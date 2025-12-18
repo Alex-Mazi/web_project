@@ -8,30 +8,23 @@
 //create course card for index and course-details carousels
 function createCourseCard(course) {
     const card = document.createElement("a");
-    card.classList.add("course-card", "course");
+    card.classList.add("carousel-course-card", "course");
     card.href = `course-details.html?id=${course.id}`;
 
     const imgSrc = course.image || "assets/img/thumbnails/default-course.png";
 
     card.innerHTML = `
-        <div class="course-card__image2">
-            <img
-                src="${imgSrc}"
-                srcset="
-                    ${imgSrc} 320w,
-                    ${imgSrc} 640w,
-                    ${imgSrc} 960w
-                "
-                sizes="(max-width: 600px) 90vw, (max-width: 1024px) 45vw, 300px"
-                alt="${course.title}"
-                loading="lazy"
-                decoding="async"
-            >
-        </div>
+        <img
+            src="${imgSrc}"
+            alt="${course.title}"
+            loading="lazy"
+            decoding="async"
+        >
         <h4>${course.title}</h4>
     `;
 
     return card;
+    
 }
 
 //creation of book card for the course-details carousel
@@ -70,7 +63,7 @@ window.initCarousel = function initCarousel(carouselElement, items, createCardFn
     track.style.willChange = "transform";
 
     function getMetrics() {
-        const card = track.querySelector(".course-card");
+        const card = track.querySelector(".carousel-course-card");
         if (!card) return null;
 
         const styles = getComputedStyle(track);
