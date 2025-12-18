@@ -1,245 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>About Us - IT Library</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="assets/css/reset.css" />
-    <link rel="stylesheet" href="assets/css/theme.css" />
-    <link rel="stylesheet" href="assets/css/layout.css" />
-    <link rel="stylesheet" href="assets/css/components.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/main.min.css"
-      rel="stylesheet"
-    />
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.js"
-    ></script>
-    <script defer src="assets/js/ui/modal.js"></script>
-    <script defer src="assets/js/ui/calendar.js"></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/main.min.css"
-      rel="stylesheet"
-    />
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
 
-  <body>
-    <header>
-      <button id="menu-btn">☰</button>
-      <h1>IT LIBRARY</h1>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <title>About Us - IT Library</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- CSS-->
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
 
-    <nav id="side-menu">
-      <a href="index.html">Home</a>
-      <a href="courses.html">Courses</a>
-      <a href="books.html">Books</a>
-      <a href="about.html">About</a>
-      <a href="register.html">Register</a>
-    </nav>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Lexend:wght@100..900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
 
-    <div id="overlay"></div>
-    <main>
-      <div id="about-wrapper">
-        <div class="about-carousel">
-          <div class="about-carousel-track">
-            <div class="about-carousel-slide">
-              <img
-                src="assets/img/about/vecteezy_abstract-modern-tech-of-programming-code-screen-developer_6222102.jpg"
-                alt=""
-              />
-            </div>
-            <div class="about-carousel-slide">
-              <img
-                src="assets/img/about/group-young-business-people-working-office.jpg"
-                alt=""
-              />
-            </div>
-            <div class="about-carousel-slide">
-              <img
-                src="assets/img/about/two-business-people-standing-server-room-with-laptop-discussing.jpg"
-                alt=""
-              />
-            </div>
-            <div class="about-carousel-slide">
-              <img
-                src="assets/img/about/woman-taking-e-learning-courses.jpg"
-                alt=""
-              />
-            </div>
+  <!-- Celendar & Scripts-->
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/main.min.css" rel="stylesheet" />
+  <script defer src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.js"></script>
+  <script defer src="assets/js/ui/modal.js"></script>
+  <script defer src="assets/js/ui/calendar.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/main.min.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <header>
+    <button id="menu-btn">☰</button>
+    <h1>IT LIBRARY</h1>
+  </header>
+
+  <nav id="side-menu">
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="books.html">Books</a>
+    <a href="about.html">About</a>
+    <a href="register.html">Register</a>
+  </nav>
+
+  <div id="overlay"></div>
+  <main>
+    <div id="about-wrapper">
+      <div class="about-carousel">
+        <div class="about-carousel-track">
+          <div class="about-carousel-slide">
+            <img src="assets/img/about/vecteezy_abstract-modern-tech-of-programming-code-screen-developer_6222102.jpg"
+              alt="" />
+          </div>
+          <div class="about-carousel-slide">
+            <img src="assets/img/about/group-young-business-people-working-office.jpg" alt="" />
+          </div>
+          <div class="about-carousel-slide">
+            <img src="assets/img/about/two-business-people-standing-server-room-with-laptop-discussing.jpg" alt="" />
+          </div>
+          <div class="about-carousel-slide">
+            <img src="assets/img/about/woman-taking-e-learning-courses.jpg" alt="" />
           </div>
         </div>
+      </div>
 
-        <div class="about-grid">
-          <div class="col-left">
-            <section class="about-section">
-              <div class="events-info">
+      <div class="about-grid">
+        <div class="col-left">
+          <section class="about-section">
+            <div class="events-info">
               <h2>Upcoming Events</h2>
               <ul class="events-list">
                 <li><strong>Live Python Class</strong> — December 5th</li>
                 <li><strong>Frontend Workshop</strong> — December 12th</li>
                 <li><strong>AI Webinar</strong> — December 20th</li>
               </ul>
+            </div>
+          </section>
+
+          <section class="about-section">
+            <h2>Calendar</h2>
+            <div id="fullcalendar-container"></div>
+          </section>
+        </div>
+
+        <div class="col-center">
+          <section class="about-section">
+            <h2>About Us</h2>
+            <p>
+              IT Library is a student-driven platform dedicated to providing
+              accessible and high-quality learning resources to anyone
+              interested in computer science and technology. Founded in 2025
+              by Alexandra Mazi and Christina Perifana, the platform aims to
+              empower learners of all levels by curating a wide range of
+              courses, books, and practical resources.
+            </p>
+            <p>
+              Our team is passionate about making technology understandable
+              and fun for everyone. The rapid evolution of technology presents
+              challenges to self-taught learners, which is why we strive to
+              create a space where students can find clear learning pathways
+              and reliable recommendations. We believe that with the right
+              resources and support, anyone can develop the skills needed to
+              thrive in the tech world.
+            </p>
+          </section>
+
+          <section class="about-section">
+            <h2>Our Mission</h2>
+            <p>
+              Our mission is to make tech education more accessible by
+              providing free and affordable access to quality learning
+              materials. We are committed to fostering a supportive community
+              where learners can grow their skills, gain confidence, and
+              achieve their goals in the ever-changing field of technology.
+            </p>
+            <ul class="mission-list">
+              <li>
+                Accessible Education for All: We are dedicated to ensuring
+                everyone has access to quality learning resources.
+              </li>
+              <li>
+                Focus on Real-World Relevance: We ensure all content is
+                practical and directly applicable to industry needs.
+              </li>
+              <li>
+                Supportive Learning Community: We foster a collaborative
+                environment where learners can support each other and grow
+                together.
+              </li>
+            </ul>
+          </section>
+        </div>
+
+        <div class="col-right">
+          <section class="about-section">
+            <h2>Team Members</h2>
+
+            <div class="team-grid">
+              <div class="team-card clickable-card" data-member-id="christina">
+                <img src="assets/img/people/christina.jpg" class="team-photo" />
+                <h3>Christina Perifana</h3>
+                <p>Frontend Developer</p>
+
+                <span class="member-details-data" data-full-name="Christina Perifana" data-role="Frontend Developer"
+                  data-description="Christina focuses on creating clean, intuitive interfaces with a strong eye for detail. 
+                    She is passionate about user experience, responsive design, and bringing ideas to life through thoughtful interaction.">
+                </span>
               </div>
-            </section>
 
-            <section class="about-section">
-              <h2>Calendar</h2>
-              <div id="fullcalendar-container"></div>
-            </section>
-          </div>
+              <div class="team-card clickable-card" data-member-id="alexandra">
+                <img src="assets/img/people/alexandra.jpg" class="team-photo" />
+                <h3>Alexandra Mazi</h3>
+                <p>Backend Developer</p>
 
-          <div class="col-center">
-            <section class="about-section">
-              <h2>About Us</h2>
+                <span class="member-details-data" data-full-name="Alexandra Mazi" data-role="Backend Developer"
+                  data-description="Alexandra is dedicated to building reliable and efficient systems behind the scenes. 
+                    She focuses on clean, well-structured code and enjoys solving complex problems with elegant, maintainable solutions.">
+                </span>
+              </div>
+
+              <div class="team-card clickable-card" data-member-id="fifi">
+                <img src="assets/img/people/fifi.jpg" class="team-photo" />
+                <h3>Fifi</h3>
+                <p>Rubber Ducky</p>
+
+                <span class="member-details-data" data-full-name="Fifi" data-role="Rubber Ducky/Emotional Support"
+                  data-description="Fifi's role is crucial to the team. Rubber ducks are essential for debugging and providing silent, unwavering moral support during late-night coding sessions.
+                     She is the best listener on the team.">
+                </span>
+              </div>
+            </div>
+          </section>
+
+          <section class="about-section">
+            <div class="office-info">
+              <h2>📍Our Office</h2>
               <p>
-                IT Library is a student-driven platform dedicated to providing
-                accessible and high-quality learning resources to anyone
-                interested in computer science and technology. Founded in 2025
-                by Alexandra Mazi and Christina Perifana, the platform aims to
-                empower learners of all levels by curating a wide range of
-                courses, books, and practical resources.
+                <strong>Address: </strong>Athens University of Economics and
+                Business, Athens, Greece<br />
+                <strong>Phone: </strong>+30 210 1234567<br />
+                <strong>Email: </strong>info@mazi-perifana.com
               </p>
-              <p>
-                Our team is passionate about making technology understandable
-                and fun for everyone. The rapid evolution of technology presents
-                challenges to self-taught learners, which is why we strive to
-                create a space where students can find clear learning pathways
-                and reliable recommendations. We believe that with the right
-                resources and support, anyone can develop the skills needed to
-                thrive in the tech world.
-              </p>
-            </section>
-
-            <section class="about-section">
-              <h2>Our Mission</h2>
-              <p>
-                Our mission is to make tech education more accessible by
-                providing free and affordable access to quality learning
-                materials. We are committed to fostering a supportive community
-                where learners can grow their skills, gain confidence, and
-                achieve their goals in the ever-changing field of technology.
-              </p>
-              <ul class="mission-list">
-                <li>
-                  Accessible Education for All: We are dedicated to ensuring
-                  everyone has access to quality learning resources.
-                </li>
-                <li>
-                  Focus on Real-World Relevance: We ensure all content is
-                  practical and directly applicable to industry needs.
-                </li>
-                <li>
-                  Supportive Learning Community: We foster a collaborative
-                  environment where learners can support each other and grow
-                  together.
-                </li>
-              </ul>
-            </section>
-          </div>
-
-          <div class="col-right">
-            <section class="about-section">
-              <h2>Team Members</h2>
-
-              <div class="team-grid">
-                <div
-                  class="team-card clickable-card"
-                  data-member-id="christina"
-                >
-                  <img
-                    src="assets/img/people/christina.jpg"
-                    class="team-photo"
-                  />
-                  <h3>Christina Perifana</h3>
-                  <p>Frontend Developer</p>
-
-                  <span
-                    class="member-details-data"
-                    data-full-name="Christina Perifana"
-                    data-role="Frontend Developer"
-                    data-description="Christina focuses on creating clean, intuitive interfaces with a strong eye for detail. 
-                    She is passionate about user experience, responsive design, and bringing ideas to life through thoughtful interaction."
-                  >
-                  </span>
-                </div>
-
-                <div
-                  class="team-card clickable-card"
-                  data-member-id="alexandra"
-                >
-                  <img
-                    src="assets/img/people/alexandra.jpg"
-                    class="team-photo"
-                  />
-                  <h3>Alexandra Mazi</h3>
-                  <p>Backend Developer</p>
-
-                  <span
-                    class="member-details-data"
-                    data-full-name="Alexandra Mazi"
-                    data-role="Backend Developer"
-                    data-description="Alexandra is dedicated to building reliable and efficient systems behind the scenes. 
-                    She focuses on clean, well-structured code and enjoys solving complex problems with elegant, maintainable solutions."
-                  >
-                  </span>
-                </div>
-
-                <div class="team-card clickable-card" data-member-id="fifi">
-                  <img src="assets/img/people/fifi.jpg" class="team-photo" />
-                  <h3>Fifi</h3>
-                  <p>Rubber Ducky</p>
-
-                  <span
-                    class="member-details-data"
-                    data-full-name="Fifi"
-                    data-role="Rubber Ducky/Emotional Support"
-                    data-description="Fifi's role is crucial to the team. Rubber ducks are essential for debugging and providing silent, unwavering moral support during late-night coding sessions.
-                     She is the best listener on the team."
-                  >
-                  </span>
-                </div>
-              </div>
-            </section>
-
-            <section class="about-section">
-              <div class="office-info">
-                <h2>📍Our Office</h2>
-                <p>
-                  <strong>Address: </strong>Athens University of Economics and
-                  Business, Athens, Greece<br />
-                  <strong>Phone: </strong>+30 210 1234567<br />
-                  <strong>Email: </strong>info@mazi-perifana.com
-                </p>
-              </div>
-              <div id="map-container">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3144.2741330900635!2d23.727338612079617!3d37.994065839378855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1a2ccc0f74c4d%3A0x98bfad208765bc87!2sAthens%20University%20of%20Economics%20and%20Business!5e0!3m2!1sen!2sgr!4v1765908937521!5m2!1sen!2sgr"
-                  allowfullscreen=""
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
-            </section>
-          </div>
+            </div>
+            <div id="map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3144.2741330900635!2d23.727338612079617!3d37.994065839378855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1a2ccc0f74c4d%3A0x98bfad208765bc87!2sAthens%20University%20of%20Economics%20and%20Business!5e0!3m2!1sen!2sgr!4v1765908937521!5m2!1sen!2sgr"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </section>
         </div>
       </div>
-    </main>
-
-    <footer>Copyright © 2025 Mazi Perifana - All rights reserved</footer>
-
-    <div id="member-modal" class="modal-hidden">
-      <div class="modal-content">
-        <button class="modal-close-btn"></button>
-        <div id="modal-details"></div>
-      </div>
     </div>
+  </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
-    <script src="assets/js/ui/menu.js"></script>
-    <script src="assets/js/ui/calendar.js"></script>
-    <script src="assets/js/ui/modal.js"></script>
-  </body>
+  <footer>Copyright © 2025 Mazi Perifana - All rights reserved</footer>
+
+  <div id="member-modal" class="modal-hidden">
+    <div class="modal-content">
+      <button class="modal-close-btn"></button>
+      <div id="modal-details"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+  <script src="assets/js/ui/menu.js"></script>
+  <script src="assets/js/ui/calendar.js"></script>
+  <script src="assets/js/ui/modal.js"></script>
+</body>
+
 </html>
