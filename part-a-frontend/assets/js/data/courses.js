@@ -114,8 +114,7 @@ function displaycourses(courses) {
     // Generate the HTML code for each course
     grid.innerHTML = courses.map(course => `
         <div class="course-card2">
-            <img src="${course.image}" alt="${course.title}" class="course-image" 
-                 onerror="this.src='assets/img/thumbnails/default-course.png'">
+            <img src="${course.image}" srcset="${course.image} 320w, ${course.image} 640w, ${course.image} 960w" sizes="(max-width: 600px) 90vw, (max-width: 1024px) 45vw, 300px" alt="${course.title}" class="course-image" loading="lazy" decoding="async" onerror="this.src='assets/img/thumbnails/default-course.png'">
             
             <div class="course-info">
                 <h3 class="course-title">${course.title}</h3>

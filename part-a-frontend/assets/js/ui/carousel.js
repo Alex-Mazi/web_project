@@ -14,7 +14,20 @@ function createCourseCard(course) {
     const imgSrc = course.image || "assets/img/thumbnails/default-course.png";
 
     card.innerHTML = `
-        <img src="${imgSrc}" alt="${course.title}">
+        <div class="course-card__image2">
+            <img
+                src="${imgSrc}"
+                srcset="
+                    ${imgSrc} 320w,
+                    ${imgSrc} 640w,
+                    ${imgSrc} 960w
+                "
+                sizes="(max-width: 600px) 90vw, (max-width: 1024px) 45vw, 300px"
+                alt="${course.title}"
+                loading="lazy"
+                decoding="async"
+            >
+        </div>
         <h4>${course.title}</h4>
     `;
 
@@ -24,7 +37,7 @@ function createCourseCard(course) {
 //creation of book card for the course-details carousel
 function createBookCard(book) {
     const card = document.createElement("a");
-    card.classList.add("course-card", "book"); 
+    card.classList.add("course-card", "book");
     card.href = book.amazon_link;
     card.target = "_blank";
     card.rel = "noopener";
@@ -32,7 +45,7 @@ function createBookCard(book) {
     const imgSrc = book.img || "assets/img/thumbnails/default-book.png";
 
     card.innerHTML = `
-        <img src="${imgSrc}" alt="${book.title}">
+        <img src="${imgSrc}" alt="${book.title}" loading="lazy" decoding="async">
         <h4>${book.title}</h4>
     `;
 

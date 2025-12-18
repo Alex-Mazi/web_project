@@ -42,6 +42,9 @@ function renderCourseDetails(course) {
         img.alt = "Course image";
     }
 
+    img.loading = "lazy";
+    img.decoding = "async";
+
     const teacherNameEl = document.getElementById("teacher-name");
     const teacherImageEl = document.getElementById("teacher-image");
 
