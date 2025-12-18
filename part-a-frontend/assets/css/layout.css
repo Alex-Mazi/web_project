@@ -378,10 +378,6 @@ label {
 }
 
 .events-info {
-  background: #f8f8f8;
-  background: rgba(0, 0, 0, 0.08);
-  box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.1);
-  border-radius: 0.4rem;
   padding: 2rem;
   margin-bottom: 5rem;
   margin-top: 3rem;
@@ -390,13 +386,11 @@ label {
 .events-list {
   list-style: circle;
   padding-left: 0;
-  text-align: left;
 }
 
 #about-wrapper {
   width: 95%;
   margin: 1rem auto;
-  background: #ffffff;
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.15);
@@ -408,7 +402,6 @@ label {
   width: 90%;
   max-width: 60rem;
   margin: 2rem auto;
-  text-align: left;
 }
 
 .about-section {
@@ -418,13 +411,10 @@ label {
 .about-section h2 {
   color: #800020;
   font-family: "Bodoni* 11";
-  margin-bottom: 1rem;
 }
 
 .about-section p {
   margin-bottom: 1rem;
-  line-height: 1.6;
-  text-align: justify;
 }
 
 .mission-list {
@@ -435,15 +425,12 @@ label {
 }
 
 .mission-list li {
-  margin: 0.6rem 0;
   color: #333;
   font-weight: 500;
 }
 
 .office-info {
-  background: #f8f8f8;
   padding: 1rem;
-  background: rgba(0, 0, 0, 0.08);
   border-radius: 0.4rem;
   box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.1);
   margin-bottom: 2.5rem;
@@ -459,20 +446,13 @@ label {
 
 .team-card {
   cursor: pointer;
-  text-align: center;
   justify-content: center;
   position: relative;
-  background: #f8f8f8;
   padding: 1rem;
   flex: 1 1 5rem;
   max-width: 100%;
   border-radius: 0.8rem;
   box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.1);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.team-card p {
-  text-align: center
 }
 
 .team-photo {
@@ -485,13 +465,11 @@ label {
 }
 
 .member-details-data {
-  display: none;
   text-align: center;
 }
 
 #fullcalendar-container {
   padding: 0.3rem;
-  background: #faf1f1;
   margin-top: 1.5rem;
   width: 100%;
   justify-self: center;
@@ -506,10 +484,6 @@ label {
 
 .fc-daygrid-event {
   display: block;
-  background-color: #c28594;
-  border-color: #68011a;
-  color: #ffffff;
-  font-size: 0.75rem;
   padding: 0.2rem 0.4rem;
   border-radius: 0.3rem;
   white-space: normal;
@@ -522,35 +496,13 @@ label {
 .fc .fc-daygrid-day-number {
   padding: 5px;
   border-radius: 50%;
-  transition: background-color 0.2s;
-}
-
-.fc .fc-toolbar-title {
-  color: #800020;
-  font-size: 1rem;
-  font-weight: 700;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.fc-daygrid-day-number:has(~ .fc-daygrid-event-harness) {
-  background-color: #ffe6eb;
-  color: #800020;
-  font-weight: bold;
-}
-
-.fc-daygrid-day-number:has(~ .fc-daygrid-event-harness):hover {
-  background-color: #ffcccc;
 }
 
 .event-tooltip {
   position: absolute;
-  background: #ffffff;
-  color: #800020;
   border-radius: 0.5rem;
   padding: 0.6rem 0.8rem;
   box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.2);
-  font-size: 0.8rem;
-  line-height: 1;
   pointer-events: none;
   display: none;
   z-index: 9999;
@@ -631,22 +583,17 @@ label {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  opacity: 1;
-  transition: opacity 0.3s ease;
 }
 
 .modal-hidden {
   display: none !important;
-  opacity: 0;
 }
 
 .modal-content {
-  background-color: #ffffff;
   padding: 2rem;
   border-radius: 1rem;
   width: 90%;
@@ -659,23 +606,16 @@ label {
   position: absolute;
   top: 1rem;
   right: 1.5rem;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #800020;
-  background: none;
   border: none;
   cursor: pointer;
 }
 
 #modal-details h3 {
-  color: #800020;
   margin-bottom: 0.5rem;
 }
 
 #modal-details p {
-  line-height: 1.5;
   margin-bottom: 1rem;
-  color: #333;
 }
 /* ======================== */
 

@@ -298,3 +298,98 @@
     padding-bottom: 2rem;
 }
 /* ======================== */
+
+/* ======== ABOUT ========= */
+.events-info {
+  background: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.4rem;
+}
+
+.events-list {
+  text-align: left;
+}
+
+.team-card {
+  text-align: center;
+  background: #f8f8f8;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.team-card p {
+  text-align: center
+}
+
+.member-details-data {
+  text-align: center;
+}
+
+#fullcalendar-container {
+  background: #faf1f1;
+}
+
+.fc-daygrid-event {
+  background-color: #c28594;
+  border-color: #68011a;
+  color: #ffffff;
+  font-size: 0.75rem;
+}
+
+.fc .fc-daygrid-day-number {
+  transition: background-color 0.2s;
+}
+
+.fc .fc-toolbar-title {
+  color: #800020;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.fc-daygrid-day-number:has(~ .fc-daygrid-event-harness) {
+  background-color: #ffe6eb;
+  color: #800020;
+  font-weight: bold;
+}
+
+.fc-daygrid-day-number:has(~ .fc-daygrid-event-harness):hover {
+  background-color: #ffcccc;
+}
+
+.event-tooltip {
+  background: #ffffff;
+  color: #800020;
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+#member-modal {
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.modal-hidden {
+  opacity: 0;
+}
+
+.modal-content {
+  background-color: #ffffff;
+}
+
+.modal-close-btn {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #800020;
+  background: none;
+}
+
+#modal-details h3 {
+  color: #800020;
+}
+
+#modal-details p {
+  line-height: 1.5;
+  color: #333;
+}
+/* ======================== */

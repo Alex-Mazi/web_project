@@ -578,3 +578,32 @@ input.invalid {
     transform: translateX(0);
 }
 /* ======================== */
+
+/* ======== ABOUT ========= */
+#about-wrapper {
+  background: #ffffff;
+}
+
+#about-container {
+  text-align: left;
+}
+
+.about-section h2 {
+  color: #800020;
+  font-family: "Bodoni* 11";
+}
+
+.about-section p {
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.mission-list li {
+  color: #333;
+  font-weight: 500;
+}
+
+.office-info {
+  background: rgba(0, 0, 0, 0.08);
+}
+/* ======================== */
