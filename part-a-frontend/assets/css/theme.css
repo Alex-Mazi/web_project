@@ -557,15 +557,15 @@ input.invalid {
     transition: transform 0.2s ease;
 }
 
-.book-card:hover .book-cover {
+.book-card2:hover .book-cover {
     transform: scale(1.12);
 }
 
-.book-card {
+.book-card2 {
     transition: background-color 0.2s ease;
 }
 
-.book-card:hover {
+.book-card2:hover {
     background-color: rgba(248, 119, 145, 0.06);
 }
 
@@ -573,7 +573,7 @@ input.invalid {
     background: var(--surface-soft);
 }
 
-.book-card a {
+.book-card2 a {
     text-align: left;
     text-decoration: none;
     color: inherit;

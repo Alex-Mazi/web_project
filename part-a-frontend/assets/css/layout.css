@@ -413,7 +413,7 @@ label {
   border-radius: 8px;
 }
 
-.book-card a {
+.book-card2 a {
   display: flex;
   align-items: center;
   gap: 0.8rem;
@@ -750,8 +750,7 @@ label {
   min-width: 80%;
 }
 
-.search-box input,
-.filter-box select {
+.search-box input, .filter-box select {
   width: 100%;
   padding: 0.8rem 1rem;
   border: 1px solid #ddd;
