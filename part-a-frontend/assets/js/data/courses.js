@@ -1,10 +1,62 @@
 /**
- * COURSES PAGE LOGIC
- * Includes: Multi-filter (Category, Level, Search), Array-based Topic Search,
- * Results Counter, and View Toggling.
+ * @author Alexandra-Maria Mazi @Alex-Mazi|| p3220111@aueb.gr
+ * @author Christina Perifana @c-peri || p3220160@aueb.gr
  */
 
-// 1. Initialize Categories Dropdown
+//Pass teh URL parameters to the filters so that the page loads with them applied if link has them
+function getURLParams() {
+    const params = new URLSearchParams(window.location.search);
+    return {
+        category: params.get('category'),
+        level: params.get('level'),
+        search: params.get('search')
+    };
+}
+
+// Apply URL parameters to filters and filter the courses so it shows only matching courses
+function applyURLFilters() {
+    const params = getURLParams();
+    
+    if (params.category) {
+        const categoryFilter = document.getElementById('categoryFilter');
+        if (categoryFilter) {
+            const options = Array.from(categoryFilter.options);
+            const matchingOption = options.find(opt => 
+                opt.value.toLowerCase() === params.category.toLowerCase()
+            );
+            
+            if (matchingOption) {
+                categoryFilter.value = matchingOption.value;
+            }
+        }
+    }
+    
+    //not used yet but prepared for future use
+    if (params.level) {
+        const levelFilter = document.getElementById('levelFilter');
+        if (levelFilter) {
+            const options = Array.from(levelFilter.options);
+            const matchingOption = options.find(opt => 
+                opt.value.toLowerCase() === params.level.toLowerCase()
+            );
+            
+            if (matchingOption) {
+                levelFilter.value = matchingOption.value;
+            }
+        }
+    }
+    
+    if (params.search) {
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.value = decodeURIComponent(params.search);
+        }
+    }
+    
+    filtercourses();
+}
+
+//Initialize categories in dropdown menu
 function initCategories() {
     const cats = [...new Set(window.courses.map(course => course.category))].sort();
     const sel = document.getElementById('categoryFilter');
@@ -17,7 +69,7 @@ function initCategories() {
     });
 }
 
-// 2. Core Filtering Logic
+// Filter courses based on search (title, teacher, topics), category, and level of difficulty
 function filtercourses() {
     const search = document.getElementById('searchInput').value.toLowerCase().trim();
     const cat = document.getElementById('categoryFilter').value;
@@ -25,23 +77,19 @@ function filtercourses() {
 
     let filtered = window.courses;
 
-    // Filter by Category
     if (cat) {
         filtered = filtered.filter(course => course.category === cat);
     }
 
-    // Filter by Level
     if (level) {
         filtered = filtered.filter(course => course.level === level);
     }
 
-    // Search by Title, Teacher, or Topics (Array)
     if (search) {
         filtered = filtered.filter(course => {
             const matchesTitle = course.title.toLowerCase().includes(search);
             const matchesTeacher = course.teacher.toLowerCase().includes(search);
             
-            // Checks if any string within the topics array matches the search
             const matchesTopic = course.topics && course.topics.some(t => 
                 t.toLowerCase().includes(search)
             );
@@ -54,7 +102,7 @@ function filtercourses() {
     updateResultsInfo(filtered.length, window.courses.length);
 }
 
-// 3. Render Courses to Grid
+// Display courses in the grid or list
 function displaycourses(courses) {
     const grid = document.getElementById('coursesGrid');
     
@@ -63,8 +111,9 @@ function displaycourses(courses) {
         return;
     }
 
+    // Generate the HTML code for each course
     grid.innerHTML = courses.map(course => `
-        <div class="course-card">
+        <div class="course-card2">
             <img src="${course.image}" alt="${course.title}" class="course-image" 
                  onerror="this.src='assets/img/thumbnails/default-course.png'">
             
@@ -75,7 +124,7 @@ function displaycourses(courses) {
                 <p class="course-teacher">by ${course.teacher}</p>
                 <p class="course-description">${course.shortDescription}</p>
                 
-                <a href="#" target="_blank" class="course-link">
+                <a href="course-details.html?id=${course.id}" target="_blank" class="course-link">
                     View Course →
                 </a>
             </div>
@@ -83,7 +132,7 @@ function displaycourses(courses) {
     `).join('');
 }
 
-// 4. Update Result Counter
+// Change the reslults info text to match the total number of courses
 function updateResultsInfo(shown, total) {
     const info = document.getElementById('resultsInfo');
     if (info) {
@@ -93,15 +142,19 @@ function updateResultsInfo(shown, total) {
     }
 }
 
-// 5. Reset All Filters
+//Resets the filters to default values
 function resetFilters() {
     document.getElementById('searchInput').value = '';
     document.getElementById('categoryFilter').value = '';
     document.getElementById('levelFilter').value = '';
+    
+    //this changes the URL to remove parameters without reloading the page when reset button is clicked
+    window.history.replaceState({}, document.title, window.location.pathname);
+    
     filtercourses();
 }
 
-// 6. View Toggle (Grid vs List)
+// Change the view via toggle to either show grid or list
 function setView(viewType) {
     const grid = document.getElementById('coursesGrid');
     const gridBtn = document.getElementById('gridViewBtn');
@@ -118,21 +171,16 @@ function setView(viewType) {
     }
 }
 
-// 7. Event Listeners & Initialization
 document.addEventListener('DOMContentLoaded', () => {
-    // Search input listener
     const searchInput = document.getElementById('searchInput');
     if (searchInput) searchInput.addEventListener('input', filtercourses);
 
-    // Category filter listener
     const catFilter = document.getElementById('categoryFilter');
     if (catFilter) catFilter.addEventListener('change', filtercourses);
 
-    // Level filter listener
     const levelFilter = document.getElementById('levelFilter');
     if (levelFilter) levelFilter.addEventListener('change', filtercourses);
 
-    // Initial load
     initCategories();
-    filtercourses();
+    applyURLFilters();
 });
