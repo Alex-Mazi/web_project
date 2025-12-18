@@ -124,6 +124,71 @@
 }
 /* ======================== */
 
+/* ==== REGISTER MODAL ==== */
+#summary-modal {
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: opacity 0.3s ease;
+}
+
+#summary-modal .modal-content {
+  background-color: #ffffff;
+}
+
+#summary-modal .modal-close-btn {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #800020;
+  background: none;
+}
+
+#summary-details h3 {
+  color: #800020;
+}
+
+#summaryText {
+  background: none;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+#confirmRegistrationBtn {
+  background-color: #800020;
+  color: white;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+#confirmRegistrationBtn:hover {
+  background-color: #550015;
+}
+
+.summary-section h4 {
+  color: #800020;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.summary-section ul li {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+#registrationSuccessMessage {
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+#registrationSuccessMessage h2 {
+  color: #800020;
+}
+
+#registrationSuccessMessage p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #333;
+}
+/* ======================== */
+
 /* ==== COURSE DETAILS ==== */
 #course-hero {
     background: #ffffff;
