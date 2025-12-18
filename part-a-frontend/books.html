@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+
     <title>Books | IT Library</title>
     <meta charset="UTF-8" />
 
@@ -14,25 +15,23 @@
     <link rel="stylesheet" href="assets/css/components.css">
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Lexend:wght@100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
 </head>
 
 <body>
 
     <header>
-    <button id="menu-btn">☰</button>
-      <img src="assets/img/thumbnails/logo.png" alt="logo" />
-    <h1>IT LIBRARY</h1>
-  </header>
+        <button id="menu-btn">☰</button>
+        <img src="assets/img/thumbnails/logo.png" alt="logo" />
+        <h1>IT LIBRARY</h1>
+    </header>
 
     <nav id="side-menu">
         <a href="index.html">Home</a>
@@ -46,33 +45,36 @@
     <div id="overlay"></div>
 
     <main>
+        
         <div id="about-wrapper">
             <div id="about-container">
+
                 <div class="library-controls">
+
                     <div class="view-toggle">
-                        <button id="gridViewBtn" class="toggle-btn active" onclick="setView('grid')">
-                            Grid
-                        </button>
-                        <button id="listViewBtn" class="toggle-btn" onclick="setView('list')">
-                            List
-                        </button>
+                        <button id="gridViewBtn" class="toggle-btn active" onclick="setView('grid')">Grid</button>
+                        <button id="listViewBtn" class="toggle-btn" onclick="setView('list')">List</button>
                     </div>
+
                     <div class="search-box">
                         <input type="text" id="searchInput" placeholder="Search by title, author, or ISBN..." />
                     </div>
+
                     <div class="filter-box">
                         <select id="categoryFilter">
                             <option value="">All Categories</option>
                         </select>
                         <button class="reset-btn" onclick="resetFilters()">Reset</button>
                     </div>
+                    
                 </div>
 
                 <div class="results-info" id="resultsInfo"></div>
-
                 <div class="books-grid" id="booksGrid"></div>
+
             </div>
         </div>
+
     </main>
 
     <footer>Copyright © 2025 Mazi Perifana - All rights reserved</footer>

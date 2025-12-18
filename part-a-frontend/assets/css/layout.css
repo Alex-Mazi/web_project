@@ -15,7 +15,6 @@ header img {
   max-height: 2rem;
   margin: 0.5rem;
 }
-
 /* ======================== */
 
 /* ========= BODY ========= */
@@ -31,7 +30,6 @@ main {
   padding-right: 1rem;
   box-sizing: border-box;
 }
-
 /* ======================== */
 
 /* ======== FOOTER ======== */
@@ -46,7 +44,6 @@ footer {
   justify-content: center;
   z-index: 9000;
 }
-
 /* ======================== */
 
 /* ========= MENU ========= */
@@ -64,7 +61,6 @@ footer {
 #side-menu.active {
   left: 0;
 }
-
 /* ======================== */
 
 /* ===== INDEX INTRO ====== */
@@ -83,7 +79,6 @@ footer {
 #intro p {
   margin-bottom: 0.9rem;
 }
-
 /* ======================== */
 
 /* == INDEX REC_COURSES === */
@@ -130,7 +125,6 @@ footer {
   line-height: 1.2;
   text-align: center;
 }
-
 /* ======================== */
 
 /* === INDEX CATEGORIES === */
@@ -150,7 +144,6 @@ footer {
 .category-card p {
   margin: 0;
 }
-
 /* ======================== */
 
 /* ===== REGISTRATION ===== */
@@ -163,21 +156,18 @@ footer {
 #register-container h2 {
   margin-bottom: 1rem;
 }
-
 /* ======================== */
 
 /* ====== FORM GROUP ====== */
 .form-group {
   margin-bottom: 1.5rem;
 }
-
 /* ======================== */
 
 /* ==== REGISTER LABEL ==== */
 label {
   margin-bottom: 5px;
 }
-
 /* ======================== */
 
 /* === REGISTER CHECKS ==== */
@@ -193,21 +183,18 @@ label {
 .course-selection > * {
   min-width: 0;
 }
-
 /* ======================== */
 
 /* === REGISTER COURSES === */
 .course-item label {
   margin: 0;
 }
-
 /* ======================== */
 
 /* === REGISTER SUMMARY === */
 #summary {
   margin-top: 2rem;
 }
-
 /* ======================== */
 
 /* ==== REGISTER MODAL ==== */
@@ -300,12 +287,11 @@ label {
 #registrationSuccessMessage h2 {
   margin-bottom: 0.8rem;
 }
-
 /* ======================== */
 
 /* ==== COURSE DETAILS ==== */
-#course-category {
-  margin-top: 0.4rem;
+#courses-category {
+  margin: 0.4rem auto 0 auto;
 }
 
 #course-hero {
@@ -483,7 +469,6 @@ label {
 .mobile-related-panel[data-type="books"] .section-hint {
   padding-top: 1.5rem;
 }
-
 /* ======================== */
 
 /* ======== ABOUT ========= */
@@ -500,9 +485,7 @@ label {
   min-width: 0;
 }
 
-.col-left,
-.col-center,
-.col-right {
+.col-left, .col-center, .col-right {
   min-width: 0;
   max-width: 100%;
   flex-wrap: wrap;
@@ -698,23 +681,19 @@ label {
 }
 
 @keyframes slide {
-  0%,
-  20% {
+  0%, 20% {
     transform: translateX(0);
   }
 
-  25%,
-  45% {
+  25%, 45% {
     transform: translateX(-100%);
   }
 
-  50%,
-  70% {
+  50%, 70% {
     transform: translateX(-200%);
   }
 
-  75%,
-  95% {
+  75%, 95% {
     transform: translateX(-300%);
   }
 
@@ -763,7 +742,6 @@ label {
 #modal-details p {
   margin-bottom: 1rem;
 }
-
 /* ======================== */
 
 /* === BOOKS & COURSES ==== */
@@ -781,8 +759,7 @@ label {
   min-width: 80%;
 }
 
-.search-box input,
-.filter-box select {
+.search-box input, .filter-box select {
   width: 100%;
   padding: 0.8rem 1rem;
   border: 1px solid #ddd;
@@ -1336,8 +1313,7 @@ label {
     text-align: center;
   }
 
-  .courses-grid.list-view,
-  .course-level {
+  .courses-grid.list-view, .course-level {
     margin-top: auto;
   }
 
@@ -1385,12 +1361,17 @@ label {
     max-width: 300px;
   }
 
+  #courses-category {
+    margin-left: 0;
+    margin-right: 0;
+    display: inline-flex;
+  }
+
   #register-container {
     max-width: 50rem;
   }
 
-  .checkboxes,
-  .course-selection {
+  .checkboxes, .course-selection {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1532,6 +1513,7 @@ label {
 }
 
 @media (min-width: 601px) and (max-width: 1024px) {
+
   .books-grid:not(.list-view) {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1551,6 +1533,7 @@ label {
 }
 
 @media (min-width: 900px) {
+
   .courses-grid .course-card {
     flex: 0 0 28%;
   }
@@ -1616,9 +1599,11 @@ label {
   .team-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
 }
 
 @media (max-width: 900px) {
+
   .book-card2 a {
     flex-direction: column;
     align-items: center;
@@ -1635,9 +1620,11 @@ label {
   .book-card2 span {
     margin-top: 0.4rem;
   }
+
 }
 
 @media (min-width: 900px) and (orientation: landscape) {
+
   .about-grid {
     grid-template-columns: 0.8fr 1.5fr 1fr;
     grid-template-areas: "col-left col-center col-right" "col-left col-center col-right";
@@ -1661,9 +1648,11 @@ label {
     grid-row: span 2;
     order: unset;
   }
+
 }
 
 @media (min-width: 1025px) {
+
   .books-grid:not(.list-view),
   .courses-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -1676,9 +1665,11 @@ label {
   .videos-grid:not(.list-view) {
     grid-template-columns: repeat(3, 1fr);
   }
+
 }
 
 @media (min-width: 1200px) {
+
   #register-container {
     max-width: 70rem;
   }
@@ -1698,6 +1689,6 @@ label {
   .book-recommendations {
     display: block;
   }
-}
 
+}
 /* ======================== */

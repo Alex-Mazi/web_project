@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+
     <title>Videos | IT Library</title>
     <meta charset="UTF-8" />
     
@@ -44,9 +45,11 @@
     <div id="overlay"></div>
 
     <main>
+
         <div id="about-wrapper">
             <div id="about-container">
                 <div class="library-controls">
+
                     <div class="view-toggle">
                         <button id="gridViewBtn" class="toggle-btn active" onclick="setView('grid')">
                             Grid
@@ -55,22 +58,26 @@
                             List
                         </button>
                     </div>
+
                     <div class="search-box">
                         <input type="text" id="searchInput" placeholder="Search by title, channel, or topic..." />
                     </div>
+
                     <div class="filter-box">
                         <select id="categoryFilter">
                             <option value="">All Categories</option>
                         </select>
                         <button class="reset-btn" onclick="resetFilters()">Reset</button>
                     </div>
+
                 </div>
 
                 <div class="results-info" id="resultsInfo"></div>
-
                 <div class="videos-grid" id="videosGrid"></div>
+
             </div>
         </div>
+
     </main>
 
     <footer>Copyright © 2025 Mazi Perifana - All rights reserved</footer>
@@ -81,6 +88,7 @@
 
     <script src="assets/js/ui/menu.js"></script>
     <script src="assets/js/ui/categories.js"></script>
+    
 </body>
 
 </html>

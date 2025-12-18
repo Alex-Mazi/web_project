@@ -1,11 +1,11 @@
-window.courses = [
-  /**
+/**
  * @author Alexandra-Maria Mazi @Alex-Mazi|| p3220111@aueb.gr
  * @author Christina Perifana @c-peri || p3220160@aueb.gr
  * 
  * Course information in JSON format to be used in courses and course-details
  */
-  
+
+window.courses = [
   /* -------------------- PROGRAMMING -------------------- */
   {
     id: 1,

@@ -20,16 +20,13 @@ function findCourseById(id) {
 // Render course details on the page
 function renderCourseDetails(course) {
     if (!course) {
-        document.querySelector("main").innerHTML =
-            "<p>Course not found.</p>";
+        document.querySelector("main").innerHTML = "<p>Course not found.</p>";
         return;
     }
     // Fill in course details
     document.querySelector("#course-title").textContent = course.title;
-    document.querySelector("#course-category").textContent =
-        `${course.category} · ${course.level}`;
-    document.querySelector("#course-description-text").textContent =
-        course.description;
+    document.querySelector("#courses-category").textContent =`${course.category} · ${course.level}`;
+    document.querySelector("#course-description-text").textContent = course.description;
 
     const img = document.querySelector("#course-image");
 
@@ -48,9 +45,7 @@ function renderCourseDetails(course) {
     const teacherNameEl = document.getElementById("teacher-name");
     const teacherImageEl = document.getElementById("teacher-image");
 
-    if (teacherNameEl) {
-        teacherNameEl.textContent = course.teacher || "IT Library Faculty";
-    }
+    if (teacherNameEl) { teacherNameEl.textContent = course.teacher || "IT Library Faculty"; }
 
     if (teacherImageEl) {
         if (course.teacherImage) {
@@ -101,6 +96,7 @@ function renderCourseDetails(course) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+
     const courseId = getCourseIdFromURL();
     const course = findCourseById(courseId);
 
@@ -111,15 +107,15 @@ document.addEventListener("DOMContentLoaded", () => {
     renderBookRecommendations(course);
     setupMobileRelated(course);
 
-    requestAnimationFrame(() => {
-        renderRelatedCoursesCarousel(course);
-    });
+    requestAnimationFrame(() => { renderRelatedCoursesCarousel(course); });
 
     setupMobileRelatedTabs();
+
 });
 
 //render the related courses carousel
 function renderRelatedCoursesCarousel(currentCourse, attempts = 0) {
+
     if (!currentCourse) return;
 
     const carousel = document.querySelector("#related-courses .carousel");
@@ -127,9 +123,7 @@ function renderRelatedCoursesCarousel(currentCourse, attempts = 0) {
 
     if (carousel.offsetWidth === 0) {
         if (attempts < 10) {
-            requestAnimationFrame(() =>
-                renderRelatedCoursesCarousel(currentCourse, attempts + 1)
-            );
+            requestAnimationFrame(() => renderRelatedCoursesCarousel(currentCourse, attempts + 1));
         }
         return;
     }
@@ -145,10 +139,12 @@ function renderRelatedCoursesCarousel(currentCourse, attempts = 0) {
     }
 
     initCarousel(carousel, relatedCourses);
+
 }
 
 // render the info for the course, like level or duration
 function renderFacts(course) {
+
     const durationEl = document.getElementById("fact-duration");
     const levelEl = document.getElementById("fact-level");
     const recommendedEl = document.getElementById("fact-recommended");
@@ -161,10 +157,12 @@ function renderFacts(course) {
         else if (course.recommended === false) recommendedEl.textContent = "Not recommended";
         else recommendedEl.textContent = "—";
     }
+
 }
 
 // match related books to the course 
 function getRelatedBooks(course) {
+
     if (!window.bookslist || !course) return [];
 
     // for courses that are not programming related, look only at course category to match books
@@ -178,10 +176,12 @@ function getRelatedBooks(course) {
     return bookslist.filter(
         book => course.topics.includes(book.category)
     );
+
 }
 
 // render book recommendations for tablets and desktops
 function renderBookRecommendations(course) {
+
     const bookListEl = document.querySelector(".book-recommendations .book-list");
     if (!bookListEl || !window.bookslist || !course) return;
 
@@ -217,10 +217,12 @@ function renderBookRecommendations(course) {
 
         bookListEl.appendChild(li);
     });
+
 }
 
 //render book recommendations specifically for mobile view, so that the recommended books get displayed in a carousel insted of the sidebar(which does not exist on mobile)
 function setupMobileRelated(currentCourse) {
+
     const mobileContainer = document.querySelector(".mobile-related-body");
     if (!mobileContainer) return;
 
@@ -278,10 +280,12 @@ function setupMobileRelated(currentCourse) {
             });
         }
     }
+
 }
 
 // put the books back to the side bar if not on mobile anymore (for example change the phone orientation to landscape)
 function restoreDesktopRelated() {
+
     const relatedCoursesSection = document.getElementById("related-courses");
     const mobileContainer = document.querySelector(".mobile-related-body");
 
@@ -296,9 +300,8 @@ function restoreDesktopRelated() {
         originalRelatedParent.appendChild(relatedCoursesSection);
     }
 
-    if (mobileContainer) {
-        mobileContainer.innerHTML = "";
-    }
+    if (mobileContainer) { mobileContainer.innerHTML = ""; }
+
 }
 
 //toggle view for recommended books
@@ -325,11 +328,13 @@ function setupMobileRelatedTabs() {
             });
         });
     });
+
 }
 
 let resizeTimeout;
 
 window.addEventListener("resize", () => {
+
     clearTimeout(resizeTimeout);
 
     resizeTimeout = setTimeout(() => {
@@ -340,6 +345,7 @@ window.addEventListener("resize", () => {
         setupMobileRelated(course);
         setupMobileRelatedTabs(); 
     }, 150);
+    
 });
 
 
