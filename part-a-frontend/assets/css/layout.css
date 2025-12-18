@@ -1482,7 +1482,7 @@ label {
   }
 
   .book-cover {
-    width: 90px; /* optional tweak */
+    width: 90px;
     max-height: none;
   }
 
@@ -1492,7 +1492,6 @@ label {
     margin-top: 0.4rem;
   }
 }
-
 
 @media (min-width: 900px) and (orientation: landscape) {
   .about-grid {
