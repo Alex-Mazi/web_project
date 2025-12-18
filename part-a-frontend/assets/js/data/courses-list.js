@@ -17,7 +17,7 @@ window.courses = [
     ],
     topics: ["Python", "Variables", "Conditions", "Loops", "Functions"],
     prerequisites: [],
-    recommended: true,
+    recommended: false,
     image: "assets/img/thumbnails/intro-programming.png",
     teacherImage: "assets/img/people/elenamarkou.jpg"
   },
@@ -80,8 +80,8 @@ window.courses = [
     ],
     topics: ["Arrays", "Linked Lists", "Stacks", "Queues", "Sorting", "Searching", "Big-O"],
     prerequisites: ["Introduction to Programming"],
-    recommended: true,
-    //image: "assets/img/thumbnails/algorithms.png",
+    recommended: false,
+    image: "assets/img/thumbnails/algorithms.png",
     teacherImage: "assets/img/people/katerinalouka.jpg"
   },
   {
@@ -102,7 +102,7 @@ window.courses = [
     topics: ["Python", "Decorators", "Generators", "Context Managers", "Performance"],
     prerequisites: ["Introduction to Programming"],
     recommended: true,
-    //image: "assets/img/thumbnails/advanced-python.png",
+    image: "assets/img/thumbnails/advanced-python.png",
     teacherImage: "assets/img/people/dimitrakalogirou.jpg"
   },
 
@@ -166,8 +166,8 @@ window.courses = [
     ],
     topics: ["Wi-Fi Standards", "Wireless Signals", "Access Points", "Interference", "Wireless Security"],
     prerequisites: ["Computer Networks Basics"],
-    recommended: false,
-    //image: "assets/img/thumbnails/wireless-networks.png",
+    recommended: true,
+    image: "assets/img/thumbnails/wireless-networks.png",
     teacherImage: "assets/img/people/ioannispetrou.jpg"
   },
   {
@@ -188,7 +188,7 @@ window.courses = [
     topics: ["Switching", "Routing", "VLANs", "Subnets", "Routing Tables"],
     prerequisites: ["Computer Networks Basics"],
     recommended: true,
-    //image: "assets/img/thumbnails/routing-switching.png",
+    image: "assets/img/thumbnails/routing-switching.png",
     teacherImage: "assets/img/people/stavrosmichailidis.jpg"
   },
   {
@@ -208,8 +208,8 @@ window.courses = [
     ],
     topics: ["Network Monitoring", "Troubleshooting", "Logs", "Performance Metrics", "Fault Isolation"],
     prerequisites: ["Network Administration & Security"],
-    recommended: true,
-    //image: "assets/img/thumbnails/network-troubleshooting.png",
+    recommended: false,
+    image: "assets/img/thumbnails/network-troubleshooting.png",
     teacherImage: "assets/img/people/eftychiakaramanou.jpg"
   },
   /* -------------------- CYBERSECURITY -------------------- */
@@ -273,7 +273,7 @@ window.courses = [
     topics: ["Digital Evidence", "Forensics Process", "Chain of Custody", "Incident Analysis"],
     prerequisites: ["Cybersecurity Essentials"],
     recommended: false,
-    //image: "assets/img/thumbnails/digital-forensics.png",
+    image: "assets/img/thumbnails/digital-forensics.png",
     teacherImage: "assets/img/people/nikostheodorou.jpg"
   },
   {
@@ -293,8 +293,8 @@ window.courses = [
     ],
     topics: ["SOC", "Incident Response", "Threat Detection", "Security Monitoring", "Response Frameworks"],
     prerequisites: ["Ethical Hacking & Penetration Testing"],
-    recommended: true,
-    //image: "assets/img/thumbnails/incident-response.png",
+    recommended: false,
+    image: "assets/img/thumbnails/incident-response.png",
     teacherImage: "assets/img/people/eirinipapakonstantinou.jpg"
   },
   /* -------------------- DATABASES -------------------- */
