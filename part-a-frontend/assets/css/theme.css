@@ -1,9 +1,31 @@
+/* ======== FONTS ========= */
+
+.dm-serif-text-regular {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+.dm-serif-text-regular-italic {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.lexend-menu {
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
 /* ======== HEADER ======== */
 header {
     background-color: #800020;
     color: #F0EEE9;
     box-shadow: 0 0 25px 0 black;
-    font-family: 'Bodoni* 11';
+    font-family: "DM Serif Text", serif;
 }
 /* ======================== */
 
@@ -30,6 +52,8 @@ footer {
     background-color: #800020;
     color: #F0EEE9;
     transition: left 0.3s ease;
+    font-family: "Lexend", sans-serif;
+
 }
 
 #side-menu a {
