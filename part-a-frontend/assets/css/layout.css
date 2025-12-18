@@ -111,10 +111,11 @@ footer {
 }
 
 .categories-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
 }
+
 
 .category-card p {
     margin: 0;
@@ -500,10 +501,6 @@ label {
         flex-wrap: wrap;
     }
 
-    .category-card {
-        flex: 0 0 calc(50% - 1rem);
-    }
-
     #side-menu {
         width: 40vw;
         max-width: 300px;
@@ -614,10 +611,6 @@ label {
 
     .course-card {
         flex: 0 0 28%;
-    }
-
-    .category-card {
-        flex: 0 0 calc(25% - 1rem);
     }
     
     #side-menu {
