@@ -1503,28 +1503,7 @@ label {
   .courses-grid {
     grid-template-columns: repeat(2, minmax(280px, 1fr));
   }
-}
 
-@media (min-width: 601px) and (max-width: 1024px) {
-  .books-grid:not(.list-view) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  #course-hero {
-    align-items: flex-start;
-  }
-
-  .course-meta {
-    flex: 1;
-    min-width: 320px;
-  }
-  .videos-grid:not(.list-view) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-}
-
-@media (min-width: 768px) {
   .carousel {
     position: relative;
     overflow: hidden;
@@ -1549,6 +1528,26 @@ label {
     flex-direction: row;
     align-items: center;
   }
+
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .books-grid:not(.list-view) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #course-hero {
+    align-items: flex-start;
+  }
+
+  .course-meta {
+    flex: 1;
+    min-width: 320px;
+  }
+  .videos-grid:not(.list-view) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
 }
 
 @media (min-width: 900px) {
