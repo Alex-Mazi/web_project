@@ -196,7 +196,7 @@ function renderBookRecommendations(course) {
 
     relatedBooks.forEach(book => {
         const li = document.createElement("li");
-        li.className = "book-card";
+        li.className = "book-card2";
 
         li.innerHTML = `
             <a href="${book.amazon_link}" target="_blank" rel="noopener">
