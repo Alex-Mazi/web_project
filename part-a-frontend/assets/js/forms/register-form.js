@@ -1,8 +1,16 @@
+/**
+ * @author Alexandra-Maria Mazi @Alex-Mazi|| p3220111@aueb.gr
+ * @author Christina Perifana @c-peri || p3220160@aueb.gr
+ * 
+ * Handles the registration form
+ */
+
 document.getElementById("registerForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
     let valid = true;
 
+    //show errors if they exist
     function showError(id, msg) {
         let error = document.getElementById(id + "-error");
         let input = document.getElementById(id);
@@ -12,6 +20,7 @@ document.getElementById("registerForm").addEventListener("submit", function (e) 
         valid = false;
     }
 
+    //clear errors 
     function clearError(id) {
         let error = document.getElementById(id + "-error");
         let input = document.getElementById(id);
@@ -20,33 +29,37 @@ document.getElementById("registerForm").addEventListener("submit", function (e) 
         if (input) input.classList.remove("invalid");
     }
 
+    //check if full name is valid via RegEx
     let fullName = document.getElementById("fullName").value.trim();
     let nameRegex = /^[A-Za-z'-]+(\s+[A-Za-z'-]+)+$/;
     if (!fullName) showError("fullName", "Name required");
     else if (!nameRegex.test(fullName)) showError("fullName", "Full name required (no special characters or numbers)");
     else clearError("fullName");
 
+    //check if email is valid via RegEx
     let email = document.getElementById("email").value.trim();
     let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email) showError("email", "Email required");
     else if (!emailRegex.test(email)) showError("email", "Invalid email format");
     else clearError("email");
 
-let dob = document.getElementById("dob").value;
+    let dob = document.getElementById("dob").value;
 
-let dobFormatted = dob; 
+    let dobFormatted = dob;
 
-if (dob) {
-    const dateParts = dob.split('-'); 
-    if (dateParts.length === 3) {
-        const year = dateParts[0];
-        const month = dateParts[1];
-        const day = dateParts[2];
-        
-        dobFormatted = `${day}/${month}/${year}`;
+    //format date of birth from yyyy-mm-dd to dd-mm-yyyy
+    if (dob) {
+        const dateParts = dob.split('-');
+        if (dateParts.length === 3) {
+            const year = dateParts[0];
+            const month = dateParts[1];
+            const day = dateParts[2];
+
+            dobFormatted = `${day}/${month}/${year}`;
+        }
     }
-}
 
+    //Check valid date of birth, must be over 16 years of age
     if (!dob) showError("dob", "Date of birth required");
     else {
         let age = new Date().getFullYear() - new Date(dob).getFullYear();
@@ -54,18 +67,43 @@ if (dob) {
         else clearError("dob");
     }
 
+    //Check if username is valid, minimum 5 characters
     let username = document.getElementById("username").value.trim();
+
     if (username.length < 5) showError("username", "Username must be at least 5 characters");
     else clearError("username");
+    
+    /**check password validity, with RegEx
+     * (must be at least 8 characters and contain at least one of the following:
+     * uppercase letter
+     * lowercase letter
+     * number
+     * symbol) */
 
-    let password = document.getElementById("password").value;
-    if (password.length < 8) showError("password", "Password must be at least 8 characters");
-    else clearError("password");
+    let password = document.getElementById("password").value.trim();
 
+    if (!password) {
+        showError("password", "Password required");
+    } else if (password.length < 8) {
+        showError("password", "Password must be at least 8 characters");
+    } else if (!/(?=.*[a-z])/.test(password)) {
+        showError("password", "Password must contain at least one lowercase letter");
+    } else if (!/(?=.*[A-Z])/.test(password)) {
+        showError("password", "Password must contain at least one uppercase letter");
+    } else if (!/(?=.*\d)/.test(password)) {
+        showError("password", "Password must contain at least one number");
+    } else if (!/(?=.*[@$!%*?&#])/.test(password)) {
+        showError("password", "Password must contain at least one symbol (@$!%*?&#)");
+    } else {
+        clearError("password");
+    }
+
+    //check if passwords match
     let confirmPassword = document.getElementById("confirmPassword").value;
     if (password !== confirmPassword) showError("confirmPassword", "Passwords do not match");
     else clearError("confirmPassword");
 
+    //check if at least one interest in selected
     let interests = [...document.querySelectorAll("input[name='interest']:checked")];
     if (interests.length === 0) {
         document.getElementById("interest-error").textContent = "Choose at least one interest";
@@ -75,6 +113,7 @@ if (dob) {
         document.getElementById("interest-error").style.display = "none";
     }
 
+    //check if at least one course is selected, and if it is check if course expertise is selected
     function validateCourses() {
         const checkboxes = document.querySelectorAll(".course-checkbox");
         const errorBox = document.getElementById("course-error");
@@ -96,7 +135,7 @@ if (dob) {
                     dropdown.classList.remove("invalid");
 
                     courseSelections.push({
-                        course: cb.parentElement.innerText.trim(), 
+                        course: cb.parentElement.innerText.trim(),
                         experience: dropdown.value
                     });
                 }
@@ -126,6 +165,7 @@ if (dob) {
 
     if (!valid) return;
 
+    //create form summary 
     let summaryData = {
         fullName,
         email,
@@ -135,7 +175,7 @@ if (dob) {
         courses: courseCheck.data
     };
 
-    const summaryTextContainer = document.getElementById("summaryText"); 
+    const summaryTextContainer = document.getElementById("summaryText");
     const registerForm = document.getElementById("registerForm");
 
     let summaryHTML = `
@@ -165,19 +205,20 @@ if (dob) {
                 <h4>Course Experience</h4>
                 <ul class="course-list">
         `;
-        
+
         summaryData.courses.forEach(courseItem => {
             summaryHTML += `
                 <li><strong>${courseItem.course}:</strong> ${courseItem.experience}</li>
             `;
         });
-        
+
         summaryHTML += `
                 </ul>
             </div>
         `;
     }
-    
+
+    //display summary modal
     summaryTextContainer.innerHTML = summaryHTML;
 
     if (window.ITLibrary && window.ITLibrary.openModal) {
@@ -185,18 +226,18 @@ if (dob) {
     } else {
         console.error("ITLibrary.openModal is not defined. Ensure modal.js is loaded correctly.");
     }
-    
+
     const confirmBtn = document.getElementById("confirmRegistrationBtn");
-    
+
     if (!confirmBtn.hasListener) {
         confirmBtn.addEventListener("click", () => {
-            
+
             if (window.ITLibrary && window.ITLibrary.closeModal) {
                 ITLibrary.closeModal('summary-modal');
             }
-            
+
             registerForm.style.display = "none";
-            
+
             const successMessage = document.getElementById("registrationSuccessMessage");
             if (successMessage) {
                 successMessage.innerHTML = `
@@ -208,12 +249,12 @@ if (dob) {
             } else {
                 alert(`Registration confirmed! Welcome, ${fullName}!`);
             }
-            
-            registerForm.reset(); 
+
+            registerForm.reset();
         });
-        confirmBtn.hasListener = true; 
+        confirmBtn.hasListener = true;
     }
-}); 
+});
 
 document.querySelectorAll(".course-checkbox").forEach(cb => {
     cb.addEventListener("change", function () {

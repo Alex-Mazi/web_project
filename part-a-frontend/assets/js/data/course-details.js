@@ -1,22 +1,30 @@
+/**
+ * @author Alexandra-Maria Mazi @Alex-Mazi|| p3220111@aueb.gr
+ * @author Christina Perifana @c-peri || p3220160@aueb.gr
+ */
+
 let originalRelatedParent = null;
 let originalRelatedNextSibling = null;
 
+// Get course ID from URL parameters to open the correct course details page
 function getCourseIdFromURL() {
     const params = new URLSearchParams(window.location.search);
     return parseInt(params.get("id"), 10);
 }
 
+// Find course by ID from the courses data
 function findCourseById(id) {
     return courses.find(course => course.id === id);
 }
 
+// Render course details on the page
 function renderCourseDetails(course) {
     if (!course) {
         document.querySelector("main").innerHTML =
             "<p>Course not found.</p>";
         return;
     }
-
+    // Fill in course details
     document.querySelector("#course-title").textContent = course.title;
     document.querySelector("#course-category").textContent =
         `${course.category} · ${course.level}`;
@@ -25,6 +33,7 @@ function renderCourseDetails(course) {
 
     const img = document.querySelector("#course-image");
 
+    // display course image or default to generic if none found
     if (course.image) {
         img.src = course.image;
         img.alt = course.title;
@@ -50,6 +59,7 @@ function renderCourseDetails(course) {
         }
     }
 
+    // frender the outcomes from completing the course
     const outcomesList = document.getElementById("outcomes-list");
     outcomesList.innerHTML = "";
     course.learningOutcomes.forEach(outcome => {
@@ -58,6 +68,7 @@ function renderCourseDetails(course) {
         outcomesList.appendChild(li);
     });
 
+    // render the topics
     const topicsContainer = document.getElementById("topics-container");
     topicsContainer.innerHTML = "";
     course.topics.forEach(topic => {
@@ -67,6 +78,7 @@ function renderCourseDetails(course) {
         topicsContainer.appendChild(span);
     });
 
+    // render necessary knowledge to take the course, defaults to no knowledge required if there are no prerequisites
     const prereqList = document.getElementById("prerequisites-list");
     prereqList.innerHTML = "";
 
@@ -103,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setupMobileRelatedTabs();
 });
 
-
+//render the related courses carousel
 function renderRelatedCoursesCarousel(currentCourse, attempts = 0) {
     if (!currentCourse) return;
 
@@ -132,7 +144,7 @@ function renderRelatedCoursesCarousel(currentCourse, attempts = 0) {
     initCarousel(carousel, relatedCourses);
 }
 
-
+// render the info for the course, like level or duration
 function renderFacts(course) {
     const durationEl = document.getElementById("fact-duration");
     const levelEl = document.getElementById("fact-level");
@@ -148,21 +160,24 @@ function renderFacts(course) {
     }
 }
 
+// match related books to the course 
 function getRelatedBooks(course) {
     if (!window.bookslist || !course) return [];
 
+    // for courses that are not programming related, look only at course category to match books
     if (course.category !== "Programming") {
         return bookslist.filter(
             book => book.category === course.category
         );
     }
 
+    //if course category is programming, match through topics, so that only the programming language that matches the course appears in the course page
     return bookslist.filter(
         book => course.topics.includes(book.category)
     );
 }
 
-
+// render book recommendations for tablets and desktops
 function renderBookRecommendations(course) {
     const bookListEl = document.querySelector(".book-recommendations .book-list");
     if (!bookListEl || !window.bookslist || !course) return;
@@ -201,6 +216,7 @@ function renderBookRecommendations(course) {
     });
 }
 
+//render book recommendations specifically for mobile view, so that the recommended books get displayed in a carousel insted of the sidebar(which does not exist on mobile)
 function setupMobileRelated(currentCourse) {
     const mobileContainer = document.querySelector(".mobile-related-body");
     if (!mobileContainer) return;
@@ -213,13 +229,11 @@ function setupMobileRelated(currentCourse) {
         return;
     }
 
-    // 🔐 Save original position ONCE
     if (!originalRelatedParent && relatedCoursesSection) {
         originalRelatedParent = relatedCoursesSection.parentElement;
         originalRelatedNextSibling = relatedCoursesSection.nextElementSibling;
     }
 
-    // Avoid duplicate moves
     if (mobileContainer.contains(relatedCoursesSection)) return;
 
     if (relatedCoursesSection) {
@@ -263,13 +277,13 @@ function setupMobileRelated(currentCourse) {
     }
 }
 
+// put the books back to the side bar if not on mobile anymore (for example change the phone orientation to landscape)
 function restoreDesktopRelated() {
     const relatedCoursesSection = document.getElementById("related-courses");
     const mobileContainer = document.querySelector(".mobile-related-body");
 
     if (!originalRelatedParent || !relatedCoursesSection) return;
 
-    // Move section back to original place
     if (originalRelatedNextSibling) {
         originalRelatedParent.insertBefore(
             relatedCoursesSection,
@@ -279,13 +293,12 @@ function restoreDesktopRelated() {
         originalRelatedParent.appendChild(relatedCoursesSection);
     }
 
-    // Remove mobile wrappers
     if (mobileContainer) {
         mobileContainer.innerHTML = "";
     }
 }
 
-
+//toggle view for recommended books
 function setupMobileRelatedTabs() {
     const tabs = document.querySelectorAll(".mobile-related-tab");
     const panels = document.querySelectorAll(".mobile-related-panel");

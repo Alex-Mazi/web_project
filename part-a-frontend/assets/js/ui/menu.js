@@ -1,3 +1,10 @@
+/**
+ * @author Alexandra-Maria Mazi @Alex-Mazi|| p3220111@aueb.gr
+ * @author Christina Perifana @c-peri || p3220160@aueb.gr
+ * 
+ * Handles the side menu open and close functionality 
+ */
+
 document.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.getElementById("menu-btn");
   const sideMenu = document.getElementById("side-menu");

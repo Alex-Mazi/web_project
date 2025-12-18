@@ -1,5 +1,13 @@
+/**
+ * @author  Christina Perifana @c-peri || p3220160@aueb.gr
+ * @author  Alexandra-Maria Mazi @Alex-Mazi|| p3220111@aueb.gr
+ * 
+ * */
+
+
 window.ITLibrary = window.ITLibrary || {};
 
+// Open the modal
 window.ITLibrary.openModal = function(modalElementId) {
     const modal = document.getElementById(modalElementId);
     if (modal) {
@@ -8,6 +16,7 @@ window.ITLibrary.openModal = function(modalElementId) {
     }
 };
 
+// Close the modal
 window.ITLibrary.closeModal = function(modalElementId) {
     const modal = document.getElementById(modalElementId);
     if (modal) {
@@ -15,11 +24,13 @@ window.ITLibrary.closeModal = function(modalElementId) {
     }
 };
 
+// Team Member and registration modal logic
 document.addEventListener("DOMContentLoaded", function () {
     const memberModal = document.getElementById('member-modal');
     const modalDetails = document.getElementById('modal-details');
     const teamCards = document.querySelectorAll('.team-card'); 
     
+    // Team Member Modal Logic
     if (memberModal && modalDetails) {
         
         function openTeamModal(clickedCard) {
@@ -52,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // Generic modal close Logic
     function handleModalClose(modalElement) {
         if (modalElement) {
             window.ITLibrary.closeModal(modalElement.id);
