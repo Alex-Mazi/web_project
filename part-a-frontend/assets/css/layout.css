@@ -182,7 +182,7 @@ label {
     gap: 1.5rem;
     background: #ffffff;
     border-radius: 16px;
-    padding: 1.5rem;
+    padding: 2rem;
     margin-bottom: 2.5rem;
     box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
 }
@@ -229,9 +229,9 @@ label {
 }
 
 .hero-visual {
-    background: #f0eee9;
-    border-radius: 12px;
-    padding: 1rem;
+    background: linear-gradient(145deg, #f4f2ee, #ebe8e2);
+    border-radius: 16px;
+    padding: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -239,8 +239,9 @@ label {
 
 .hero-visual img {
     width: 100%;
-    max-height: 240px;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
 }
 
 #course-facts {
@@ -525,16 +526,13 @@ label {
 
     #course-hero {
         flex-direction: row;
-        align-items: center;
+        align-items: stretch;   
         gap: 2rem;
         margin-left: 0.6rem;
         margin-right: 0.6rem;
+        min-height: 420px;      
     }
 
-    #course-hero img {
-        width: 40%;
-        max-height: 240px;
-    }
 
     .course-meta {
         flex: 1 1 auto;     
@@ -640,7 +638,9 @@ label {
     }
 
     .hero-visual {
-        flex: 1;
+        flex: 0 0 60%;          
+        padding: 0.4rem;
+        overflow: hidden;
     }
 
     .course-meta {
