@@ -1151,6 +1151,11 @@ label {
 /* ======================== */
 
 @media (max-width: 599px) {
+
+  .course-content-grid {
+    grid-template-columns: 1fr;
+  }
+
   #side-menu {
     width: 55vw;
     max-width: 220px;
@@ -1190,10 +1195,6 @@ label {
 
   .course-meta #course-category p {
     text-align: center;
-  }
-
-  .course-left {
-    display: contents;
   }
 
   #course-description {
