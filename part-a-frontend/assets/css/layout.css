@@ -1212,8 +1212,8 @@ label {
 
   #course-outcomes {
     order: 3;
-    margin-top: -3rem;
-    margin-bottom: -1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
   }
 
   .mobile-related {
