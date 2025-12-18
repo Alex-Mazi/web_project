@@ -176,6 +176,19 @@ footer {
 .category-card p {
     color: #555;
 }
+
+.category-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.category-link:visited {
+    color: inherit;
+}
+
+.category-link:hover {
+    text-decoration: none;
+}
 /* ======================== */
 
 /* ===== REGISTRATION ===== */

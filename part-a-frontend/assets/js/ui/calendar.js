@@ -1,3 +1,10 @@
+/**
+ * @author Alexandra-Maria Mazi @Alex-Mazi|| p3220111@aueb.gr
+ * @author Christina Perifana @c-peri || p3220160@aueb.gr
+ * 
+ * Using FullCalendar to create an interactive calendar for live classes and webinars in the about us page.
+ */
+
 document.addEventListener("DOMContentLoaded", function () {
   window.EVENTS = [
     {

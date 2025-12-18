@@ -1,3 +1,10 @@
+/**
+ * @author Alexandra-Maria Mazi @Alex-Mazi|| p3220111@aueb.gr
+ * @author Christina Perifana @c-peri || p3220160@aueb.gr
+ * 
+ * Book information in JSON format to be used in books and course-details
+ */
+
 window.bookslist = [
     {
       title: "Effective Java (3rd Edition)",

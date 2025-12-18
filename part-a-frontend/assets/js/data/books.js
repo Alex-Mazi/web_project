@@ -1,3 +1,9 @@
+/**
+* @author Alexandra-Maria Mazi @Alex-Mazi|| p3220111@aueb.gr
+ * @author Christina Perifana @c-peri || p3220160@aueb.gr
+ */
+
+//Initialize categories in dropdown menu
 function initCategories() {
     const cats = [...new Set(window.bookslist.map(b => b.category))].sort();
     const sel = document.getElementById('categoryFilter');
@@ -8,7 +14,7 @@ function initCategories() {
         sel.appendChild(opt);
     });
 }
-
+// Filter Books Based on Search and Category
 function filterBooks() {
     const search = document.getElementById('searchInput').value.toLowerCase().trim();
     const cat = document.getElementById('categoryFilter').value;
@@ -29,14 +35,15 @@ function filterBooks() {
     updateResultsInfo(filtered.length, window.bookslist.length);
 }
 
+// Display books in the grid or list
 function displayBooks(books) {
     const grid = document.getElementById('booksGrid');
-    
+    // Handle no results
     if (books.length === 0) {
         grid.innerHTML = `<div class="no-results"><p>No books found.</p></div>`;
         return;
     }
-
+    // Generate the HTML code for each book
     grid.innerHTML = books.map(book => `
         <div class="book-card">
             <img src="${book.img}" alt="${book.title}" class="book-image" 
@@ -56,17 +63,20 @@ function displayBooks(books) {
     `).join('');
 }
 
+// Change the reslults info text to match the total number of books
 function updateResultsInfo(shown, total) {
     const info = document.getElementById('resultsInfo');
     info.textContent = shown === total ? `Showing all ${total} books` : `Showing ${shown} of ${total} books`;
 }
 
+//Resets the filters to default values
 function resetFilters() {
     document.getElementById('searchInput').value = '';
     document.getElementById('categoryFilter').value = '';
     filterBooks();
 }
 
+// Change the view via toggle to either show grid or list
 function setView(viewType) {
     const grid = document.getElementById('booksGrid');
     const gridBtn = document.getElementById('gridViewBtn');
@@ -86,6 +96,7 @@ function setView(viewType) {
 document.getElementById('searchInput').addEventListener('input', filterBooks);
 document.getElementById('categoryFilter').addEventListener('change', filterBooks);
 
+// Initialize on page load
 window.onload = () => {
     initCategories();
     filterBooks();

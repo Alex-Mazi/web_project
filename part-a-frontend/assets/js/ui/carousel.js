@@ -1,7 +1,11 @@
-/* ===================================== */
-/* CAROUSEL CORE LOGIC */
-/* ===================================== */
+/**
+ * @author Alexandra-Maria Mazi @Alex-Mazi|| p3220111@aueb.gr
+ * @author Christina Perifana @c-peri || p3220160@aueb.gr
+ * 
+ * Handles the registration form
+ */
 
+//create course card for index and course-details carousels
 function createCourseCard(course) {
     const card = document.createElement("a");
     card.classList.add("course-card", "course");
@@ -17,9 +21,10 @@ function createCourseCard(course) {
     return card;
 }
 
+//creation of book card for the course-details carousel
 function createBookCard(book) {
     const card = document.createElement("a");
-    card.classList.add("course-card", "book"); // reuse same styling
+    card.classList.add("course-card", "book"); 
     card.href = book.amazon_link;
     card.target = "_blank";
     card.rel = "noopener";
@@ -34,12 +39,7 @@ function createBookCard(book) {
     return card;
 }
 
-
-
-/* ===================================== */
-/* INITIALIZE A CAROUSEL INSTANCE */
-/* ===================================== */
-
+//initialize the carousel
 window.initCarousel = function initCarousel(carouselElement, items, createCardFn = createCourseCard) {
     const track = carouselElement.querySelector(".carousel-track");
     const prevBtn = carouselElement.querySelector(".carousel-btn.prev");
