@@ -11,9 +11,7 @@
   min-width: 0;
 }
 
-.col-left,
-.col-center,
-.col-right {
+.col-left, .col-center, .col-right {
   min-width: 0;
   max-width: 100%;
   flex-wrap: wrap;
@@ -61,10 +59,7 @@
 @media (min-width: 56.25rem) and (orientation: landscape) {
   .about-grid {
     grid-template-columns: 0.8fr 1.5fr 1fr;
-
-    grid-template-areas:
-      "col-left col-center col-right"
-      "col-left col-center col-right";
+    grid-template-areas: "col-left col-center col-right" "col-left col-center col-right";
     gap: 2rem;
   }
 
@@ -110,7 +105,6 @@
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.15);
-
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -222,7 +216,6 @@
   justify-self: center;
   border-radius: 0.5rem;
   box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.2);
-
 }
 
 .fc-daygrid-event-harness {
@@ -298,7 +291,6 @@
   border: none;
 }
 
-
 .about-carousel {
   width: 100%;
   max-height: clamp(14rem, 30vw, 24rem);
@@ -330,29 +322,26 @@
 
 @keyframes slide {
 
-  0%,
-  20% {
+  0%, 20% {
     transform: translateX(0);
   }
 
-  25%,
-  45% {
+  25%, 45% {
     transform: translateX(-100%);
   }
 
-  50%,
-  70% {
+  50%, 70% {
     transform: translateX(-200%);
   }
 
-  75%,
-  95% {
+  75%, 95% {
     transform: translateX(-300%);
   }
 
   100% {
     transform: translateX(0);
   }
+
 }
 
 #member-modal {
@@ -362,11 +351,9 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   z-index: 1000;
   opacity: 1;
   transition: opacity 0.3s ease;
@@ -408,10 +395,9 @@
   line-height: 1.5;
   margin-bottom: 1rem;
   color: #333;
-
-
 }
 
+/*REGISTRATION*/
 #summary-modal {
   position: fixed;
   top: 0;
@@ -552,8 +538,7 @@
   min-width: 80%;
 }
 
-.search-box input,
-.filter-box select {
+.search-box input, .filter-box select {
   width: 100%;
   padding: 0.8rem 1rem;
   border: 1px solid #ddd;
@@ -562,8 +547,7 @@
   transition: border-color 0.2s;
 }
 
-.search-box input:focus,
-.filter-box select:focus {
+.search-box input:focus, .filter-box select:focus {
   outline: none;
   border-color: #800020;
 }
@@ -766,7 +750,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 599px) {
 
   #about-wrapper:has(.library-controls) {
     padding: 0.75rem 0.5rem;
@@ -777,30 +761,29 @@
   }
 
   .library-controls {
-        flex-direction: column; /* Stack vertically on small phones */
-        align-items: stretch;
-    }
+    flex-direction: column;
+    align-items: stretch;
+  }
 
-    .filter-box {
-        display: flex;
-        flex-wrap: wrap; 
-    }
-    
-    .filter-group {
-      display: inline-block;
-      width: 48%; /* Two dropdowns per row */
-      margin-bottom: 0.5rem;
-    }
+  .filter-box {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-    .reset-btn {
-        grid-column: span 2; /* Reset button takes full width below dropdowns */
-    }
-    
-    /* Ensure text doesn't overflow dropdowns */
-    .filter-group select {
-        font-size: 0.9rem; 
-        padding: 0.5rem;
-    }
+  .filter-group {
+    display: inline-block;
+    width: 48%;
+    margin-bottom: 0.5rem;
+  }
+
+  .reset-btn {
+    grid-column: span 2;
+  }
+
+  .filter-group select {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
 
   .view-toggle {
     display: none;
@@ -833,19 +816,18 @@
     margin-top: auto;
   }
 
-
   .courses-grid.list-view .course-card {
     background: #f8f8f8;
-  border-radius: 0.8rem;
-  padding: 1.5rem;
-  max-height: 40rem;
-  box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.1);
-  display: flex;
-  aspect-ratio: 1/2;
-  flex-direction: column;
-  width: 100%;
-  transition: transform 0.25s ease;
-}
+    border-radius: 0.8rem;
+    padding: 1.5rem;
+    max-height: 40rem;
+    box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.1);
+    display: flex;
+    aspect-ratio: 1/2;
+    flex-direction: column;
+    width: 100%;
+    transition: transform 0.25s ease;
+  }
 
   .courses-grid.list-view .course-image {
     width: 100%;
@@ -880,7 +862,6 @@
   align-items: stretch;
 }
 
-/* Tablet: 2 Columns | Desktop: 3 Columns */
 @media (min-width: 600px) {
   .courses-grid {
     grid-template-columns: repeat(2, minmax(280px, 1fr));
