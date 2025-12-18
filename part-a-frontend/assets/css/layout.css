@@ -1,171 +1,186 @@
 /* ======== HEADER ======== */
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
 }
+
 /* ======================== */
 
 /* ========= BODY ========= */
 body {
-    margin: 0;
-    padding-top: 3rem; 
-    padding-bottom: 2.5rem; 
+  margin: 0;
+  padding-top: 3rem;
+  padding-bottom: 2.5rem;
 }
 
 main {
-    padding: 1rem;
-    box-sizing: border-box;
+  padding: 1rem;
+  box-sizing: border-box;
 }
+
 /* ======================== */
 
 /* ======== FOOTER ======== */
 footer {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9000;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9000;
 }
+
 /* ======================== */
 
 /* ========= MENU ========= */
 #side-menu {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 60vw; 
-    max-width: 260px;
-    height: 100%;
-    padding-top: 3rem;
-    z-index: 999; 
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 60vw;
+  max-width: 260px;
+  height: 100%;
+  padding-top: 3rem;
+  z-index: 999;
 }
 
 #side-menu.active {
-    left: 0;
+  left: 0;
 }
+
 /* ======================== */
 
 /* ===== INDEX INTRO ====== */
 #intro {
-    margin: 2rem auto;
+  margin: 2rem auto;
 }
 
-#intro h3 { 
-    margin-bottom: 0.6rem;
+#intro h3 {
+  margin-bottom: 0.6rem;
 }
 
 #intro h3::after {
-    margin: 0.4rem auto 0 auto;
+  margin: 0.4rem auto 0 auto;
 }
 
-#intro p { 
-    margin-bottom: 0.9rem;
+#intro p {
+  margin-bottom: 0.9rem;
 }
+
 /* ======================== */
 
 /* == INDEX REC_COURSES === */
 #recommended-courses {
-    width: 100%;
-    box-sizing: border-box;
-    padding-bottom: 0rem;
-    margin-bottom: 0rem;
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 0rem;
+  margin-bottom: 0rem;
 }
 
 .carousel {
-    padding-top: 0.8rem;
-    overflow: hidden;
-    position: relative;
+  padding-top: 0.8rem;
+  overflow: hidden;
+  position: relative;
 }
 
 .carousel-track {
-    display: flex;
-    gap: 1rem;
-    padding: 0 2rem;
-    box-sizing: border-box;
+  display: flex;
+  gap: 1rem;
+  padding: 0 2rem;
+  box-sizing: border-box;
 }
 
 .course-card {
-    flex: 0 0 100%;
+  flex: 0 0 100%;
 }
+
 /* ======================== */
 
 /* === INDEX CATEGORIES === */
 #course-categories {
-    width: 100%;
-    max-width: 900px;
-    padding: 1rem;
-    margin: 1rem auto;
+  width: 100%;
+  max-width: 900px;
+  padding: 1rem;
+  margin: 1rem auto;
 }
 
 .categories-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
 }
 
 .category-card p {
-    margin: 0;
+  margin: 0;
 }
+
 /* ======================== */
 
 /* ===== REGISTRATION ===== */
 #register-container {
-    width: 90%;
-    max-width: 40rem;
-    margin: 2rem auto;
+  width: 90%;
+  max-width: 40rem;
+  margin: 2rem auto;
 }
 
-#register-container h2{
-    margin-bottom: 1rem;
+#register-container h2 {
+  margin-bottom: 1rem;
 }
+
 /* ======================== */
 
 /* ====== FORM GROUP ====== */
 .form-group {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
+
 /* ======================== */
 
 /* ==== REGISTER LABEL ==== */
 label {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
+
 /* ======================== */
 
 /* === REGISTER CHECKS ==== */
-.checkboxes, .course-selection {
-    display: grid;
-    margin-top: 0.5rem;
-    grid-template-columns: 1fr;
-    gap: 1rem;
+.checkboxes,
+.course-selection {
+  display: grid;
+  margin-top: 0.5rem;
+  grid-template-columns: 1fr;
+  gap: 1rem;
 }
 
-.checkboxes > *, .course-selection > * {
-    min-width: 0;
+.checkboxes>*,
+.course-selection>* {
+  min-width: 0;
 }
+
 /* ======================== */
 
 /* === REGISTER COURSES === */
 .course-item label {
-    margin: 0;
+  margin: 0;
 }
+
 /* ======================== */
 
 /* === REGISTER SUMMARY === */
 #summary {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
+
 /* ======================== */
 
 /* ==== REGISTER MODAL ==== */
@@ -258,183 +273,185 @@ label {
 #registrationSuccessMessage h2 {
   margin-bottom: 0.8rem;
 }
+
 /* ======================== */
 
 /* ==== COURSE DETAILS ==== */
 #course-category {
-    margin-top: 0.4rem;
+  margin-top: 0.4rem;
 }
 
 #course-hero {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
 }
 
 #course-hero img {
-    width: 100%;
-    max-height: 260px;
-    object-fit: contain;
+  width: 100%;
+  max-height: 260px;
+  object-fit: contain;
 }
 
 .course-content-grid {
-    display: flex;
-    flex-direction: column;
-    grid-template-columns: 3fr 1.2fr;
-    gap: 3rem;
-    align-items: stretch;
-    overflow: visible;
-    transform: none;
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: 3fr 1.2fr;
+  gap: 3rem;
+  align-items: stretch;
+  overflow: visible;
+  transform: none;
 }
 
 #course-title {
-    overflow-wrap: anywhere;
-    margin-bottom: 0.3rem;
+  overflow-wrap: anywhere;
+  margin-bottom: 0.3rem;
 }
 
 #course-description {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 #course-description h3 {
-    margin-bottom: 0.2rem;
+  margin-bottom: 0.2rem;
 }
 
 #related-courses {
-    padding-top: 1.5rem;
+  padding-top: 1.5rem;
 }
 
 .related-courses-container {
-    display: flex;
-    gap: 1rem;
-    overflow-x: auto;
-    padding-bottom: 0.5rem;
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
 }
 
 .hero-visual {
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-visual img {
-    width: 100%;
-    max-height: 240px;
-    object-fit: contain;
+  width: 100%;
+  max-height: 240px;
+  object-fit: contain;
 }
 
 #course-facts {
-    display: flex;
-    gap: 1.8rem;  
-    flex-wrap: wrap;
-    margin-top: 1rem;
+  display: flex;
+  gap: 1.8rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
 .course-left {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #course-outcomes {
-    margin-top: 1.5rem;
-    margin-bottom: 3.2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 3.2rem;
 }
 
 #course-outcomes ul {
-    padding-left: 1.2rem;
-    margin: 0;
+  padding-left: 1.2rem;
+  margin: 0;
 }
 
 #course-outcomes li {
-    margin-bottom: 0.4rem;   
+  margin-bottom: 0.4rem;
 }
 
 .instructor-info {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
 }
 
 .instructor-info img {
-    width: 48px;
-    height: 48px;
-    object-fit: cover;
-    border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 #teacher-name {
-    margin: 0;
+  margin: 0;
 }
 
 .teacher-role {
-    display: block;                
-    margin-top: 0.15rem;
+  display: block;
+  margin-top: 0.15rem;
 }
 
 .book-recommendations {
-    display: none;
-    margin-top: 1.2rem;
+  display: none;
+  margin-top: 1.2rem;
 }
 
 .book-cover {
-    width: 80px;
-    height: auto;
-    max-height: 80px;
-    object-fit: contain;
-    flex-shrink: 0;
+  width: 80px;
+  height: auto;
+  max-height: 80px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .book-recommendations ul {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
 }
 
 .book-recommendations li {
-    padding: 0.75rem;
-    border-radius: 8px;
+  padding: 0.75rem;
+  border-radius: 8px;
 }
 
 .book-card a {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
 }
 
 .mobile-related {
-    display: none;
-    margin-top: 2rem;
+  display: none;
+  margin-top: 2rem;
 }
 
 .mobile-related-header {
-    display: flex;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+  display: flex;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .mobile-related-tab {
-    flex: 1;
-    padding: 0.6rem 0;
-    cursor: pointer;
+  flex: 1;
+  padding: 0.6rem 0;
+  cursor: pointer;
 }
 
 .mobile-related-tab.active {
-    display: block;
-    border-bottom: 2px solid #800020;
+  display: block;
+  border-bottom: 2px solid #800020;
 }
 
 .mobile-related-panel {
-    display: none;
+  display: none;
 }
 
 .mobile-related-panel.active {
-    display: block;
+  display: block;
 }
 
 .mobile-related-panel[data-type="books"] .section-hint {
-    padding-top: 1.5rem;
+  padding-top: 1.5rem;
 }
+
 /* ======================== */
 
 /* ======== ABOUT ========= */
@@ -451,7 +468,9 @@ label {
   min-width: 0;
 }
 
-.col-left, .col-center, .col-right {
+.col-left,
+.col-center,
+.col-right {
   min-width: 0;
   max-width: 100%;
   flex-wrap: wrap;
@@ -647,19 +666,23 @@ label {
 
 @keyframes slide {
 
-  0%, 20% {
+  0%,
+  20% {
     transform: translateX(0);
   }
 
-  25%, 45% {
+  25%,
+  45% {
     transform: translateX(-100%);
   }
 
-  50%, 70% {
+  50%,
+  70% {
     transform: translateX(-200%);
   }
 
-  75%, 95% {
+  75%,
+  95% {
     transform: translateX(-300%);
   }
 
@@ -709,6 +732,7 @@ label {
 #modal-details p {
   margin-bottom: 1rem;
 }
+
 /* ======================== */
 
 /* === BOOKS & COURSES ==== */
@@ -726,7 +750,8 @@ label {
   min-width: 80%;
 }
 
-.search-box input, .filter-box select {
+.search-box input,
+.filter-box select {
   width: 100%;
   padding: 0.8rem 1rem;
   border: 1px solid #ddd;
@@ -915,7 +940,7 @@ label {
   justify-content: space-between;
 }
 
-.course-title .course-level{
+.course-title .course-level {
   margin-bottom: 0.5rem;
 }
 
@@ -984,92 +1009,93 @@ label {
   padding: 0.6rem 1.2rem;
   text-align: left;
 }
+
 /* ======================== */
 
 /* ======== MEDIA ========= */
 @media (max-width: 599px) {
 
-    #side-menu {
-        width: 55vw;      
-        max-width: 220px; 
-    }
+  #side-menu {
+    width: 55vw;
+    max-width: 220px;
+  }
 
-    #intro {
-        width: 94%;
-        padding: 1.2rem 1rem;
-        border-left: 4px solid #800020;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.10);
-    }
+  #intro {
+    width: 94%;
+    padding: 1.2rem 1rem;
+    border-left: 4px solid #800020;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.10);
+  }
 
-    #intro h3 {
-        font-size: 1.2rem;
-    }
+  #intro h3 {
+    font-size: 1.2rem;
+  }
 
-    #intro h3::after {
-        width: 40px;
-    }
+  #intro h3::after {
+    width: 40px;
+  }
 
-    #course-facts {
-        justify-content: center;
-        text-align: center;
-    }
+  #course-facts {
+    justify-content: center;
+    text-align: center;
+  }
 
-    .fact {
-        align-items: center;
-    }
+  .fact {
+    align-items: center;
+  }
 
-    .highlight-card {
-        margin-right: 0.6rem;
-    }
+  .highlight-card {
+    margin-right: 0.6rem;
+  }
 
-    .course-left {
-        display: contents;
-    }
+  .course-left {
+    display: contents;
+  }
 
-    #course-description {
-        order: 1;
-    }
+  #course-description {
+    order: 1;
+  }
 
-    .course-right {
-        order: 2;
-    }
+  .course-right {
+    order: 2;
+  }
 
-    #course-outcomes {
-        order: 3;
-        margin-top: -3rem;
-        margin-bottom: -1rem;
-    }
+  #course-outcomes {
+    order: 3;
+    margin-top: -3rem;
+    margin-bottom: -1rem;
+  }
 
-    .mobile-related {
-        order: 4;
-        margin-top: 0rem;
-    }
+  .mobile-related {
+    order: 4;
+    margin-top: 0rem;
+  }
 
-    #related-courses {
-        order: 5;
-    }
+  #related-courses {
+    order: 5;
+  }
 
-    .mobile-related {
-        display: block;
-    }
+  .mobile-related {
+    display: block;
+  }
 
-    .section-title {
-        display: none;
-    }
+  .section-title {
+    display: none;
+  }
 
-    .mobile-related-panel .book-recommendations {
-        display: block;
-        margin-top: 0;
-    }
+  .mobile-related-panel .book-recommendations {
+    display: block;
+    margin-top: 0;
+  }
 
-    .course-right.sidebar-card {
-        position: static;
-        top: auto;
-        max-height: none;
-        overflow: visible;
-    }
+  .course-right.sidebar-card {
+    position: static;
+    top: auto;
+    max-height: none;
+    overflow: visible;
+  }
 
-    #about-wrapper:has(.library-controls) {
+  #about-wrapper:has(.library-controls) {
     padding: 0.75rem 0.5rem;
   }
 
@@ -1159,7 +1185,8 @@ label {
     text-align: center;
   }
 
-  .courses-grid.list-view, .course-level {
+  .courses-grid.list-view,
+  .course-level {
     margin-top: auto;
   }
 
@@ -1167,151 +1194,148 @@ label {
 
 @media (min-width: 600px) {
 
-    .course-card {
-        flex: 0 0 45%;
-    }
+  .course-card {
+    flex: 0 0 45%;
+  }
 
-    .categories-container {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
+  .categories-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 
-    .category-card {
-        flex: 0 0 calc(50% - 1rem);
-    }
+  #side-menu {
+    width: 40vw;
+    max-width: 300px;
+  }
 
-    #side-menu {
-        width: 40vw;
-        max-width: 300px;
-    }
+  #register-container {
+    max-width: 50rem;
+  }
 
-    #register-container {
-        max-width: 50rem;
-    }
+  .checkboxes,
+  .course-selection {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-    .checkboxes, .course-selection {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  #intro {
+    padding: 1.8rem 1.4rem;
+  }
 
-    #intro {
-        padding: 1.8rem 1.4rem;
-    }
+  #intro h3 {
+    font-size: 1.5rem;
+  }
 
-    #intro h3 {
-        font-size: 1.5rem;
-    }
+  #course-hero {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    margin-left: 0.6rem;
+    margin-right: 0.6rem;
+  }
 
-    #course-hero {
-        flex-direction: row;
-        align-items: center;
-        gap: 2rem;
-        margin-left: 0.6rem;
-        margin-right: 0.6rem;
-    }
+  #course-hero img {
+    width: 40%;
+    max-height: 240px;
+  }
 
-    #course-hero img {
-        width: 40%;
-        max-height: 240px;
-    }
+  .course-meta {
+    flex: 1 1 auto;
+    max-width: 560px;
+    width: 100%;
+    min-width: 0;
+    text-align: left;
+    margin: 0 auto;
+  }
 
-    .course-meta {
-        flex: 1 1 auto;     
-        max-width: 560px;   
-        width: 100%;
-        min-width: 0;      
-        text-align: left;
-        margin: 0 auto;
-    }
+  .instructor {
+    justify-content: center;
+    text-align: center;
+  }
 
-    .instructor {
-        justify-content: center;
-        text-align: center;
-    }
+  .instructor img {
+    margin: 0 auto;
+  }
 
-    .instructor img {
-        margin: 0 auto;
-    }
+  .course-content-grid {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2.5rem;
+    align-items: stretch;
+    overflow: visible;
+  }
 
-    .course-content-grid {
-        display: grid;
-        grid-template-columns: 3fr 1fr;
-        gap: 2.5rem;
-        align-items: stretch;
-        overflow: visible;
-    }
+  .course-left {
+    display: flex;
+    flex-direction: column;
+  }
 
-    .course-left {
-        display: flex;
-        flex-direction: column;
-    }
+  .course-right {
+    order: initial;
+    align-self: start;
+    margin-top: 2rem;
+  }
 
-    .course-right {
-        order: initial;
-        align-self: start; 
-        margin-top: 2rem;
-    }
+  .section-hint {
+    font-size: 0.9rem;
+    color: #777;
+  }
 
-    .section-hint {
-        font-size: 0.9rem;
-        color: #777;
-    }
+  .book-recommendations {
+    display: block;
+  }
 
-    .book-recommendations {
-        display: block;
-    }
+  .course-sidebar {
+    display: flex;
+    flex-direction: column;
+  }
 
-    .course-sidebar {
-        display: flex;
-        flex-direction: column;
-    }
+  .course-right.sidebar-card {
+    position: sticky;
+    top: 4.2rem;
+    align-self: start;
+    max-height: calc(100vh - 6.5rem);
+    overflow-y: visible;
+    max-height: none;
+  }
 
-    .course-right.sidebar-card {
-        position: sticky;
-        top: 4.2rem;
-        align-self: start;
-        max-height: calc(100vh - 6.5rem);
-        overflow-y: visible;
-        max-height: none;
-    }
+  .related-carousel .course-card {
+    aspect-ratio: auto;
+  }
 
-    .related-carousel .course-card {
-        aspect-ratio: auto;
-    }
+  .related-carousel .course-card img {
+    height: auto;
+    max-height: 140px;
+  }
 
-    .related-carousel .course-card img {
-        height: auto;
-        max-height: 140px;
-    }
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "col-center col-center"
+      "col-right col-right"
+      "col-left col-left";
+    gap: 2rem;
+  }
 
-    .about-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-        "col-center col-center"
-        "col-right col-right"
-        "col-left col-left";
-        gap: 2rem;
-    }
+  .col-center {
+    order: 1;
+  }
 
-    .col-center {
-        order: 1;
-    }
+  .col-left {
+    order: 2;
+  }
 
-    .col-left {
-        order: 2;
-    }
+  .col-right {
+    grid-area: col-left;
+    grid-row: 2;
+  }
 
-    .col-right {
-        grid-area: col-left;
-        grid-row: 2;
-    }
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-    .team-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .courses-grid {
-        grid-template-columns: repeat(2, minmax(280px, 1fr));
-    }
+  .courses-grid {
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+  }
 
 }
 
@@ -1323,77 +1347,74 @@ label {
 
 @media (min-width: 900px) {
 
-    .course-card {
-        flex: 0 0 28%;
-    }
+  .course-card {
+    flex: 0 0 28%;
+  }
 
-    .category-card {
-        flex: 0 0 calc(25% - 1rem);
-    }
-    
-    #side-menu {
-        width: 25vw;
-        max-width: 320px;
-    }
+  #side-menu {
+    width: 25vw;
+    max-width: 320px;
+  }
 
-    #register-container {
-        max-width: 60rem;
-    }
+  #register-container {
+    max-width: 60rem;
+  }
 
-    .checkboxes, .course-selection {
-        grid-template-columns: repeat(3, 1fr);
-    }
+  .checkboxes,
+  .course-selection {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-    #intro {
-        width: 85%;
-        max-width: 850px;
-    }
+  #intro {
+    width: 85%;
+    max-width: 850px;
+  }
 
-    #course-hero {
-        flex-direction: row;
-        align-items: center;
-        gap: 2rem;
-        margin-left: 0.6rem;
-        margin-right: 0.6rem;
-    }
+  #course-hero {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    margin-left: 0.6rem;
+    margin-right: 0.6rem;
+  }
 
-    .hero-visual {
-        flex: 1;
-    }
+  .hero-visual {
+    flex: 1;
+  }
 
-    .course-meta {
-        flex: 1;
-    }
+  .course-meta {
+    flex: 1;
+  }
 
-    .course-content-grid {
-        display: grid;
-        grid-template-columns: 3fr 1fr;
-        gap: 2.5rem;
-        align-items: stretch;
-        overflow: visible;
-    }
+  .course-content-grid {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2.5rem;
+    align-items: stretch;
+    overflow: visible;
+  }
 
-    .course-right {
-        margin-left: 3rem;
-    }
+  .course-right {
+    margin-left: 3rem;
+  }
 
-    .section-hint {
-        font-size: 1rem;
-        color: #777;
-    }
+  .section-hint {
+    font-size: 1rem;
+    color: #777;
+  }
 
-    .book-recommendations {
-        display: block;
-    }
+  .book-recommendations {
+    display: block;
+  }
 
-    .course-sidebar {
-        display: flex;
-        flex-direction: column;
-    }
+  .course-sidebar {
+    display: flex;
+    flex-direction: column;
+  }
 
-    .team-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
 }
 
@@ -1427,33 +1448,35 @@ label {
 
 @media (min-width: 1025px) {
 
-  .books-grid:not(.list-view), .courses-grid{
+  .books-grid:not(.list-view),
+  .courses-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-  
-}
-
-@media (min-width: 1200px) { 
-
-    #register-container {
-        max-width: 70rem;
-    }
-
-    .course-content-grid {
-        display: grid;
-        grid-template-columns: 3fr 1fr;
-        gap: 2.5rem;
-        align-items: stretch;
-        overflow: visible;
-    }
-
-    .course-right {
-        max-width: 360px;
-    }
-
-    .book-recommendations {
-        display: block;
-    }
 
 }
+
+@media (min-width: 1200px) {
+
+  #register-container {
+    max-width: 70rem;
+  }
+
+  .course-content-grid {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2.5rem;
+    align-items: stretch;
+    overflow: visible;
+  }
+
+  .course-right {
+    max-width: 360px;
+  }
+
+  .book-recommendations {
+    display: block;
+  }
+
+}
+
 /* ======================== */
